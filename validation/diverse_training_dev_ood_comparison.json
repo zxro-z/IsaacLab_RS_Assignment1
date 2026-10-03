@@ -1,0 +1,134 @@
+[
+  {
+    "environment": "UnevenBlocks",
+    "existing": {
+      "reward_mean": 35.76963806152344,
+      "reward_std": 23.241825103759766,
+      "episode_length_mean": 506.9599914550781,
+      "episode_length_std": 304.46875,
+      "forward_displacement_mean": 31.776838302612305,
+      "forward_displacement_std": 20.755943298339844,
+      "forward_velocity_mean": 3.4452450275421143,
+      "timeout_count": 13,
+      "timeout_ratio": 0.13,
+      "fall_count": 87,
+      "fall_ratio": 0.87,
+      "progress_2m_count": 97,
+      "progress_2m_ratio": 0.9699999690055847,
+      "progress_5m_ratio": 0.83
+    },
+    "diverse": {
+      "reward_mean": 33.91648483276367,
+      "reward_std": 22.620529174804688,
+      "episode_length_mean": 460.1999816894531,
+      "episode_length_std": 292.0769348144531,
+      "forward_displacement_mean": 30.801713943481445,
+      "forward_displacement_std": 20.626785278320312,
+      "forward_velocity_mean": 3.732680082321167,
+      "timeout_count": 7,
+      "timeout_ratio": 0.07,
+      "fall_count": 93,
+      "fall_ratio": 0.93,
+      "progress_2m_count": 96,
+      "progress_2m_ratio": 0.9599999785423279,
+      "progress_5m_count": 82,
+      "progress_5m_ratio": 0.8199999928474426
+    },
+    "effects": {
+      "reward_percent": -5.180799496971034,
+      "displacement_percent": -3.068663879787866,
+      "fall_ratio_delta_pp": 6.000000000000005,
+      "timeout_ratio_delta_pp": -6.0,
+      "progress_2m_ratio_delta_pp": -0.9999990463256836,
+      "progress_5m_ratio_delta_pp": -1.0000007152557333
+    }
+  },
+  {
+    "environment": "SteppingStones",
+    "existing": {
+      "reward_mean": 17.576597213745117,
+      "reward_std": 9.843884468078613,
+      "episode_length_mean": 706.6799926757812,
+      "episode_length_std": 328.2884216308594,
+      "forward_displacement_mean": 12.099124908447266,
+      "forward_displacement_std": 7.761349201202393,
+      "forward_velocity_mean": 1.0536608695983887,
+      "timeout_count": 57,
+      "timeout_ratio": 0.57,
+      "fall_count": 43,
+      "fall_ratio": 0.43,
+      "progress_2m_count": 95,
+      "progress_2m_ratio": 0.949999988079071,
+      "progress_5m_ratio": 0.71
+    },
+    "diverse": {
+      "reward_mean": 18.202280044555664,
+      "reward_std": 10.183734893798828,
+      "episode_length_mean": 726.0,
+      "episode_length_std": 332.2344970703125,
+      "forward_displacement_mean": 13.075243949890137,
+      "forward_displacement_std": 8.4273099899292,
+      "forward_velocity_mean": 1.1769299507141113,
+      "timeout_count": 62,
+      "timeout_ratio": 0.62,
+      "fall_count": 38,
+      "fall_ratio": 0.38,
+      "progress_2m_count": 96,
+      "progress_2m_ratio": 0.9599999785423279,
+      "progress_5m_count": 72,
+      "progress_5m_ratio": 0.7199999690055847
+    },
+    "effects": {
+      "reward_percent": 3.559749496456886,
+      "displacement_percent": 8.067682983926982,
+      "fall_ratio_delta_pp": -4.999999999999999,
+      "timeout_ratio_delta_pp": 5.000000000000004,
+      "progress_2m_ratio_delta_pp": 0.9999990463256836,
+      "progress_5m_ratio_delta_pp": 0.9999969005584752
+    }
+  },
+  {
+    "environment": "GapPath",
+    "existing": {
+      "reward_mean": 1.5401182174682617,
+      "reward_std": 1.275911808013916,
+      "episode_length_mean": 118.2699966430664,
+      "episode_length_std": 174.89134216308594,
+      "forward_displacement_mean": 1.010811448097229,
+      "forward_displacement_std": 0.4467391073703766,
+      "forward_velocity_mean": 0.8089138865470886,
+      "timeout_count": 4,
+      "timeout_ratio": 0.04,
+      "fall_count": 96,
+      "fall_ratio": 0.96,
+      "progress_2m_count": 0,
+      "progress_2m_ratio": 0.0,
+      "progress_5m_ratio": 0.0
+    },
+    "diverse": {
+      "reward_mean": 1.3901687860488892,
+      "reward_std": 1.4895685911178589,
+      "episode_length_mean": 129.4499969482422,
+      "episode_length_std": 213.9002685546875,
+      "forward_displacement_mean": 0.9432594776153564,
+      "forward_displacement_std": 0.55631023645401,
+      "forward_velocity_mean": 0.84513258934021,
+      "timeout_count": 6,
+      "timeout_ratio": 0.06,
+      "fall_count": 94,
+      "fall_ratio": 0.94,
+      "progress_2m_count": 0,
+      "progress_2m_ratio": 0.0,
+      "progress_5m_count": 0,
+      "progress_5m_ratio": 0.0
+    },
+    "effects": {
+      "reward_percent": -9.736228668593272,
+      "displacement_percent": -6.682944738015551,
+      "fall_ratio_delta_pp": -2.0000000000000018,
+      "timeout_ratio_delta_pp": 1.9999999999999998,
+      "progress_2m_ratio_delta_pp": 0.0,
+      "progress_5m_ratio_delta_pp": 0.0
+    }
+  }
+]

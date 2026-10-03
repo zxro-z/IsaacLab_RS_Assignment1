@@ -1,0 +1,131 @@
+import csv
+from datetime import datetime, timezone
+import hashlib
+import json
+import math
+from pathlib import Path
+import subprocess
+import sys
+
+root=Path('/home/zxro/IsaacLab_RS'); val=root/'validation'; runs=val/'official_evaluator_parity_runs'
+def digest(path): return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+def save(path,obj):
+ with path.open('x') as s: json.dump(obj,s,indent=2,allow_nan=False)
+p=json.loads((val/'official_evaluator_parity.json').read_text())
+assert p['overall_parity']
+before=json.loads((runs/'integrity_before.json').read_text())
+assert all(digest(root/name)==value for name,value in before.items())
+raw=list(csv.DictReader((val/'final_unseen_raw.csv').open()))
+assert len(raw)==400
+aggregates=list(csv.DictReader((val/'final_unseen_results.csv').open()))
+std_checks=[]
+for aggregate in aggregates:
+ samples=[float(r['episode_return']) for r in raw if r['policy']==aggregate['policy']]
+ assert len(samples)==100
+ mean=sum(samples)/len(samples)
+ std=math.sqrt(sum((r-mean)**2 for r in samples)/len(samples))
+ published=float(aggregate['reward_std'])
+ assert math.isclose(std,published,rel_tol=1e-6,abs_tol=1e-6)
+ std_checks.append(dict(policy=aggregate['policy'],raw_population_std_float64=std,published_std_float32=published))
+source_names=['scripts/assignment/evaluate_final_unseen.py','scripts/reinforcement_learning/rsl_rl/play_one_episode.py',
+ 'scripts/reinforcement_learning/rsl_rl/ant_observation_adapter.py','source/isaaclab_rl/isaaclab_rl/rsl_rl/vecenv_wrapper.py',
+ 'scripts/reinforcement_learning/rsl_rl/cli_args.py']
+source_hashes={n:dict(before=before.get(n,digest(root/n)),after=digest(root/n),changed=False) for n in source_names}
+created=['scripts/assignment/check_official_evaluator_parity.py','scripts/assignment/run_official_evaluator_parity.py']
+addendum=dict(timestamp=datetime.now(timezone.utc).isoformat(),
+ reason='Official assignment play_one_episode.py was checked after the original Final preregistration.',
+ unchanged=['checkpoints','checkpoint SHA256','training','Final terrain geometry/config','terrain seed','reward definition',
+ 'termination definition','observation definition','sensor definition'],
+ evaluation_protocol=['verified first-episode accounting with official play_one_episode.py',
+ 'terminal-step reward included','terminal step counted','post-reset episodes excluded',
+ 'additional logging affects measurement only','Same-trajectory reference accounting retains current policy-specific observation construction'],
+ declaration='No tuning, retraining, policy selection, or terrain modification was performed based on Final results.',
+ original_preregister_sha256=digest(val/'final_unseen_preregister.json'),
+ official_reference_url=p['official_reference'],official_reference_sha256=digest(runs/'provided_play_one_episode.py'),
+ source_hashes=source_hashes,
+ added_instrumentation_source_hashes={n:dict(before=None,after=digest(root/n)) for n in created},
+ checkpoint_sha256={k:v['checkpoint_sha256'] for k,v in p['policies'].items()},
+ original_results_sha256={n:digest(val/n) for n in ['final_unseen_raw.csv','final_unseen_results.csv','final_unseen_summary.md']},
+ integrity=p['integrity'],overall_parity=True,final_reevaluation_required=False,
+ accumulator_precision_difference='Official float64 vs existing float32; all returns pass rtol=1e-6, atol=1e-6. No tolerance relaxation.',
+ std_definition='Population std in both evaluators. No summary recalculation or overwrite.',std_crosscheck=std_checks)
+save(val/'final_unseen_evaluation_protocol_addendum.json',addendum)
+lines=['# Official evaluator parity verification','',
+ 'Task `Isaac-Ant-Final-Unseen-v0`, seed 24, 4 envs per policy. Verified against the downloaded assignment source, rather than assuming the locally named script is identical.',
+ '',f"Official URL: {p['official_reference']}",f"Official snapshot SHA256: `{digest(runs/'provided_play_one_episode.py')}`",'',
+ '## A. Official semantics','',
+ 'The provided evaluator initializes per-env rewards as float64, steps as int64, and finished as bool. After policy inference and env.step, its operations are:',
+ '', '```python','active = ~finished','episode_rewards[active] += rewards[active]','episode_steps[active] += 1','finished |= dones.bool()','```','',
+ 'The terminal transition contributes reward and one step before the finished mask changes. Later auto-reset episodes are ignored for that env, even though the batched policy and simulation continue stepping it. Each env has its own accumulator and completion mask. Rewards come directly from RslRlVecEnvWrapper.step; the wrapper forwards the underlying env reward without replacement, and merges terminated | truncated into long dones.',
+ '',
+ 'CLI seed 24 is assigned to agent_cfg.seed by cli_args.update_rsl_rl_cfg, then to env_cfg.seed before gym.make. The local script performs the equivalent assignment before creation. No late reseeding was injected.',
+ '',
+ 'Multi-env return mean/std use float64 accumulated returns; step mean/std first convert steps to float64. Both std calls use unbiased=False (population, ddof=0). With one env the official script prints the single return and step count.',
+ '',
+ 'Official loop also stops at env.max_episode_length or simulator shutdown. It warns and reports partial episodes if any remain unfinished. The local script instead requires all first episodes to complete and raises on premature simulator shutdown. This guard difference is outside the completed-episode accounting: every smoke env completed by the 960-step official cap. The original raw 400 rows also each record completion via timeout or fall. Seed -1 also differs in general (official CLI randomizes it); this verification uses the fixed seed 24 only.',
+ '',
+ '## B. Current evaluator comparison','',
+ '`evaluate_final_unseen.py` contains orchestration, not a separate simulation accounting loop. It calls the LOCAL `scripts/reinforcement_learning/rsl_rl/play_one_episode.py` with the frozen checkpoint and flags, then copies its episode and aggregate data into CSV. This local script differs from the downloaded official source and supplies the required policy observation adapters.',
+ '',
+ '| Check | Verdict | Execution-order evidence |','|---|---|---|',
+ '| First episode only | PASS | Separate finished mask for every env; local loop ends only after all finish. |',
+ '| Terminal reward included | PASS | Local returns[active] += rewards[active] before newly_finished updates finished. |',
+ '| Terminal step counted | PASS | Local lengths[active] += 1 before updating finished. |',
+ '| Post-reset episode excluded | PASS | active computed before env.step from previous finished; finished cannot change during env.step. Next iteration masks completed envs. |',
+ '| Done handling | PASS | Both use the same wrapper terminated OR truncated, then bool; local newly_finished = dones.bool() & active is equivalent to official finished OR dones.bool(). |',
+ '| Reward source | PASS | Same direct env.step reward vector; no recomputation or reward shaping. |',
+ '| Seed handling | PASS (seed 24) | Agent seed -> env_cfg.seed before gym.make in both. |',
+ '| Per-env accounting | PASS | Independent indexed reward/step tensors, with equal finished masks and step counts asserted on every transition. |',
+ '| Std definition | PASS | Both population std, unbiased=False. No pandas ddof=1 path. |','',
+ 'Numerical precision differs: official float64 return accumulation and float64 step reductions versus local float32 return accumulation and float32 step reductions. This is not an episode/reward-source discrepancy. The actual return differences below all pass the requested tolerance without relaxing it. Raw CSV population std was independently reconstructed and agrees with the published std within 1e-6 relative/absolute tolerance; existing summaries were preserved.',
+ '',
+ '## C. Small parity method and results','',
+ 'The new wrapper parses the official snapshot AST, verifies and extracts its exact four accounting statements, and renames only shadow accumulator variables. It instruments an in-memory AST of the existing local script, leaving both original source files unchanged. The current script performs the real env creation, checkpoint load, policy-specific observation construction and inference. Immediately after each actual env.step, the official shadow accumulator consumes the very same reward/done vector. The existing local accounting statements then execute unchanged. This implements the requested observation-adapter fallback; it is not an independent unadapted official-script rollout.',
+ '',
+ 'Every transition asserts identical finished masks and step counts, unchanged official accumulators for already-finished envs, and unchanged current returns for already-finished envs. Runtime observation shape is checked on every step against the checkpoint actor dimension. Terminal reward addition is explicitly checked in the reference, and current totals and terminal-step counts are compared. The JSON records first_done_step, terminal reward, and observed post-reset transitions. No checkpoint export is invoked.',
+ '',
+ 'Tolerance: `np.isclose(current, official, rtol=1e-6, atol=1e-6)`. Because both accumulators share one trajectory, their differences are accumulation precision, not GPU trajectory nondeterminism. No tolerance adjustment was needed. Full precision values are in JSON; the table prints nine decimal places.','']
+for key,data in p['policies'].items():
+ label=next(a['policy'] for a in aggregates if (a['policy'].lower().replace(' ','_').replace('+','_')==key)) if key not in ('original_heightscan','heightscan_contact','diverse_heightscan_contact') else {'original_heightscan':'Original HeightScan','heightscan_contact':'HeightScan+Contact','diverse_heightscan_contact':'Diverse HeightScan+Contact'}[key]
+ lines += [f"### Policy: {label}",'',f"Actor input: {data['actor_input_dim']}; runtime observation: {data['runtime_observation_dim']}. Parity: **PASS**.",'',
+ '| Env | Official return | Current return | Official steps | Current steps | Absolute return difference | Post-reset transitions observed / counted |',
+ '|---|---:|---:|---:|---:|---:|---:|']
+ for e in data['episodes']:
+  lines.append(f"| {e['env_id']} | {e['official_episode_return']:.9f} | {e['current_episode_return']:.9f} | {e['official_episode_steps']} | {e['current_episode_steps']} | {e['absolute_return_difference']:.9g} | {e['post_reset_transitions_observed']} / 0 |")
+ lines += ['']
+maxdiff=max(e['absolute_return_difference'] for d in p['policies'].values() for e in d['episodes'])
+lines += [f'Maximum absolute return difference: {maxdiff:.12g}. All 16 first episodes completed; terminal rewards and steps included; no post-reset contribution.',
+ '', '## D. Decision','',
+ 'Case A: all four policies PASS. Preserve the existing 400 raw rows and the existing aggregate/summary files. No Final 100-env reevaluation was launched. Population std already matches, so summary recalculation is unnecessary. Checkpoints, training, terrain, preregistration, rewards, terminations, sensors and observations were not modified.',
+ '', 'The existing Final evaluation follows the first-episode accounting',
+ 'semantics of the provided play_one_episode.py.', 'No Final re-evaluation is required.','',
+ 'The next analysis steps may proceed: (1) 40 m first-pass / terrain-section analysis; (2) confidence intervals or paired bootstrap using the raw 400 episodes; (3) stock reward component decomposition. Those analyses were not performed in this parity task.',
+ '', '## E. Artifacts and integrity','',
+ '- New wrapper: `scripts/assignment/check_official_evaluator_parity.py`.',
+ '- New four-policy smoke runner: `scripts/assignment/run_official_evaluator_parity.py`.',
+ '- Main results: `validation/official_evaluator_parity.json`.',
+ '- Per-policy JSON/logs, official source snapshot, source/artifact hashes and full simulation commands: `validation/official_evaluator_parity_runs/`.',
+ '- Separate protocol addendum: `validation/final_unseen_evaluation_protocol_addendum.json`.',
+ '- This report: `validation/official_evaluator_parity.md`.',
+ '', f"All {p['integrity']['protected_file_count']} pre-existing validation artifacts, preregistered sources and selected checkpoints covered by the pre-test snapshot retained their hashes. The addendum records before/after relevant source hashes and checkpoint SHA256. Existing preregistration and Dev artifacts were not overwritten.",
+ '', 'The first sandbox attempt could not access CUDA (No CUDA GPUs are available). Its logs/results were preserved under `official_evaluator_parity_runs/sandbox_attempt/`. The successful GPU run used explicitly approved execution outside the sandbox, with the same Python/Isaac Sim installation as the original Final evaluation.',
+ '', '## F. Validation','',
+ '`python -m py_compile` and `git diff --check` results are recorded in `official_evaluator_parity_runs/validation.log`. Full smoke commands are in `commands.log`; validation/inspection command provenance is in `session_commands.log`. All policy subprocesses exited zero on the approved GPU run.','']
+with (val/'official_evaluator_parity.md').open('x') as s:s.write('\n'.join(lines))
+commands=[['python','-m','py_compile','scripts/assignment/check_official_evaluator_parity.py','scripts/assignment/run_official_evaluator_parity.py',
+ 'scripts/assignment/evaluate_final_unseen.py','scripts/reinforcement_learning/rsl_rl/play_one_episode.py'],['git','diff','--check']]
+with (runs/'validation.log').open('x') as s:
+ for cmd in commands:
+  s.write('$ '+' '.join(cmd)+'\n');s.flush()
+  child=subprocess.run(cmd,cwd=root,stdout=s,stderr=subprocess.STDOUT)
+  s.write('exit_code='+str(child.returncode)+'\n');s.flush()
+  assert child.returncode==0
+ for name in ['scripts/assignment/check_official_evaluator_parity.py','scripts/assignment/run_official_evaluator_parity.py']:
+  cmd=['git','diff','--no-index','--check','/dev/null',name]
+  s.write('$ '+' '.join(cmd)+'\n');s.flush()
+  child=subprocess.run(cmd,cwd=root,stdout=s,stderr=subprocess.STDOUT)
+  s.write('exit_code='+str(child.returncode)+'\n');s.flush()
+  assert child.returncode==0
+ s.write('Raw rows: 400; four groups of 100. All preserved-file hashes match. Population std reconstructed from raw CSV matches existing results.\n')
+assert all(digest(root/name)==value for name,value in before.items())
+print('Documentation, addendum, std crosscheck, compile and whitespace checks: PASS')

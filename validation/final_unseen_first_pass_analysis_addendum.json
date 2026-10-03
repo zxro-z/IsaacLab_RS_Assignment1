@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-10-03T12:59:58.871874+00:00",
+  "purpose": "Post-hoc measurement of frozen Final first-pass progress; no tuning or new Final result replacement.",
+  "unchanged": [
+    "training",
+    "checkpoints and SHA256",
+    "terrain geometry/config/seed",
+    "reward",
+    "termination",
+    "observation",
+    "sensor",
+    "original Final raw/results/summary",
+    "preregistration",
+    "official parity and protocol addendum"
+  ],
+  "protected_count": 468,
+  "protected_changed": [],
+  "consistency_pass": true,
+  "source_hashes": {
+    "scripts/assignment/evaluate_final_unseen_first_pass.py": "adb5c7bfd95119da600615b83ca78ca2ed1757207e18c92365cf84c66b6264af",
+    "scripts/assignment/run_final_unseen_first_pass_measurement.py": "4d6839975cece93f9929b62cf0a284fa625913ce3c8fee791875af43edc94b5e",
+    "scripts/assignment/analyze_final_unseen_sections.py": "348c1db653d7b91186c1a61d42b383f8b621bcb6039b3f24997745d85dc0901e"
+  },
+  "original_final_hashes": {
+    "final_unseen_raw.csv": "5ffa27a649fd55180dec2a66d97667eb576585ba778a207235d129540576b9c6",
+    "final_unseen_results.csv": "a2356cd295ef5f4200265ef86a0ae747c6d03084e03cbfd2a336389ecad03c84",
+    "final_unseen_summary.md": "c1b154ca2572b3c6ce72c30b03a4c76cdfcf4eeb46d6291268aa5e18c774ad17",
+    "final_unseen_preregister.json": "5a06d1a934fcec84a3e842358f925c234bf5574e2f1cbf04a65e02182fe95ab2",
+    "official_evaluator_parity.json": "4133a50eac7b9b5ea79b71c495424caa3ef89e85215fae7e03f9e6385bdbe88a",
+    "final_unseen_evaluation_protocol_addendum.json": "5c6777469523c34c2db7932b4e61da1ed27c6f0c1ecdf3258a252a3acf4f9925"
+  },
+  "declaration": "No tuning, retraining, policy selection, or terrain modification was performed based on Final results."
+}

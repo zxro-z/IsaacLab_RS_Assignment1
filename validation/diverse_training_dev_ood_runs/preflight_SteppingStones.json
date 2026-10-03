@@ -1,0 +1,18 @@
+{
+  "status": "preflight_pass",
+  "task": "Isaac-Ant-DevOOD-SteppingStones-v0",
+  "checkpoint": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_18-57-46_ablation_heightscan_contact_diverse_s42/model_999.pt",
+  "seed": 24,
+  "num_envs": 1,
+  "steps": 20,
+  "finite_observation_reward": true,
+  "actor_input_dim": 127,
+  "critic_input_dim": 127,
+  "observation_dim": 127,
+  "height_scan_enabled": true,
+  "height_scan_pattern": "original",
+  "scan_dim": 63,
+  "terrain_mesh_sha256": "477351dd0eba82bdaee34c77392a11e9ce25e9f1addd68e16e9674f4016a0773",
+  "env_origins_sha256": "0f1a463fd90702e6cf66321428e6e8252f43f96e6f564d6e16579c5ef230a6bc",
+  "robot_material_sha256": "de50fb2329a296dcc79c26066d14cc5feef91cde57682f0a9171f7db8452709d"
+}

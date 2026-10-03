@@ -1,0 +1,101 @@
+{
+  "current_submission_candidate": "HeightScan+Contact (provisional; pending team confirmation)",
+  "models": [
+    {
+      "policy": "Base",
+      "checkpoint": "logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42/model_999.pt",
+      "checkpoint_sha256": "a7304b58e1d06ba656b910d33edfdbcd9e08c28c8e541f80c095073242ff2570",
+      "size_bytes": 3024107,
+      "saved_iteration": 999,
+      "training_task": "Isaac-Ant-Terrain-Ablation-Base-v0",
+      "observation_dim": 60,
+      "actor_first_layer_shape": [
+        400,
+        60
+      ],
+      "training_run": "logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42",
+      "env_config": "logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42/params/env.yaml",
+      "agent_config": "logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42/params/agent.yaml",
+      "config_sha256": {
+        "env.yaml": "0065a2b6d9ba064a9837d01f25e6a4ca8466eb08994cd4340d988525d33b92b3",
+        "agent.yaml": "406a9e5f0383094dcdbd315b31223fe6cb1925c4814f1ae7abd238fbc0391722"
+      },
+      "evaluation_task": "Isaac-Ant-Final-Unseen-v0",
+      "evaluation_flags": []
+    },
+    {
+      "policy": "Original HeightScan",
+      "checkpoint": "logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42/model_999.pt",
+      "checkpoint_sha256": "716a6bbb860078beb41766b31f3d35ff0775f875c4411f5c5c7055be95379aca",
+      "size_bytes": 3628907,
+      "saved_iteration": 999,
+      "training_task": "Isaac-Ant-Terrain-Ablation-HeightScan-v0",
+      "observation_dim": 123,
+      "actor_first_layer_shape": [
+        400,
+        123
+      ],
+      "training_run": "logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42",
+      "env_config": "logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42/params/env.yaml",
+      "agent_config": "logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42/params/agent.yaml",
+      "config_sha256": {
+        "env.yaml": "5028d18ecf64e43f1d82c4ac2a103ba2b87c0fd4e0e5376d7589549984ceab2d",
+        "agent.yaml": "a03c82f49dc11383bfc5aa7b0028e715ec3f43c29d7352e4318b640e048f0993"
+      },
+      "evaluation_task": "Isaac-Ant-Final-Unseen-v0",
+      "evaluation_flags": [
+        "--height_scan"
+      ]
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "checkpoint": "logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/model_999.pt",
+      "checkpoint_sha256": "8fa361827664fce1a42a2f4d42152853c81a6a8cf63deb3174aca5b9d80d937a",
+      "size_bytes": 3667307,
+      "saved_iteration": 999,
+      "training_task": "Isaac-Ant-Terrain-Ablation-HeightScan-Contact-v0",
+      "observation_dim": 127,
+      "actor_first_layer_shape": [
+        400,
+        127
+      ],
+      "training_run": "logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42",
+      "env_config": "logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/params/env.yaml",
+      "agent_config": "logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/params/agent.yaml",
+      "config_sha256": {
+        "env.yaml": "c52c2b7e5734f763bb10617ac48ab3aae0ce8e8b480c9fb6ce28bcfa0c1a7e08",
+        "agent.yaml": "0d02423e89388be472c6d365c49a7acd4022d0fd1d017b7158533db4e442de76"
+      },
+      "evaluation_task": "Isaac-Ant-Final-Unseen-v0",
+      "evaluation_flags": [
+        "--height_scan",
+        "--foot_contacts"
+      ]
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "checkpoint": "logs/rsl_rl/ant/2026-10-03_18-57-46_ablation_heightscan_contact_diverse_s42/model_999.pt",
+      "checkpoint_sha256": "2f36d5fc0280a9000b1719552ab1c68cb64861a22b9088440f19acd5217dfe48",
+      "size_bytes": 3667307,
+      "saved_iteration": 999,
+      "training_task": "Isaac-Ant-Terrain-Diverse-HeightScan-Contact-v0",
+      "observation_dim": 127,
+      "actor_first_layer_shape": [
+        400,
+        127
+      ],
+      "training_run": "logs/rsl_rl/ant/2026-10-03_18-57-46_ablation_heightscan_contact_diverse_s42",
+      "env_config": "logs/rsl_rl/ant/2026-10-03_18-57-46_ablation_heightscan_contact_diverse_s42/params/env.yaml",
+      "agent_config": "logs/rsl_rl/ant/2026-10-03_18-57-46_ablation_heightscan_contact_diverse_s42/params/agent.yaml",
+      "config_sha256": {
+        "env.yaml": "4f3edc620aec0316efcbf0251a7a56594de7578839055afc02355bedeb66de8f",
+        "agent.yaml": "edcc4ebc5349d8ea5ee0efdab360f2e095686668774a5285572a34e1eca09369"
+      },
+      "evaluation_task": "Isaac-Ant-Final-Unseen-v0",
+      "evaluation_flags": [
+        "--height_scan",
+        "--foot_contacts"
+      ]
+    }
+  ]
+}

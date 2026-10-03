@@ -1,0 +1,183 @@
+{
+  "timestamp": "2026-10-03T13:43:44.838280+00:00",
+  "task": "Isaac-Ant-Final-Unseen-v0",
+  "seed": 24,
+  "terrain_seed": 2404,
+  "num_envs": 100,
+  "first_episode_only": true,
+  "control_dt": 0.016666666666666666,
+  "measurement_only": true,
+  "reward_terms": [
+    {
+      "name": "progress",
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.progress_reward",
+      "weight": 1.0,
+      "parameters": {
+        "target_pos": [
+          1000.0,
+          0.0,
+          0.0
+        ]
+      },
+      "description": "Potential difference towards world target (1000,0,0). __call__ zeros target-vector z before distance; reset uses initial 3-D distance. Potential=-distance/control_dt, then manager multiplies by dt. No separate linear-velocity reward."
+    },
+    {
+      "name": "alive",
+      "function": "isaaclab.envs.mdp.rewards.is_alive",
+      "weight": 0.5,
+      "parameters": {},
+      "description": "(~termination_manager.terminated).float(): 1 for non-fall steps including pure timeout; 0 on non-timeout termination, including simultaneous fall+timeout."
+    },
+    {
+      "name": "upright",
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.upright_posture_bonus",
+      "weight": 0.1,
+      "parameters": {
+        "threshold": 0.93
+      },
+      "description": "1 if base-up world-Z projection > 0.93, else 0."
+    },
+    {
+      "name": "move_to_target",
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.move_to_target_bonus",
+      "weight": 0.5,
+      "parameters": {
+        "threshold": 0.8,
+        "target_pos": [
+          1000.0,
+          0.0,
+          0.0
+        ]
+      },
+      "description": "Heading projection towards target: 1 if projection > 0.8, else projection/0.8 (may be negative)."
+    },
+    {
+      "name": "action_l2",
+      "function": "isaaclab.envs.mdp.rewards.action_l2",
+      "weight": -0.005,
+      "parameters": {},
+      "description": "sum(action_manager.action squared)."
+    },
+    {
+      "name": "energy",
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.power_consumption",
+      "weight": -0.05,
+      "parameters": {
+        "gear_ratio": {
+          ".*": 15.0
+        }
+      },
+      "description": "sum(abs(action * joint_velocity * normalized_gear_ratio)); all gear ratios 15, normalized by maximum => 1. This is the stock proxy, not a new physical energy measurement."
+    },
+    {
+      "name": "joint_pos_limits",
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.joint_pos_limits_penalty_ratio",
+      "weight": -0.1,
+      "parameters": {
+        "threshold": 0.99,
+        "gear_ratio": {
+          ".*": 15.0
+        }
+      },
+      "description": "Normalize joints to [-1,1] using soft limits; sum (abs(normalized_position)>0.99) * (abs(position)-0.99)/(1-0.99) * normalized_gear_ratio."
+    }
+  ],
+  "reward_definition": {
+    "inheritance": "AntFinalUnseenEnvCfg -> AntDevOODBaseEnvCfg -> AntOODTerrainEnvCfg -> AntEnvCfg.RewardsCfg",
+    "total": "Authoritative unchanged env.step returned reward; no replacement/redefinition",
+    "manager": "compute evaluates raw term once, multiplies weight * control_dt, sequentially adds float32 values",
+    "buffer": "_step_reward stores weighted per-second value: value/control_dt, not raw/unweighted. Logging restores control_dt without recomputing terms.",
+    "extras": "reset logging averages over resetting envs and divides episode component sums by max episode length seconds; not sufficient per-env episode data",
+    "terminal": "All seven terms evaluated after termination computation and before auto-reset; alive zero on terminated step, pure timeout alive remains one",
+    "no": "No explicit terminal penalty, standalone linear-velocity reward or new reward component"
+  },
+  "bootstrap": {
+    "iterations": 50000,
+    "seed": 2404,
+    "method": "paired env_id block percentile 95%, shared multinomial resamples across policies/components/measures",
+    "std": "population ddof=0",
+    "multiple_comparisons": "Marginal exploratory component CIs; no p-values, no multiplicity correction"
+  },
+  "definitions": {
+    "pre40": "Steps 1..first_reach_step_40m inclusive; entire episode if unreached",
+    "post40": "Strictly after first reach through terminal step; zero for noncompleters",
+    "per_step": "Per-episode component_sum / own episode_steps, then equal-env average; not a pooled exposure-weighted rate",
+    "per_second": "component_sum / own episode_steps / control_dt",
+    "fractions": "Ratio of mean component to mean env total; supplementary signed ratio, not a share of positive utility",
+    "duration_rate_identity": "delta(S)=delta(L)*(q_new+q_ref)/2 + delta(q)*(L_new+L_ref)/2. This is symmetric algebra, not a causal decomposition.",
+    "conditioned": "Exploratory 40m-completer/noncompleter/fall/original-timeout groups; different selected populations"
+  },
+  "identity": {
+    "step_count": 351119,
+    "step_max_absolute_error": 2.805609256029129e-08,
+    "step_mean_absolute_error": 3.855846353593664e-09,
+    "ordered_float32_step_max_error": 1.4901161193847656e-08,
+    "episode_max_absolute_native_error": 0.00011068218213949876,
+    "episode_mean_absolute_native_error": 2.4052112724817222e-05,
+    "episode_max_absolute_float64_trace_error": 2.828732249327004e-06,
+    "step_tolerance": {
+      "rtol": 1e-06,
+      "atol": 1e-06
+    },
+    "episode_tolerance": {
+      "rtol": 2e-06,
+      "atol": 1e-06
+    },
+    "nominal_episode_1e6_tolerance_failures": 8,
+    "nominal_failures": [
+      {
+        "policy": "Original HeightScan",
+        "env_id": 83,
+        "error": -9.404801033952026e-05
+      },
+      {
+        "policy": "HeightScan+Contact",
+        "env_id": 4,
+        "error": 7.965591044012399e-05
+      },
+      {
+        "policy": "HeightScan+Contact",
+        "env_id": 14,
+        "error": -9.745504939928651e-05
+      },
+      {
+        "policy": "HeightScan+Contact",
+        "env_id": 20,
+        "error": 8.042446199851838e-05
+      },
+      {
+        "policy": "HeightScan+Contact",
+        "env_id": 56,
+        "error": 9.166583981823351e-05
+      },
+      {
+        "policy": "HeightScan+Contact",
+        "env_id": 89,
+        "error": -7.261426821969508e-05
+      },
+      {
+        "policy": "Diverse HeightScan+Contact",
+        "env_id": 93,
+        "error": 0.00011068218213949876
+      },
+      {
+        "policy": "Diverse HeightScan+Contact",
+        "env_id": 96,
+        "error": 8.001564208370837e-05
+      }
+    ],
+    "justification": "Eight-or-fewer nominal failures are expected native float32 sequential-accumulation roundoff; actual total trajectory exactly reproduces existing evaluation. Episode tolerance 2e-6 relative + 1e-6 absolute retains all observed errors and every episode also passes the explicit gamma_N roundoff bound.",
+    "all_step_checks_pass": true,
+    "all_episode_checks_pass": true,
+    "episodes": [
+      {
+        "policy": "Base",
+        "env_id": 0,
+        "episode_steps": 960,
+        "max_absolute_step_error": 1.6239937394857407e-08,
+        "mean_absolute_step_error": 3.4688672675050234e-09,
+        "component_minus_native_return": 1.1850180726469262e-05,
+        "component_minus_float64_trace_total": 1.9327594600326847e-06,
+        "float64_trace_minus_native_return": 9.917421266436577e-06,
+        "component_sum_native_float32_accumulation": 64.21986389160156,
+        "float32_roundoff_bound": 

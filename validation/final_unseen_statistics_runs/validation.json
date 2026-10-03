@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "each_policy_n": 100,
+  "each_unconditional_pair_n": 100,
+  "raw_rows": 400,
+  "first_pass_rows": 400,
+  "missing_continuous": 0,
+  "missing_binary": 0,
+  "missing_timing": "Only unreachable boundaries; handled by explicitly reported joint subset",
+  "paired_weights_direct_crosscheck": true,
+  "bootstrap_center_checked": true,
+  "estimate_inside_ci_checked": true,
+  "binary_interval_bounds_checked": true,
+  "protected_count": 520,
+  "changed": []
+}

@@ -1,0 +1,27 @@
+{
+  "num_envs": 4,
+  "seed": 42,
+  "steps_per_task": 64,
+  "terrain_seed": 42,
+  "registration": "PASS",
+  "non_observation_to_dict_equality": "PASS",
+  "original_Ant_PPO_equality": "PASS",
+  "original_Ant_rewards_equality": "PASS",
+  "terrain_mesh_sha256": "b0e35dcc30ded30df1d7f3ec574236e66ab5c293e9bef821078e3f6c86dc0bf9",
+  "env_origins_sha256": "d5cf3a8dcb5bfd68b6d52bc7348e8e7f0d8461a8fc9863d18aa42e5cd3da5d1b",
+  "robot_material_sha256": "18571baae52534a5270a79b303449363de9012b6b9535088ffc77042ce82b2b1",
+  "cross_task_hash_equality": "PASS",
+  "initial_clearance_range_m": [0.4999980926513672, 0.5],
+  "all_four_feet_show_contact_and_air": true,
+  "finite_observations_and_rewards": true,
+  "action_shape": [4, 8],
+  "policy_shapes": {
+    "Isaac-Ant-Terrain-Ablation-Base-v0": [4, 60],
+    "Isaac-Ant-Terrain-Ablation-HeightScan-v0": [4, 123],
+    "Isaac-Ant-Terrain-Ablation-Contact-v0": [4, 64],
+    "Isaac-Ant-Terrain-Ablation-HeightScan-Contact-v0": [4, 127]
+  },
+  "protected_source_files_unchanged": true,
+  "migrated_run_file_checksums": "16/16 PASS",
+  "training_executed": false
+}

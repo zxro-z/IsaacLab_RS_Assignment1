@@ -1,0 +1,77 @@
+import csv,hashlib,json,math
+from pathlib import Path
+import subprocess,sys
+import numpy as np
+root=Path('/home/zxro/IsaacLab_RS');sys.path.insert(0,str(root/'scripts/assignment'))
+import analyze_final_unseen_statistics as m
+v=root/'validation';r=v/'final_unseen_statistics_runs'
+a=json.loads((v/'final_unseen_statistical_analysis.json').read_text())
+raw=m.index_csv(v/'final_unseen_raw.csv');first=m.index_csv(v/'final_unseen_first_pass_raw.csv')
+data,times=m.prepare(raw,first)
+# Independent weighted sums reproduce every saved unconditional and conditional CI/median.
+rng=np.random.default_rng(2404)
+w=rng.multinomial(100,np.full(100,.01),size=50000)
+for ref,new in m.PAIRS:
+ name=f'{m.POLICIES[ref]} → {m.POLICIES[new]}'
+ for k,metric in enumerate(m.METRICS):
+  row=a['pairwise'][name][metric];delta=data[:,new,k]-data[:,ref,k]
+  samples=np.sum(w*delta[None,:],axis=1)/100
+  low,high=np.quantile(samples,[.025,.975],method='linear')
+  assert np.isclose(row['observed_delta'],delta.mean(),rtol=1e-12,atol=1e-12)
+  assert np.allclose([row['ci95_low'],row['ci95_high']],[low,high],rtol=1e-12,atol=1e-12)
+  assert np.isclose(row['bootstrap_median_delta'],np.median(samples),rtol=1e-12,atol=1e-12)
+for row,(ref,new) in zip(a['conditional_timing'],m.PAIRS):
+ mask=np.isfinite(times[:,ref])&np.isfinite(times[:,new]);n=int(mask.sum())
+ assert n==row['n_pairs'] and np.flatnonzero(mask).tolist()==row['joint_env_ids']
+ tw=rng.multinomial(n,np.full(n,1/n),size=50000)
+ delta=times[mask,new]-times[mask,ref]
+ samples=np.sum(tw*delta[None,:],axis=1)/n
+ assert np.allclose([row['ci95_low'],row['ci95_high']],np.quantile(samples,[.025,.975]),atol=1e-12)
+for j,policy in enumerate(m.POLICIES):
+ for k,metric in enumerate(m.METRICS):
+  row=a['policy_ci'][policy][metric];values=data[:,j,k]
+  assert row['n']==100
+  assert np.isclose(row['estimate'],values.mean(),atol=1e-12)
+  assert np.isclose(row['std'],values.std(ddof=0),atol=1e-12)
+  assert np.isclose(row['se'],values.std(ddof=1)/10,atol=1e-12)
+  if metric in m.CONTINUOUS:
+   samples=np.sum(w*values[None,:],axis=1)/100
+   expected=np.quantile(samples,[.025,.975])
+   assert np.allclose([row['bootstrap']['ci95_low'],row['bootstrap']['ci95_high']],expected,atol=1e-12)
+  else:
+   assert np.allclose(row['wilson_ci95'],m.wilson(int(values.sum()),100),atol=1e-12)
+# Adversarial pairing fixture: a fixed paired offset must have a degenerate bootstrap delta,
+# regardless of wide variation in the reference observations.
+x=np.arange(100,dtype=float)**2
+samples,weights=m.bootstrap_means(np.column_stack([x,x+3]),np.random.default_rng(7),iterations=2000)
+assert np.allclose(samples[:,1]-samples[:,0],3,atol=1e-12)
+assert abs(m.wilson(0,100)[0])<1e-15 and abs(m.wilson(100,100)[1]-1)<1e-15
+assert abs(m.wilson(0,100)[1]-.03699349820698568)<1e-12
+try:m.boolean('')
+except AssertionError:pass
+else:raise AssertionError('Missing binary data must not be silently false')
+# The original raw/first-pass outcomes cannot be silently misjoined.
+wrong={k:dict(value) for k,value in first.items()};wrong[m.POLICIES[0],0]['episode_return']='0'
+try:m.validate_pairing(raw,wrong)
+except AssertionError:pass
+else:raise AssertionError('Inconsistent raw/first-pass join accepted')
+checks=m.check_aggregates(raw)
+protected=json.loads((r/'protected_before.json').read_text())
+assert all(hashlib.sha256((root/n).read_bytes()).hexdigest()==h for n,h in protected.items())
+assert hashlib.sha256((root/'scripts/assignment/analyze_final_unseen_statistics.py').read_bytes()).hexdigest()==a['integrity']['source_sha256']
+with (r/'validation.log').open('x') as log:
+ for cmd in [['python','-m','py_compile','scripts/assignment/analyze_final_unseen_statistics.py'],['git','diff','--check']]:
+  log.write('$ '+' '.join(cmd)+'\n');log.flush()
+  child=subprocess.run(cmd,cwd=root,stdout=log,stderr=subprocess.STDOUT)
+  log.write(f'exit_code={child.returncode}\n');assert child.returncode==0
+ cmd=['git','diff','--no-index','--check','/dev/null','scripts/assignment/analyze_final_unseen_statistics.py']
+ child=subprocess.run(cmd,cwd=root,capture_output=True,text=True)
+ log.write('$ '+' '.join(cmd)+'\n'+child.stdout+child.stderr+f'exit_code={child.returncode}\n')
+ assert child.returncode in (0,1) and not child.stdout and not child.stderr
+ log.write('No-index exit 1 with no diagnostics is expected for a new file.\n')
+ log.write('PASS: independently reproduced all 30 unconditional paired CI/medians and all 3 joint-completer timing CI distributions with fixed RNG.\n')
+ log.write('PASS: policy bootstrap CI, std(ddof=0), SE(ddof=1), Wilson CI and existing aggregate consistency.\n')
+ log.write('PASS: constant paired-offset fixture; missing binary rejection; invalid raw/first-pass join rejection.\n')
+ log.write(f'PASS: {len(protected)} protected hashes and current analysis source fingerprint. No simulation performed.\n')
+with (r/'validation_source.txt').open('x') as s:s.write(Path(__file__).read_text())
+print('Independent bootstrap, pairing fixtures, aggregate consistency, compile, whitespace, integrity: PASS')

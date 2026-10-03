@@ -1,0 +1,1028 @@
+{
+  "task": "Isaac-Ant-DevOOD-SteppingStones-v0",
+  "checkpoint": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42/model_999.pt",
+  "seed": 24,
+  "num_envs": 100,
+  "observation_dim": 60,
+  "terrain_seed": 2402,
+  "terrain_mesh_sha256": "477351dd0eba82bdaee34c77392a11e9ce25e9f1addd68e16e9674f4016a0773",
+  "env_origins_sha256": "da547d2cf9481a81b491473d72e3b2d25649842bd2161f5ee9bbfad09069e357",
+  "robot_material_sha256": "37aa67b2f006497c1e88625a1461557e8b5d5db2c425bbbed6076de236f01fe5",
+  "aggregates": {
+    "reward_mean": 19.093097686767578,
+    "reward_std": 11.387235641479492,
+    "episode_length_mean": 652.0799560546875,
+    "episode_length_std": 350.2343444824219,
+    "forward_displacement_mean": 15.821603775024414,
+    "forward_displacement_std": 9.968778610229492,
+    "forward_velocity_mean": 1.440270185470581,
+    "timeout_count": 48,
+    "timeout_ratio": 0.48,
+    "fall_count": 52,
+    "fall_ratio": 0.52,
+    "progress_2m_count": 92,
+    "progress_2m_ratio": 0.9199999570846558
+  },
+  "episodes": [
+    {
+      "env_id": 0,
+      "episode_return": 13.6588773727417,
+      "episode_length": 960,
+      "forward_displacement_m": 4.396426677703857,
+      "forward_velocity_mean_mps": 0.2727414071559906,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 1,
+      "episode_return": 22.289466857910156,
+      "episode_length": 659,
+      "forward_displacement_m": 19.671043395996094,
+      "forward_velocity_mean_mps": 1.7799509763717651,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 2,
+      "episode_return": 24.90326499938965,
+      "episode_length": 960,
+      "forward_displacement_m": 18.296913146972656,
+      "forward_velocity_mean_mps": 1.1282992362976074,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 3,
+      "episode_return": 1.2828810214996338,
+      "episode_length": 102,
+      "forward_displacement_m": 1.0339736938476562,
+      "forward_velocity_mean_mps": 0.6060941815376282,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": false
+    },
+    {
+      "env_id": 4,
+      "episode_return": 14.41649055480957,
+      "episode_length": 960,
+      "forward_displacement_m": 6.044261932373047,
+      "forward_velocity_mean_mps": 0.3750847578048706,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 5,
+      "episode_return": 28.046384811401367,
+      "episode_length": 960,
+      "forward_displacement_m": 22.319534301757812,
+      "forward_velocity_mean_mps": 1.3902333974838257,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 6,
+      "episode_return": 5.311705112457275,
+      "episode_length": 148,
+      "forward_displacement_m": 5.206171989440918,
+      "forward_velocity_mean_mps": 2.108583927154541,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 7,
+      "episode_return": 4.973257064819336,
+      "episode_length": 151,
+      "forward_displacement_m": 3.9981460571289062,
+      "forward_velocity_mean_mps": 1.585037112236023,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 8,
+      "episode_return": 13.606945991516113,
+      "episode_length": 369,
+      "forward_displacement_m": 11.960861206054688,
+      "forward_velocity_mean_mps": 1.9411513805389404,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 9,
+      "episode_return": 32.57126998901367,
+      "episode_length": 960,
+      "forward_displacement_m": 27.698572158813477,
+      "forward_velocity_mean_mps": 1.7198500633239746,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 10,
+      "episode_return": 13.349895477294922,
+      "episode_length": 395,
+      "forward_displacement_m": 11.781902313232422,
+      "forward_velocity_mean_mps": 1.7796802520751953,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 11,
+      "episode_return": 21.615652084350586,
+      "episode_length": 960,
+      "forward_displacement_m": 15.682641983032227,
+      "forward_velocity_mean_mps": 0.9782047271728516,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 12,
+      "episode_return": 35.82088851928711,
+      "episode_length": 960,
+      "forward_displacement_m": 31.504383087158203,
+      "forward_velocity_mean_mps": 1.9624141454696655,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 13,
+      "episode_return": 24.37309455871582,
+      "episode_length": 960,
+      "forward_displacement_m": 18.791351318359375,
+      "forward_velocity_mean_mps": 1.1670341491699219,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 14,
+      "episode_return": 20.231740951538086,
+      "episode_length": 960,
+      "forward_displacement_m": 15.38183879852295,
+      "forward_velocity_mean_mps": 0.9575601816177368,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 15,
+      "episode_return": 32.60559844970703,
+      "episode_length": 960,
+      "forward_displacement_m": 28.377971649169922,
+      "forward_velocity_mean_mps": 1.764773964881897,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 16,
+      "episode_return": 13.280903816223145,
+      "episode_length": 296,
+      "forward_displacement_m": 11.99020004272461,
+      "forward_velocity_mean_mps": 2.4260878562927246,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 17,
+      "episode_return": 31.849273681640625,
+      "episode_length": 960,
+      "forward_displacement_m": 27.82796287536621,
+      "forward_velocity_mean_mps": 1.7314578294754028,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 18,
+      "episode_return": 33.83373260498047,
+      "episode_length": 960,
+      "forward_displacement_m": 28.24754524230957,
+      "forward_velocity_mean_mps": 1.7586140632629395,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 19,
+      "episode_return": 29.285320281982422,
+      "episode_length": 960,
+      "forward_displacement_m": 24.101036071777344,
+      "forward_velocity_mean_mps": 1.4978126287460327,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 20,
+      "episode_return": 4.514268398284912,
+      "episode_length": 100,
+      "forward_displacement_m": 3.9846725463867188,
+      "forward_velocity_mean_mps": 2.387725591659546,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 21,
+      "episode_return": 14.087268829345703,
+      "episode_length": 432,
+      "forward_displacement_m": 11.984867095947266,
+      "forward_velocity_mean_mps": 1.655371904373169,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 22,
+      "episode_return": 9.180327415466309,
+      "episode_length": 242,
+      "forward_displacement_m": 7.986169815063477,
+      "forward_velocity_mean_mps": 1.9752867221832275,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 23,
+      "episode_return": 29.4254093170166,
+      "episode_length": 960,
+      "forward_displacement_m": 24.179542541503906,
+      "forward_velocity_mean_mps": 1.5037559270858765,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 24,
+      "episode_return": 38.277854919433594,
+      "episode_length": 960,
+      "forward_displacement_m": 33.93492126464844,
+      "forward_velocity_mean_mps": 2.1083600521087646,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 25,
+      "episode_return": -0.09539642184972763,
+      "episode_length": 49,
+      "forward_displacement_m": -0.3335609436035156,
+      "forward_velocity_mean_mps": -0.3939356505870819,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": false
+    },
+    {
+      "env_id": 26,
+      "episode_return": 29.875802993774414,
+      "episode_length": 960,
+      "forward_displacement_m": 24.776660919189453,
+      "forward_velocity_mean_mps": 1.5408453941345215,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 27,
+      "episode_return": 16.354352951049805,
+      "episode_length": 960,
+      "forward_displacement_m": 15.804863929748535,
+      "forward_velocity_mean_mps": 0.9809541702270508,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 28,
+      "episode_return": 8.722417831420898,
+      "episode_length": 309,
+      "forward_displacement_m": 7.418468475341797,
+      "forward_velocity_mean_mps": 1.4336473941802979,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 29,
+      "episode_return": 20.829206466674805,
+      "episode_length": 960,
+      "forward_displacement_m": 12.528694152832031,
+      "forward_velocity_mean_mps": 0.7886510491371155,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 30,
+      "episode_return": 29.58780288696289,
+      "episode_length": 960,
+      "forward_displacement_m": 24.603918075561523,
+      "forward_velocity_mean_mps": 1.5302817821502686,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 31,
+      "episode_return": 13.264716148376465,
+      "episode_length": 479,
+      "forward_displacement_m": 10.852132797241211,
+      "forward_velocity_mean_mps": 1.348015308380127,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 32,
+      "episode_return": 23.88620948791504,
+      "episode_length": 960,
+      "forward_displacement_m": 19.12209129333496,
+      "forward_velocity_mean_mps": 1.1839503049850464,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 33,
+      "episode_return": 14.803872108459473,
+      "episode_length": 513,
+      "forward_displacement_m": 11.98824691772461,
+      "forward_velocity_mean_mps": 1.3984743356704712,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 34,
+      "episode_return": 32.22467041015625,
+      "episode_length": 960,
+      "forward_displacement_m": 27.229488372802734,
+      "forward_velocity_mean_mps": 1.690938949584961,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 35,
+      "episode_return": 35.100643157958984,
+      "episode_length": 960,
+      "forward_displacement_m": 29.94675636291504,
+      "forward_velocity_mean_mps": 1.8651273250579834,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 36,
+      "episode_return": 31.090246200561523,
+      "episode_length": 960,
+      "forward_displacement_m": 25.4229736328125,
+      "forward_velocity_mean_mps": 1.5825811624526978,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 37,
+      "episode_return": 25.617076873779297,
+      "episode_length": 960,
+      "forward_displacement_m": 23.409269332885742,
+      "forward_velocity_mean_mps": 1.4540443420410156,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 38,
+      "episode_return": 15.97753620147705,
+      "episode_length": 599,
+      "forward_displacement_m": 12.431971549987793,
+      "forward_velocity_mean_mps": 1.244687557220459,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 39,
+      "episode_return": 29.656312942504883,
+      "episode_length": 960,
+      "forward_displacement_m": 25.224288940429688,
+      "forward_velocity_mean_mps": 1.5689778327941895,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 40,
+      "episode_return": 5.330415725708008,
+      "episode_length": 226,
+      "forward_displacement_m": 3.9236526489257812,
+      "forward_velocity_mean_mps": 1.0404325723648071,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 41,
+      "episode_return": 28.22621726989746,
+      "episode_length": 960,
+      "forward_displacement_m": 23.572349548339844,
+      "forward_velocity_mean_mps": 1.4647713899612427,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 42,
+      "episode_return": 23.809768676757812,
+      "episode_length": 708,
+      "forward_displacement_m": 19.97439956665039,
+      "forward_velocity_mean_mps": 1.684165596961975,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 43,
+      "episode_return": 27.345977783203125,
+      "episode_length": 960,
+      "forward_displacement_m": 23.346630096435547,
+      "forward_velocity_mean_mps": 1.4501593112945557,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 44,
+      "episode_return": 27.569049835205078,
+      "episode_length": 960,
+      "forward_displacement_m": 22.98181915283203,
+      "forward_velocity_mean_mps": 1.4331034421920776,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 45,
+      "episode_return": 28.2970027923584,
+      "episode_length": 960,
+      "forward_displacement_m": 23.86508560180664,
+      "forward_velocity_mean_mps": 1.4832321405410767,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 46,
+      "episode_return": 13.750975608825684,
+      "episode_length": 368,
+      "forward_displacement_m": 11.962215423583984,
+      "forward_velocity_mean_mps": 1.943219542503357,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 47,
+      "episode_return": 14.127572059631348,
+      "episode_length": 544,
+      "forward_displacement_m": 11.712287902832031,
+      "forward_velocity_mean_mps": 1.2849128246307373,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 48,
+      "episode_return": 32.42937088012695,
+      "episode_length": 891,
+      "forward_displacement_m": 27.953510284423828,
+      "forward_velocity_mean_mps": 1.875876784324646,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 49,
+      "episode_return": 29.631240844726562,
+      "episode_length": 960,
+      "forward_displacement_m": 25.695987701416016,
+      "forward_velocity_mean_mps": 1.5962969064712524,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 50,
+      "episode_return": 7.2827887535095215,
+      "episode_length": 298,
+      "forward_displacement_m": 5.6801605224609375,
+      "forward_velocity_mean_mps": 1.13874351978302,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 51,
+      "episode_return": 30.129024505615234,
+      "episode_length": 960,
+      "forward_displacement_m": 25.70849609375,
+      "forward_velocity_mean_mps": 1.6002987623214722,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 52,
+      "episode_return": 24.83024787902832,
+      "episode_length": 960,
+      "forward_displacement_m": 20.8341121673584,
+      "forward_velocity_mean_mps": 1.292214274406433,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 53,
+      "episode_return": 34.612369537353516,
+      "episode_length": 960,
+      "forward_displacement_m": 31.063247680664062,
+      "forward_velocity_mean_mps": 1.9342381954193115,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 54,
+      "episode_return": 31.59366798400879,
+      "episode_length": 878,
+      "forward_displacement_m": 27.99032974243164,
+      "forward_velocity_mean_mps": 1.9005272388458252,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 55,
+      "episode_return": 4.0801191329956055,
+      "episode_length": 132,
+      "forward_displacement_m": 3.3188281059265137,
+      "forward_velocity_mean_mps": 1.5043295621871948,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 56,
+      "episode_return": 14.648638725280762,
+      "episode_length": 512,
+      "forward_displacement_m": 11.989116668701172,
+      "forward_velocity_mean_mps": 1.3973575830459595,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 57,
+      "episode_return": 5.220171928405762,
+      "episode_length": 251,
+      "forward_displacement_m": 4.480100631713867,
+      "forward_velocity_mean_mps": 1.0684677362442017,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 58,
+      "episode_return": 28.481895446777344,
+      "episode_length": 960,
+      "forward_displacement_m": 23.187976837158203,
+      "forward_velocity_mean_mps": 1.4415510892868042,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 59,
+      "episode_return": 7.6778483390808105,
+      "episode_length": 255,
+      "forward_displacement_m": 6.111576080322266,
+      "forward_velocity_mean_mps": 1.4290696382522583,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 60,
+      "episode_return": 18.74519157409668,
+      "episode_length": 960,
+      "forward_displacement_m": 14.9334716796875,
+      "forward_velocity_mean_mps": 0.9223757982254028,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 61,
+      "episode_return": 7.895445346832275,
+      "episode_length": 278,
+      "forward_displacement_m": 6.787877082824707,
+      "forward_velocity_mean_mps": 1.4552843570709229,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 62,
+      "episode_return": 13.427769660949707,
+      "episode_length": 310,
+      "forward_displacement_m": 11.981067657470703,
+      "forward_velocity_mean_mps": 2.3137118816375732,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 63,
+      "episode_return": 22.86421775817871,
+      "episode_length": 682,
+      "forward_displacement_m": 19.94150161743164,
+      "forward_velocity_mean_mps": 1.7450355291366577,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 64,
+      "episode_return": 28.697254180908203,
+      "episode_length": 960,
+      "forward_displacement_m": 24.139122009277344,
+      "forward_velocity_mean_mps": 1.5020250082015991,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 65,
+      "episode_return": 36.3386116027832,
+      "episode_length": 960,
+      "forward_displacement_m": 31.771984100341797,
+      "forward_velocity_mean_mps": 1.9753057956695557,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 66,
+      "episode_return": 4.411318302154541,
+      "episode_length": 97,
+      "forward_displacement_m": 3.9752845764160156,
+      "forward_velocity_mean_mps": 2.456672191619873,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 67,
+      "episode_return": 41.26808547973633,
+      "episode_length": 960,
+      "forward_displacement_m": 36.771629333496094,
+      "forward_velocity_mean_mps": 2.2886762619018555,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 68,
+      "episode_return": 23.046804428100586,
+      "episode_length": 706,
+      "forward_displacement_m": 19.942657470703125,
+      "forward_velocity_mean_mps": 1.6870143413543701,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 69,
+      "episode_return": 18.842937469482422,
+      "episode_length": 960,
+      "forward_displacement_m": 13.411087036132812,
+      "forward_velocity_mean_mps": 0.8328573703765869,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 70,
+      "episode_return": -0.0676022320985794,
+      "episode_length": 86,
+      "forward_displacement_m": -0.2011566162109375,
+      "forward_velocity_mean_mps": -0.13481418788433075,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": false
+    },
+    {
+      "env_id": 71,
+      "episode_return": 4.499162673950195,
+      "episode_length": 88,
+      "forward_displacement_m": 3.968170166015625,
+      "forward_velocity_mean_mps": 2.719109535217285,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 72,
+      "episode_return": 34.10675048828125,
+      "episode_length": 951,
+      "forward_displacement_m": 30.427513122558594,
+      "forward_velocity_mean_mps": 1.9113034009933472,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 73,
+      "episode_return": 14.061354637145996,
+      "episode_length": 422,
+      "forward_displacement_m": 11.997364044189453,
+      "forward_velocity_mean_mps": 1.6981607675552368,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 74,
+      "episode_return": 17.716768264770508,
+      "episode_length": 960,
+      "forward_displacement_m": 5.021482467651367,
+      "forward_velocity_mean_mps": 0.3008095622062683,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 75,
+      "episode_return": 22.265968322753906,
+      "episode_length": 593,
+      "forward_displacement_m": 19.929080963134766,
+      "forward_velocity_mean_mps": 2.0086920261383057,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 76,
+      "episode_return": 4.351100444793701,
+      "episode_length": 77,
+      "forward_displacement_m": 3.997722625732422,
+      "forward_velocity_mean_mps": 3.1113312244415283,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 77,
+      "episode_return": 3.1516315937042236,
+      "episode_length": 960,
+      "forward_displacement_m": 4.639385223388672,
+      "forward_velocity_mean_mps": 0.2788514792919159,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 78,
+      "episode_return": 21.86595344543457,
+      "episode_length": 960,
+      "forward_displacement_m": 16.894758224487305,
+      "forward_velocity_mean_mps": 1.0511621236801147,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 79,
+      "episode_return": 22.501346588134766,
+      "episode_length": 579,
+      "forward_displacement_m": 19.688430786132812,
+      "forward_velocity_mean_mps": 2.0304911136627197,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 80,
+      "episode_return": 31.667343139648438,
+      "episode_length": 960,
+      "forward_displacement_m": 27.01850128173828,
+      "forward_velocity_mean_mps": 1.681432843208313,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 81,
+      "episode_return": 6.840390205383301,
+      "episode_length": 231,
+      "forward_displacement_m": 5.762948036193848,
+      "forward_velocity_mean_mps": 1.487475037574768,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 82,
+      "episode_return": 0.8912111520767212,
+      "episode_length": 64,
+      "forward_displacement_m": 0.361968994140625,
+      "forward_velocity_mean_mps": 0.35137128829956055,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": false
+    },
+    {
+      "env_id": 83,
+      "episode_return": 1.9003769159317017,
+      "episode_length": 135,
+      "forward_displacement_m": 1.3345222473144531,
+      "forward_velocity_mean_mps": 0.5902904272079468,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": false
+    },
+    {
+      "env_id": 84,
+      "episode_return": 35.717777252197266,
+      "episode_length": 960,
+      "forward_displacement_m": 31.1002197265625,
+      "forward_velocity_mean_mps": 1.93519127368927,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 85,
+      "episode_return": 9.727537155151367,
+      "episode_length": 446,
+      "forward_displacement_m": 7.286853790283203,
+      "forward_velocity_mean_mps": 0.973467230796814,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 86,
+      "episode_return": 24.34775733947754,
+      "episode_length": 960,
+      "forward_displacement_m": 19.160594940185547,
+      "forward_velocity_mean_mps": 1.1922093629837036,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 87,
+      "episode_return": 29.09420394897461,
+      "episode_length": 942,
+      "forward_displacement_m": 24.714271545410156,
+      "forward_velocity_mean_mps": 1.5660101175308228,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 88,
+      "episode_return": 1.109125018119812,
+      "episode_length": 82,
+      "forward_displacement_m": 0.9371223449707031,
+      "forward_velocity_mean_mps": 0.6877661943435669,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": false
+    },
+    {
+      "env_id": 89,
+      "episode_return": 4.508869171142578,
+      "episode_length": 153,
+      "forward_displacement_m": 3.9705162048339844,
+      "forward_velocity_mean_mps": 1.5528678894042969,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 90,
+      "episode_return": 4.603588581085205,
+      "episode_length": 150,
+      "forward_displacement_m": 3.9894638061523438,
+      "forward_velocity_mean_mps": 1.602150321006775,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 91,
+      "episode_return": 8.134821891784668,
+      "episode_length": 468,
+      "forward_displacement_m": 5.399196624755859,
+      "forward_velocity_mean_mps": 0.6883581876754761,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 92,
+      "episode_return": 33.049678802490234,
+      "episode_length": 960,
+      "forward_displacement_m": 28.3636474609375,
+      "forward_velocity_mean_mps": 1.7644288539886475,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 93,
+      "episode_return": 33.12759017944336,
+      "episode_length": 912,
+      "forward_displacement_m": 27.760421752929688,
+      "forward_velocity_mean_mps": 1.818490982055664,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 94,
+      "episode_return": 4.415387153625488,
+      "episode_length": 210,
+      "forward_displacement_m": 3.5688819885253906,
+      "forward_velocity_mean_mps": 1.0086497068405151,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 95,
+      "episode_return": 24.175682067871094,
+      "episode_length": 960,
+      "forward_displacement_m": 18.499225616455078,
+      "forward_velocity_mean_mps": 1.1510601043701172,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 96,
+      "episode_return": 10.570096969604492,
+      "episode_length": 419,
+      "forward_displacement_m": 7.890636444091797,
+      "forward_velocity_mean_mps": 1.1230647563934326,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    },
+    {
+      "env_id": 97,
+      "episode_return": 0.47688838839530945,
+      "episode_length": 62,
+      "forward_displacement_m": 0.4298439025878906,
+      "forward_velocity_mean_mps": 0.41599971055984497,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": false
+    },
+    {
+      "env_id": 98,
+      "episode_return": 24.169355392456055,
+      "episode_length": 960,
+      "forward_displacement_m": 20.79155921936035,
+      "forward_velocity_mean_mps": 1.2906932830810547,
+      "time_out": true,
+      "fall": false,
+      "progress_2m": true
+    },
+    {
+      "env_id": 99,
+      "episode_return": 2.0303595066070557,
+      "episode_length": 79,
+      "forward_displacement_m": 1.6405181884765625,
+      "forward_velocity_mean_mps": 1.2506166696548462,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": false
+    }
+  ]
+}

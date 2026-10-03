@@ -1,0 +1,2207 @@
+{
+  "task": "Isaac-Ant-Final-Unseen-v0",
+  "seed": 24,
+  "num_envs": 100,
+  "physics_dt": 0.008333333333333333,
+  "decimation": 2,
+  "control_dt": 0.016666666666666666,
+  "terrain_seed": 2404,
+  "course_design": {
+    "size_m": [
+      40.0,
+      8.0
+    ],
+    "spawn_local_xyz": [
+      2.0,
+      4.0,
+      0.0
+    ],
+    "horizontal_scale": 0.1,
+    "vertical_scale": 0.005,
+    "slope_threshold": 0.75,
+    "layout": [
+      10,
+      10
+    ],
+    "terrain_seed": 2404,
+    "evaluation_seed": 24,
+    "spawn_flat_x": [
+      0.0,
+      4.0
+    ],
+    "ridge": {
+      "x": [
+        4.0,
+        10.0
+      ],
+      "center_height": 0.02,
+      "cross_amplitude": 0.04,
+      "cross_scale": 1.5
+    },
+    "terraces": [
+      {
+        "x": [
+          10.0,
+          12.2
+        ],
+        "height": 0.04,
+        "y_offset": -0.3
+      },
+      {
+        "x": [
+          12.2,
+          15.6
+        ],
+        "height": 0.075,
+        "y_offset": 0.4
+      },
+      {
+        "x": [
+          15.6,
+          18.0
+        ],
+        "height": 0.025,
+        "y_offset": -0.2
+      }
+    ],
+    "terrace_lateral_half_extent": 3.6,
+    "terrace_lateral_taper": 0.6,
+    "basin": {
+      "x": [
+        18.0,
+        25.0
+      ],
+      "depth": 0.07,
+      "lateral_scale": 1.7
+    },
+    "landing": {
+      "x": [
+        25.0,
+        40.0
+      ],
+      "amplitudes": [
+        0.025,
+        0.015
+      ],
+      "x_wavelengths": [
+        4.0,
+        7.0
+      ],
+      "y_wavelength": 5.0,
+      "phase": 1.0471975511965976,
+      "end_taper_m": 2.0
+    },
+    "lateral_envelope": "cos(pi*y/width)^2, y measured from centerline",
+    "friction": {
+      "static": 1.0,
+      "dynamic": 1.0,
+      "restitution": 0.0,
+      "combine": "average"
+    },
+    "termination": {
+      "torso_height": "root_z-local_terrain_z < 0.31 or missing terrain hit",
+      "time_out": "original 16 seconds"
+    },
+    "novelty": "analytic asymmetric ridge + irregular connected offset terraces + smooth basin + deterministic Fourier landing",
+    "no": [
+      "isolated stepping stones",
+      "explicit gaps/trenches",
+      "discrete obstacle generator",
+      "uniform noise generator",
+      "curriculum"
+    ]
+  },
+  "env_origins_xy": [
+    [
+      -38.0,
+      -36.0
+    ],
+    [
+      82.0,
+      -36.0
+    ],
+    [
+      -38.0,
+      -36.0
+    ],
+    [
+      162.0,
+      -36.0
+    ],
+    [
+      -38.0,
+      -36.0
+    ],
+    [
+      -78.0,
+      -36.0
+    ],
+    [
+      -118.0,
+      -36.0
+    ],
+    [
+      162.0,
+      -36.0
+    ],
+    [
+      122.0,
+      -36.0
+    ],
+    [
+      -38.0,
+      -36.0
+    ],
+    [
+      122.0,
+      -28.0
+    ],
+    [
+      -198.0,
+      -28.0
+    ],
+    [
+      -158.0,
+      -28.0
+    ],
+    [
+      -118.0,
+      -28.0
+    ],
+    [
+      -78.0,
+      -28.0
+    ],
+    [
+      -158.0,
+      -28.0
+    ],
+    [
+      122.0,
+      -28.0
+    ],
+    [
+      -78.0,
+      -28.0
+    ],
+    [
+      -158.0,
+      -28.0
+    ],
+    [
+      -78.0,
+      -28.0
+    ],
+    [
+      162.0,
+      -20.0
+    ],
+    [
+      122.0,
+      -20.0
+    ],
+    [
+      2.0,
+      -20.0
+    ],
+    [
+      42.0,
+      -20.0
+    ],
+    [
+      -118.0,
+      -20.0
+    ],
+    [
+      42.0,
+      -20.0
+    ],
+    [
+      -158.0,
+      -20.0
+    ],
+    [
+      -38.0,
+      -20.0
+    ],
+    [
+      122.0,
+      -20.0
+    ],
+    [
+      42.0,
+      -20.0
+    ],
+    [
+      -158.0,
+      -12.0
+    ],
+    [
+      -38.0,
+      -12.0
+    ],
+    [
+      -118.0,
+      -12.0
+    ],
+    [
+      122.0,
+      -12.0
+    ],
+    [
+      -38.0,
+      -12.0
+    ],
+    [
+      -198.0,
+      -12.0
+    ],
+    [
+      -198.0,
+      -12.0
+    ],
+    [
+      -38.0,
+      -12.0
+    ],
+    [
+      -158.0,
+      -12.0
+    ],
+    [
+      2.0,
+      -12.0
+    ],
+    [
+      162.0,
+      -4.0
+    ],
+    [
+      -118.0,
+      -4.0
+    ],
+    [
+      82.0,
+      -4.0
+    ],
+    [
+      -158.0,
+      -4.0
+    ],
+    [
+      -78.0,
+      -4.0
+    ],
+    [
+      -78.0,
+      -4.0
+    ],
+    [
+      122.0,
+      -4.0
+    ],
+    [
+      122.0,
+      -4.0
+    ],
+    [
+      42.0,
+      -4.0
+    ],
+    [
+      -158.0,
+      -4.0
+    ],
+    [
+      -158.0,
+      4.0
+    ],
+    [
+      -118.0,
+      4.0
+    ],
+    [
+      -38.0,
+      4.0
+    ],
+    [
+      -198.0,
+      4.0
+    ],
+    [
+      42.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      122.0,
+      4.0
+    ],
+    [
+      -78.0,
+      4.0
+    ],
+    [
+      -118.0,
+      4.0
+    ],
+    [
+      82.0,
+      4.0
+    ],
+    [
+      -118.0,
+      12.0
+    ],
+    [
+      2.0,
+      12.0
+    ],
+    [
+      122.0,
+      12.0
+    ],
+    [
+      82.0,
+      12.0
+    ],
+    [
+      42.0,
+      12.0
+    ],
+    [
+      2.0,
+      12.0
+    ],
+    [
+      162.0,
+      12.0
+    ],
+    [
+      -198.0,
+      12.0
+    ],
+    [
+      82.0,
+      12.0
+    ],
+    [
+      82.0,
+      12.0
+    ],
+    [
+      2.0,
+      20.0
+    ],
+    [
+      162.0,
+      20.0
+    ],
+    [
+      -158.0,
+      20.0
+    ],
+    [
+      122.0,
+      20.0
+    ],
+    [
+      2.0,
+      20.0
+    ],
+    [
+      82.0,
+      20.0
+    ],
+    [
+      162.0,
+      20.0
+    ],
+    [
+      122.0,
+      20.0
+    ],
+    [
+      2.0,
+      20.0
+    ],
+    [
+      82.0,
+      20.0
+    ],
+    [
+      42.0,
+      28.0
+    ],
+    [
+      -38.0,
+      28.0
+    ],
+    [
+      162.0,
+      28.0
+    ],
+    [
+      -198.0,
+      28.0
+    ],
+    [
+      -198.0,
+      28.0
+    ],
+    [
+      82.0,
+      28.0
+    ],
+    [
+      -78.0,
+      28.0
+    ],
+    [
+      -78.0,
+      28.0
+    ],
+    [
+      42.0,
+      28.0
+    ],
+    [
+      162.0,
+      28.0
+    ],
+    [
+      162.0,
+      36.0
+    ],
+    [
+      -38.0,
+      36.0
+    ],
+    [
+      -38.0,
+      36.0
+    ],
+    [
+      42.0,
+      36.0
+    ],
+    [
+      162.0,
+      36.0
+    ],
+    [
+      -158.0,
+      36.0
+    ],
+    [
+      -38.0,
+      36.0
+    ],
+    [
+      -118.0,
+      36.0
+    ],
+    [
+      2.0,
+      36.0
+    ],
+    [
+      -38.0,
+      36.0
+    ]
+  ],
+  "initial_root_xy": [
+    [
+      -38.0,
+      -36.0
+    ],
+    [
+      82.0,
+      -36.0
+    ],
+    [
+      -38.0,
+      -36.0
+    ],
+    [
+      162.0,
+      -36.0
+    ],
+    [
+      -38.0,
+      -36.0
+    ],
+    [
+      -78.0,
+      -36.0
+    ],
+    [
+      -118.0,
+      -36.0
+    ],
+    [
+      162.0,
+      -36.0
+    ],
+    [
+      122.0,
+      -36.0
+    ],
+    [
+      -38.0,
+      -36.0
+    ],
+    [
+      122.0,
+      -28.0
+    ],
+    [
+      -198.0,
+      -28.0
+    ],
+    [
+      -158.0,
+      -28.0
+    ],
+    [
+      -118.0,
+      -28.0
+    ],
+    [
+      -78.0,
+      -28.0
+    ],
+    [
+      -158.0,
+      -28.0
+    ],
+    [
+      122.0,
+      -28.0
+    ],
+    [
+      -78.0,
+      -28.0
+    ],
+    [
+      -158.0,
+      -28.0
+    ],
+    [
+      -78.0,
+      -28.0
+    ],
+    [
+      162.0,
+      -20.0
+    ],
+    [
+      122.0,
+      -20.0
+    ],
+    [
+      2.0,
+      -20.0
+    ],
+    [
+      42.0,
+      -20.0
+    ],
+    [
+      -118.0,
+      -20.0
+    ],
+    [
+      42.0,
+      -20.0
+    ],
+    [
+      -158.0,
+      -20.0
+    ],
+    [
+      -38.0,
+      -20.0
+    ],
+    [
+      122.0,
+      -20.0
+    ],
+    [
+      42.0,
+      -20.0
+    ],
+    [
+      -158.0,
+      -12.0
+    ],
+    [
+      -38.0,
+      -12.0
+    ],
+    [
+      -118.0,
+      -12.0
+    ],
+    [
+      122.0,
+      -12.0
+    ],
+    [
+      -38.0,
+      -12.0
+    ],
+    [
+      -198.0,
+      -12.0
+    ],
+    [
+      -198.0,
+      -12.0
+    ],
+    [
+      -38.0,
+      -12.0
+    ],
+    [
+      -158.0,
+      -12.0
+    ],
+    [
+      2.0,
+      -12.0
+    ],
+    [
+      162.0,
+      -4.0
+    ],
+    [
+      -118.0,
+      -4.0
+    ],
+    [
+      82.0,
+      -4.0
+    ],
+    [
+      -158.0,
+      -4.0
+    ],
+    [
+      -78.0,
+      -4.0
+    ],
+    [
+      -78.0,
+      -4.0
+    ],
+    [
+      122.0,
+      -4.0
+    ],
+    [
+      122.0,
+      -4.0
+    ],
+    [
+      42.0,
+      -4.0
+    ],
+    [
+      -158.0,
+      -4.0
+    ],
+    [
+      -158.0,
+      4.0
+    ],
+    [
+      -118.0,
+      4.0
+    ],
+    [
+      -38.0,
+      4.0
+    ],
+    [
+      -198.0,
+      4.0
+    ],
+    [
+      42.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      122.0,
+      4.0
+    ],
+    [
+      -78.0,
+      4.0
+    ],
+    [
+      -118.0,
+      4.0
+    ],
+    [
+      82.0,
+      4.0
+    ],
+    [
+      -118.0,
+      12.0
+    ],
+    [
+      2.0,
+      12.0
+    ],
+    [
+      122.0,
+      12.0
+    ],
+    [
+      82.0,
+      12.0
+    ],
+    [
+      42.0,
+      12.0
+    ],
+    [
+      2.0,
+      12.0
+    ],
+    [
+      162.0,
+      12.0
+    ],
+    [
+      -198.0,
+      12.0
+    ],
+    [
+      82.0,
+      12.0
+    ],
+    [
+      82.0,
+      12.0
+    ],
+    [
+      2.0,
+      20.0
+    ],
+    [
+      162.0,
+      20.0
+    ],
+    [
+      -158.0,
+      20.0
+    ],
+    [
+      122.0,
+      20.0
+    ],
+    [
+      2.0,
+      20.0
+    ],
+    [
+      82.0,
+      20.0
+    ],
+    [
+      162.0,
+      20.0
+    ],
+    [
+      122.0,
+      20.0
+    ],
+    [
+      2.0,
+      20.0
+    ],
+    [
+      82.0,
+      20.0
+    ],
+    [
+      42.0,
+      28.0
+    ],
+    [
+      -38.0,
+      28.0
+    ],
+    [
+      162.0,
+      28.0
+    ],
+    [
+      -198.0,
+      28.0
+    ],
+    [
+      -198.0,
+      28.0
+    ],
+    [
+      82.0,
+      28.0
+    ],
+    [
+      -78.0,
+      28.0
+    ],
+    [
+      -78.0,
+      28.0
+    ],
+    [
+      42.0,
+      28.0
+    ],
+    [
+      162.0,
+      28.0
+    ],
+    [
+      162.0,
+      36.0
+    ],
+    [
+      -38.0,
+      36.0
+    ],
+    [
+      -38.0,
+      36.0
+    ],
+    [
+      42.0,
+      36.0
+    ],
+    [
+      162.0,
+      36.0
+    ],
+    [
+      -158.0,
+      36.0
+    ],
+    [
+      -38.0,
+      36.0
+    ],
+    [
+      -118.0,
+      36.0
+    ],
+    [
+      2.0,
+      36.0
+    ],
+    [
+      -38.0,
+      36.0
+    ]
+  ],
+  "initial_terrain_local_xy": [
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ]
+  ],
+  "checkpoint": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42/model_999.pt",
+  "checkpoint_sha256": "a7304b58e1d06ba656b910d33edfdbcd9e08c28c8e541f80c095073242ff2570",
+  "actor_input_dim": 60,
+  "critic_input_dim": 60,
+  "observation_dim": 60,
+  "source_sha256": "88c8fca3c9b0556bcde6f168200ea54798be1c27ce43f134c347dafd84648d22",
+  "observation_runtime_checks": true,
+  "timing": "step 0 initial pose; row k true post-control-step k pose; terminal pose before auto-reset",
+  "coordinate": "terrain_local_xy = root_world_xy - env_origin_xy + spawn_local_xy; fixed initial tile, no modulo",
+  "legacy_displacement": "last pre-control-step root x minus initial x, preserved for consistency",
+  "reward_terms": [
+    {
+      "name": "progress",
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.progress_reward",
+      "weight": 1.0,
+      "parameters": {
+        "target_pos": [
+          1000.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "alive",
+      "function": "isaaclab.envs.mdp.rewards.is_alive",
+      "weight": 0.5,
+      "parameters": {}
+    },
+    {
+      "name": "upright",
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.upright_posture_bonus",
+      "weight": 0.1,
+      "parameters": {
+        "threshold": 0.93
+      }
+    },
+    {
+      "name": "move_to_target",
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.move_to_target_bonus",
+      "weight": 0.5,
+      "parameters": {
+        "threshold": 0.8,
+        "target_pos": [
+          1000.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "action_l2",
+      "function": "isaaclab.envs.mdp.rewards.action_l2",
+      "weight": -0.005,
+      "parameters": {}
+    },
+    {
+      "name": "energy",
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.power_consumption",
+      "weight": -0.05,
+      "parameters": {
+        "gear_ratio": {
+          ".*": 15.0
+        }
+      }
+    },
+    {
+      "name": "joint_pos_limits",
+      "function": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards.joint_pos_limits_penalty_ratio",
+      "weight": -0.1,
+      "parameters": {
+        "threshold": 0.99,
+        "gear_ratio": {
+          ".*": 15.0
+        }
+      }
+    }
+  ],
+  "stock_reward_config_match": true,
+  "reward_capture": "Read-only existing RewardManager._step_reward (weighted value/dt); multiply by unchanged control dt",
+  "reward_raw_functions_recomputed": false,
+  "reward_compute_or_weights_modified": false,
+  "instrumentation_source_sha256": "89988135353aacfbbf30b8e16c3b5cd0204a10438b3586485bc84fcf7d7890e5",
+  "reward_source_sha256": "5d41d6a376cfb456849d861c3232694ea5662cc38970e2e2c7e5152f156d88d7",
+  "all_first_episodes_completed": true,
+  "episodes": [
+    {
+      "env_id": 0,
+      "episode_return": 64.21986389160156,
+      "episode_steps": 960,
+      "legacy_final_displacement": 59.507118225097656,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 1,
+      "episode_return": 64.32125854492188,
+      "episode_steps": 960,
+      "legacy_final_displacement": 59.177581787109375,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 2,
+      "episode_return": 57.693790435791016,
+      "episode_steps": 960,
+      "legacy_final_displacement": 52.66084289550781,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 3,
+      "episode_return": 62.23163604736328,
+      "episode_steps": 836,
+      "legacy_final_displacement": 57.945068359375,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 4,
+      "episode_return": 67.37318420410156,
+      "episode_steps": 960,
+      "legacy_final_displacement": 62.21824645996094,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 5,
+      "episode_return": 64.01199340820312,
+      "episode_steps": 960,
+      "legacy_final_displacement": 58.60498046875,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 6,
+      "episode_return": 61.97392272949219,
+      "episode_steps": 960,
+      "legacy_final_displacement": 58.026512145996094,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 7,
+      "episode_return": 56.06786346435547,
+      "episode_steps": 960,
+      "legacy_final_displacement": 52.39958190917969,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 8,
+      "episode_return": 63.15605926513672,
+      "episode_steps": 960,
+      "legacy_final_displacement": 58.07344055175781,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 9,
+      "episode_return": 62.50227737426758,
+      "episode_steps": 960,
+      "legacy_final_displacement": 56.88243103027344,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 10,
+      "episode_return": 67.67262268066406,
+      "episode_steps": 960,
+      "legacy_final_displacement": 62.34761047363281,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 11,
+      "episode_return": 67.0920181274414,
+      "episode_steps": 960,
+      "legacy_final_displacement": 61.90899658203125,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 12,
+      "episode_return": 1.0467313528060913,
+      "episode_steps": 56,
+      "legacy_final_displacement": 0.569915771484375,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 13,
+      "episode_return": 3.086606025695801,
+      "episode_steps": 154,
+      "legacy_final_displacement": 2.5670623779296875,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 14,
+      "episode_return": 11.955239295959473,
+      "episode_steps": 243,
+      "legacy_final_displacement": 11.118637084960938,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 15,
+      "episode_return": 64.91387176513672,
+      "episode_steps": 960,
+      "legacy_final_displacement": 59.4967041015625,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 16,
+      "episode_return": 68.52086639404297,
+      "episode_steps": 960,
+      "legacy_final_displacement": 62.78602600097656,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 17,
+      "episode_return": 63.34404373168945,
+      "episode_steps": 960,
+      "legacy_final_displacement": 58.09658432006836,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 18,
+      "episode_return": 70.93827056884766,
+      "episode_steps": 960,
+      "legacy_final_displacement": 65.79019927978516,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 19,
+      "episode_return": 64.41413116455078,
+      "episode_steps": 960,
+      "legacy_final_displacement": 59.269439697265625,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 20,
+      "episode_return": 62.873592376708984,
+      "episode_steps": 945,
+      "legacy_final_displacement": 57.94419860839844,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 21,
+      "episode_return": 64.81006622314453,
+      "episode_steps": 960,
+      "legacy_final_displacement": 59.62420654296875,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 22,
+      "episode_return": 61.32937240600586,
+      "episode_steps": 960,
+      "legacy_final_displacement": 55.80418014526367,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 23,
+      "episode_return": 69.29391479492188,
+      "episode_steps": 960,
+      "legacy_final_displacement": 63.985389709472656,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 24,
+      "episode_return": 60.857025146484375,
+      "episode_steps": 960,
+      "legacy_final_displacement": 56.101226806640625,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 25,
+      "episode_return": 64.94518280029297,
+      "episode_steps": 960,
+      "legacy_final_displacement": 59.842857360839844,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 26,
+      "episode_return": 69.48900604248047,
+      "episode_steps": 960,
+      "legacy_final_displacement": 64.74492645263672,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 27,
+      "episode_return": 24.720264434814453,
+      "episode_steps": 505,
+      "legacy_final_displacement": 22.430139541625977,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 28,
+      "episode_return": 66.14028930664062,
+      "episode_steps": 960,
+      "legacy_final_displacement": 61.28431701660156,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 29,
+      "episode_return": 66.525390625,
+      "episode_steps": 960,
+      "legacy_final_displacement": 61.473297119140625,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 30,
+      "episode_return": 63.54598617553711,
+      "episode_steps": 960,
+      "legacy_final_displacement": 57.78362274169922,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 31,
+      "episode_return": 63.50425720214844,
+      "episode_steps": 960,
+      "legacy_final_displacement": 58.47222900390625,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 32,
+      "episode_return": 66.97705078125,
+      "episode_steps": 960,
+      "legacy_final_displacement": 61.898773193359375,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 33,
+      "episode_return": 64.36652374267578,
+      "episode_steps": 960,
+      "legacy_final_displacement": 58.62471008300781,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 34,
+      "episode_return": 60.54914474487305,
+      "episode_steps": 960,
+      "legacy_final_displacement": 55.65513610839844,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 35,
+      "episode_return": 12.66016960144043,
+      "episode_steps": 222,
+      "legacy_final_displacement": 11.851593017578125,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 36,
+      "episode_return": 13.663858413696289,
+      "episode_steps": 306,
+      "legacy_final_displacement": 13.311416625976562,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 37,
+      "episode_return": 65.09516906738281,
+      "episode_steps": 960,
+      "legacy_final_displacement": 59.54961395263672,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 38,
+      "episode_return": 64.0363540649414,
+      "episode_steps": 960,
+      "legacy_final_displacement": 58.63238525390625,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 39,
+      "episode_return": 66.96772766113281,
+      "episode_steps": 960,
+      "legacy_final_displacement": 61.94310760498047,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 40,
+      "episode_return": 62.55955505371094,
+      "episode_steps": 894,
+      "legacy_final_displacement": 57.95051574707031,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 41,
+      "episode_return": 69.27989196777344,
+      "episode_steps": 960,
+      "legacy_final_displacement": 64.24427795410156,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 42,
+      "episode_return": 70.27651977539062,
+      "episode_steps": 960,
+      "legacy_final_displacement": 65.00686645507812,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 43,
+      "episode_return": 52.22407913208008,
+      "episode_steps": 773,
+      "legacy_final_displacement": 48.10234069824219,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 44,
+      "episode_return": 69.65496063232422,
+      "episode_steps": 960,
+      "legacy_final_displacement": 64.18983459472656,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 45,
+      "episode_return": 66.0170669555664,
+      "episode_steps": 960,
+      "legacy_final_displacement": 61.03522491455078,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 46,
+      "episode_return": 67.77169036865234,
+      "episode_steps": 960,
+      "legacy_final_displacement": 62.91325378417969,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 47,
+      "episode_return": 65.97965240478516,
+      "episode_steps": 960,
+      "legacy_final_displacement": 60.6429443359375,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 48,
+      "episode_return": 67.06205749511719,
+      "episode_steps": 960,
+      "legacy_final_displacement": 62.286582946777344,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 49,
+      "episode_return": 64.52973937988281,
+      "episode_steps": 960,
+      "legacy_final_displacement": 59.791481018066406,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 50,
+      "episode_return": 70.36244201660156,
+      "episode_steps": 960,
+      "legacy_final_displacement": 65.14966583251953,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 51,
+      "episode_return": 66.23123168945312,
+      "episode_steps": 960,
+      "legacy_final_displacement": 61.14945983886719,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 52,
+      "episode_return": 71.1791763305664,
+      "episode_steps": 960,
+      "legacy_final_displacement": 65.75973510742188,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 53,
+      "episode_return": 62.994075775146484,
+      "episode_steps": 960,
+      "legacy_final_displacement": 57.64546203613281,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 54,
+      "episode_return": 65.44927215576172,
+      "episode_steps": 960,
+      "legacy_final_displacement": 60.38543701171875,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 55,
+      "episode_return": 64.55885314941406,
+      "episode_steps": 960,
+      "legacy_final_displacement": 59.26424789428711,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 56,
+      "episode_return": 70.22171783447266,
+      "episode_steps": 960,
+      "legacy_final_displacement": 64.90518188476562,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 57,
+      "episode_return": 65.48095703125,
+      "episode_steps": 960,
+      "legacy_final_displacement": 60.29673385620117,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 58,
+      "episode_return": 65.84903717041016,
+      "episode_steps": 960,
+      "legacy_final_displacement": 61.038795471191406,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 59,
+      "episode_return": 69.5194320678711,
+      "episode_steps": 960,
+      "legacy_final_displacement": 64.20333862304688,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 60,
+      "episode_return": 62.14186477661133,
+      "episode_steps": 960,
+      "legacy_final_displacement": 57.022220611572266,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 61,
+      "episode_return": 62.83845138549805,
+      "episode_steps": 960,
+      "legacy_final_displacement": 57.39468765258789,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 62,
+      "episode_return": 67.84720611572266,
+      "episode_steps": 960,
+      "legacy_final_displacement": 62.3968505859375,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 63,
+      "episode_return": 66.32683563232422,
+      "episode_steps": 960,
+      "legacy_final_displacement": 60.901214599609375,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 64,
+      "episode_return": 71.97565460205078,
+      "episode_steps": 960,
+      "legacy_final_displacement": 67.01995849609375,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 65,
+      "episode_return": 64.95833587646484,
+      "episode_steps": 960,
+      "legacy_final_displacement": 59.640804290771484,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 66,
+      "episode_return": 62.89176940917969,
+      "episode_steps": 869,
+      "legacy_final_displacement": 57.99226379394531,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 67,
+      "episode_return": 67.23986053466797,
+      "episode_steps": 960,
+      "legacy_final_displacement": 62.04478454589844,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 68,
+      "episode_return": 63.55491638183594,
+      "episode_steps": 960,
+      "legacy_final_displacement": 58.28887939453125,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 69,
+      "episode_return": 67.68609619140625,
+      "episode_steps": 960,
+      "legacy_final_displacement": 62.6697998046875,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 70,
+      "episode_return": 0.46522873640060425,
+      "episode_steps": 49,
+      "legacy_final_displacement": 0.023577213287353516,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 71,
+      "episode_return": 62.104454040527344,
+      "episode_steps": 875,
+      "legacy_final_displacement": 57.94805908203125,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 72,
+      "episode_return": 68.36422729492188,
+      "episode_steps": 960,
+      "legacy_final_displacement": 63.509521484375,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 73,
+      "episode_return": 55.032432556152344,
+      "episode_steps": 960,
+      "legacy_final_displacement": 50.12371826171875,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 74,
+      "episode_return": 0.6446056962013245,
+      "episode_steps": 131,
+      "legacy_final_displacement": 0.6887805461883545,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 75,
+      "episode_return": 59.68367385864258,
+      "episode_steps": 960,
+      "legacy_final_displacement": 54.48345947265625,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 76,
+      "episode_return": 58.88441467285156,
+      "episode_steps": 960,
+      "legacy_final_displacement": 53.26005554199219,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 77,
+      "episode_return": 62.57453918457031,
+      "episode_steps": 960,
+      "legacy_final_displacement": 57.61463928222656,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 78,
+      "episode_return": 67.81597137451172,
+      "episode_steps": 960,
+      "legacy_final_displacement": 62.30409240722656,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 79,
+      "episode_return": 64.67420196533203,
+      "episode_steps": 960,
+      "legacy_final_displacement": 59.25050354003906,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 80,
+      "episode_return": 65.53756713867188,
+      "episode_steps": 960,
+      "legacy_final_displacement": 60.237754821777344,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 81,
+      "episode_return": 63.52388381958008,
+      "episode_steps": 960,
+      "legacy_final_displacement": 58.71199035644531,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 82,
+      "episode_return": 62.190731048583984,
+      "episode_steps": 825,
+      "legacy_final_displacement": 57.944549560546875,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 83,
+      "episode_return": 67.38802337646484,
+      "episode_steps": 960,
+      "legacy_final_displacement": 62.23835754394531,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 84,
+      "episode_return": 61.742183685302734,
+      "episode_steps": 960,
+      "legacy_final_displacement": 56.29325866699219,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 85,
+      "episode_return": 66.77149200439453,
+      "episode_steps": 960,
+      "legacy_final_displacement": 61.49159240722656,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 86,
+      "episode_return": 53.77811813354492,
+      "episode_steps": 814,
+      "legacy_final_displacement": 49.463409423828125,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 87,
+      "episode_return": 63.724613189697266,
+      "episode_steps": 960,
+      "legacy_final_displacement": 58.41215515136719,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 88,
+      "episode_return": 67.511474609375,
+      "episode_steps": 960,
+      "legacy_final_displacement": 62.40070343017578,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 89,
+      "episode_return": 62.814456939697266,
+      "episode_steps": 940,
+      "legacy_final_displacement": 57.9769287109375,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 90,
+      "episode_return": 62.036720275878906,
+      "episode_steps": 837,
+      "legacy_final_displacement": 57.89799499511719,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 91,
+      "episode_return": 58.72894287109375,
+      "episode_steps": 960,
+      "legacy_final_displacement": 53.36518478393555,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 92,
+      "episode_return": 69.14634704589844,
+      "episode_steps": 960,
+      "legacy_final_displacement": 63.859962463378906,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 93,
+      "episode_return": 66.76240539550781,
+      "episode_steps": 960,
+      "legacy_final_displacement": 61.6669921875,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 94,
+      "episode_return": 63.013179779052734,
+      "episode_steps": 960,
+      "legacy_final_displacement": 57.97517395019531,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 95,
+      "episode_return": 71.24251556396484,
+      "episode_steps": 960,
+      "legacy_final_displacement": 66.40044403076172,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 96,
+      "episode_return": 67.89627838134766,
+      "episode_steps": 960,
+      "legacy_final_displacement": 62.89021301269531,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 97,
+      "episode_return": 71.66773986816406,
+      "episode_steps": 960,
+      "legacy_final_displacement": 66.19024658203125,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 98,
+      "episode_return": 70.45449829101562,
+      "episode_steps": 960,
+      "legacy_final_displacement": 65.56600952148438,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 99,
+      "episode_return": 70.7110824584961,
+      "episode_steps": 960,
+      "legacy_final_displacement": 65.2236328125,
+      "fall": false,
+      "timeout": true
+    }
+  ]
+}

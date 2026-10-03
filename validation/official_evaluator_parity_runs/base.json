@@ -1,0 +1,83 @@
+{
+  "task": "Isaac-Ant-Final-Unseen-v0",
+  "seed": 24,
+  "num_envs": 4,
+  "checkpoint": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42/model_999.pt",
+  "checkpoint_sha256": "a7304b58e1d06ba656b910d33edfdbcd9e08c28c8e541f80c095073242ff2570",
+  "actor_input_dim": 60,
+  "runtime_observation_dim": 60,
+  "official_reference_sha256": "70dd6d6674ca211f335b57fea5d8dca417fe670753adedf2d002a638b2b089d0",
+  "current_source_sha256": "88c8fca3c9b0556bcde6f168200ea54798be1c27ce43f134c347dafd84648d22",
+  "method": "official AST accounting on identical current policy observation/action trajectory",
+  "official_accumulator_dtype": "float64",
+  "current_accumulator_dtype": "torch.float32",
+  "tolerance": {
+    "rtol": 1e-06,
+    "atol": 1e-06
+  },
+  "all_first_episodes_completed": true,
+  "terminal_reward_included": true,
+  "terminal_step_counted": true,
+  "post_reset_excluded": true,
+  "official_max_episode_length": 960,
+  "official_cap_would_complete": true,
+  "episodes": [
+    {
+      "env_id": 0,
+      "official_episode_return": 67.03331505693495,
+      "current_episode_return": 67.03337097167969,
+      "official_episode_steps": 960,
+      "current_episode_steps": 960,
+      "absolute_return_difference": 5.59147447347641e-05,
+      "terminal_reward": 0.07327048480510712,
+      "terminal_step": 960,
+      "post_reset_transitions_observed": 0,
+      "post_reset_accounted_steps": 0,
+      "return_close": true,
+      "steps_equal": true
+    },
+    {
+      "env_id": 1,
+      "official_episode_return": 71.14250315562822,
+      "current_episode_return": 71.14253234863281,
+      "official_episode_steps": 960,
+      "current_episode_steps": 960,
+      "absolute_return_difference": 2.9193004593253136e-05,
+      "terminal_reward": 0.08449045568704605,
+      "terminal_step": 960,
+      "post_reset_transitions_observed": 0,
+      "post_reset_accounted_steps": 0,
+      "return_close": true,
+      "steps_equal": true
+    },
+    {
+      "env_id": 2,
+      "official_episode_return": 63.84387187380344,
+      "current_episode_return": 63.8438835144043,
+      "official_episode_steps": 960,
+      "current_episode_steps": 960,
+      "absolute_return_difference": 1.1640600860118866e-05,
+      "terminal_reward": 0.07437550276517868,
+      "terminal_step": 960,
+      "post_reset_transitions_observed": 0,
+      "post_reset_accounted_steps": 0,
+      "return_close": true,
+      "steps_equal": true
+    },
+    {
+      "env_id": 3,
+      "official_episode_return": 60.10714759316761,
+      "current_episode_return": 60.10712814331055,
+      "official_episode_steps": 879,
+      "current_episode_steps": 879,
+      "absolute_return_difference": 1.944985706359148e-05,
+      "terminal_reward": 0.028088634833693504,
+      "terminal_step": 879,
+      "post_reset_transitions_observed": 81,
+      "post_reset_accounted_steps": 0,
+      "return_close": true,
+      "steps_equal": true
+    }
+  ],
+  "parity": true
+}

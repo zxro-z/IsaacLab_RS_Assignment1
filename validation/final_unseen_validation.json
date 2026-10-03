@@ -1,0 +1,70 @@
+{
+  "result": "PASS",
+  "policy_free": true,
+  "seed": 24,
+  "num_envs": 4,
+  "steps": 64,
+  "initial_root_positions": [
+    [
+      -38.0,
+      -36.0,
+      0.5
+    ],
+    [
+      82.0,
+      -20.0,
+      0.5
+    ],
+    [
+      -38.0,
+      -4.0,
+      0.5
+    ],
+    [
+      162.0,
+      20.0,
+      0.5
+    ]
+  ],
+  "env_origins": [
+    [
+      -38.0,
+      -36.0,
+      0.0
+    ],
+    [
+      82.0,
+      -20.0,
+      0.0
+    ],
+    [
+      -38.0,
+      -4.0,
+      0.0
+    ],
+    [
+      162.0,
+      20.0,
+      0.0
+    ]
+  ],
+  "initial_clearance": [
+    0.5,
+    0.4999980926513672,
+    0.5,
+    0.5000019073486328
+  ],
+  "geometry_finite": true,
+  "body_frames_above_spawn_surface": true,
+  "reward_matches_basic_ant": true,
+  "mesh_sha256": "c0e1eb34d72dbc86d0a64774a27878aeb9acd9de2174cb0853f99703234cc282",
+  "env_origins_sha256": "8ea5168a4f1abbdfeae1c25850bba00869f834843354c58135c9c71e807c2341",
+  "robot_material_sha256": "20dc826c0b4b9b54194b5b678e07d64e473d6c80fab0439b1a7daa19aacfec01",
+  "zero_action_termination_count": 0,
+  "mesh_z_extent": [
+    -1.0,
+    0.07500000298023224
+  ],
+  "preregister_sha256": "5a06d1a934fcec84a3e842358f925c234bf5574e2f1cbf04a65e02182fe95ab2",
+  "scene_invariance": "Shared hidden original scanner + contacts for every candidate; policy terms only adapted"
+}

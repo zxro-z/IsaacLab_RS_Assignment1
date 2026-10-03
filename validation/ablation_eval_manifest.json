@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Base",
+    "task_id": "Isaac-Ant-Terrain-Ablation-Base-v0",
+    "observation_dim": 60,
+    "checkpoint_path": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42/model_999.pt",
+    "seed": 42,
+    "training_run_path": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42",
+    "status": "completed"
+  },
+  {
+    "label": "HeightScan",
+    "task_id": "Isaac-Ant-Terrain-Ablation-HeightScan-v0",
+    "observation_dim": 123,
+    "checkpoint_path": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42/model_999.pt",
+    "seed": 42,
+    "training_run_path": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42",
+    "status": "completed"
+  },
+  {
+    "label": "Contact",
+    "task_id": "Isaac-Ant-Terrain-Ablation-Contact-v0",
+    "observation_dim": 64,
+    "checkpoint_path": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_01-01-49_ablation_contact_obs64_s42/model_999.pt",
+    "seed": 42,
+    "training_run_path": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_01-01-49_ablation_contact_obs64_s42",
+    "status": "completed"
+  },
+  {
+    "label": "HeightScan+Contact",
+    "task_id": "Isaac-Ant-Terrain-Ablation-HeightScan-Contact-v0",
+    "observation_dim": 127,
+    "checkpoint_path": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/model_999.pt",
+    "seed": 42,
+    "training_run_path": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42",
+    "status": "completed"
+  }
+]

@@ -1,0 +1,1266 @@
+{
+  "timestamp": "2026-10-03T11:42:12.584903+00:00",
+  "task_id": "Isaac-Ant-Final-Unseen-v0",
+  "design": {
+    "size_m": [
+      40.0,
+      8.0
+    ],
+    "spawn_local_xyz": [
+      2.0,
+      4.0,
+      0.0
+    ],
+    "horizontal_scale": 0.1,
+    "vertical_scale": 0.005,
+    "slope_threshold": 0.75,
+    "layout": [
+      10,
+      10
+    ],
+    "terrain_seed": 2404,
+    "evaluation_seed": 24,
+    "spawn_flat_x": [
+      0.0,
+      4.0
+    ],
+    "ridge": {
+      "x": [
+        4.0,
+        10.0
+      ],
+      "center_height": 0.02,
+      "cross_amplitude": 0.04,
+      "cross_scale": 1.5
+    },
+    "terraces": [
+      {
+        "x": [
+          10.0,
+          12.2
+        ],
+        "height": 0.04,
+        "y_offset": -0.3
+      },
+      {
+        "x": [
+          12.2,
+          15.6
+        ],
+        "height": 0.075,
+        "y_offset": 0.4
+      },
+      {
+        "x": [
+          15.6,
+          18.0
+        ],
+        "height": 0.025,
+        "y_offset": -0.2
+      }
+    ],
+    "terrace_lateral_half_extent": 3.6,
+    "terrace_lateral_taper": 0.6,
+    "basin": {
+      "x": [
+        18.0,
+        25.0
+      ],
+      "depth": 0.07,
+      "lateral_scale": 1.7
+    },
+    "landing": {
+      "x": [
+        25.0,
+        40.0
+      ],
+      "amplitudes": [
+        0.025,
+        0.015
+      ],
+      "x_wavelengths": [
+        4.0,
+        7.0
+      ],
+      "y_wavelength": 5.0,
+      "phase": 1.0471975511965976,
+      "end_taper_m": 2.0
+    },
+    "lateral_envelope": "cos(pi*y/width)^2, y measured from centerline",
+    "friction": {
+      "static": 1.0,
+      "dynamic": 1.0,
+      "restitution": 0.0,
+      "combine": "average"
+    },
+    "termination": {
+      "torso_height": "root_z-local_terrain_z < 0.31 or missing terrain hit",
+      "time_out": "original 16 seconds"
+    },
+    "novelty": "analytic asymmetric ridge + irregular connected offset terraces + smooth basin + deterministic Fourier landing",
+    "no": [
+      "isolated stepping stones",
+      "explicit gaps/trenches",
+      "discrete obstacle generator",
+      "uniform noise generator",
+      "curriculum"
+    ]
+  },
+  "seed": 24,
+  "terrain_seed": 2404,
+  "official_num_envs": 100,
+  "policy_set": [
+    {
+      "label": "Base",
+      "task_id": "Isaac-Ant-Terrain-Ablation-Base-v0",
+      "observation_dim": 60,
+      "checkpoint_path": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42/model_999.pt",
+      "seed": 42,
+      "training_run_path": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42",
+      "status": "completed"
+    },
+    {
+      "label": "HeightScan",
+      "task_id": "Isaac-Ant-Terrain-Ablation-HeightScan-v0",
+      "observation_dim": 123,
+      "checkpoint_path": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42/model_999.pt",
+      "seed": 42,
+      "training_run_path": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42",
+      "status": "completed"
+    },
+    {
+      "label": "HeightScan+Contact",
+      "task_id": "Isaac-Ant-Terrain-Ablation-HeightScan-Contact-v0",
+      "observation_dim": 127,
+      "checkpoint_path": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/model_999.pt",
+      "seed": 42,
+      "training_run_path": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42",
+      "status": "completed"
+    },
+    {
+      "label": "Diverse HeightScan+Contact",
+      "checkpoint_path": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_18-57-46_ablation_heightscan_contact_diverse_s42/model_999.pt",
+      "observation_dim": 127
+    }
+  ],
+  "optional_compact_included": false,
+  "source_hashes": {
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_ablation_env_cfg.py": "23bc0aef4b752799a45517203e65f9f70e4dae6cb7ee3b441d56195745a25693",
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_env_cfg.py": "fd17a386c8482f0d22fa2f0b5959514e0ba6aff5dcefd59a46c87ce749e59c44",
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_contact_observations.py": "e463d5bf8866b2d6b05caab9a651112e13053c7972ad0cb63853f747e977a132",
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_compact_terrain_env_cfg.py": "874c8c22a022bdaa8a5fdcc1317cf0dabb12761b61cc6577ee496c5ba309f929",
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py": "e93ca45ac82d7687a1cee28c4d2178d7daf193544a0beb44911feac578f910e7",
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_ood_env_cfg.py": "29a9763bd590a1606677e09463da899dc6a1d95f00feac190cdb78d8f5b62db8",
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_friction_random_env_cfg.py": "15b6a2807aa3c71bc052a3cfc741ec760a80ac41c8bc2496112163fbe4b9fa0a",
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_compact_terrain_observations.py": "79759c065b0a48d2b73528683d495dac9b3433adabc3d1a5d208fab2b3181eb1",
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_diverse_env_cfg.py": "ffe780437db2a16f75c85ffcb0a93c9ba37f1e213795d8cb49e42c6ecfd7f70e",
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_dev_ood_env_cfg.py": "7f86727d22e8a4404f299805ab0f163510873fa40fd8967781cf7458cfe52346",
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_ood_terrain_env_cfg.py": "efe5cc160fc3a82244d7c7c18382d194c74e61476177a4113d1da9aa33630d0a",
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_heightscan_variants_env_cfg.py": "d4af531259c92a380c78e174ec1e089231d0efa54fcf4742a079adfbd9d0d546",
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/agents/rsl_rl_ppo_lr_cfg.py": "91589a8771f8287f918951bc35c413e15c3b9f9ba7e43c2c41c8a073fbfad6a9",
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/agents/rsl_rl_ppo_cfg.py": "9d3ae28bc6bdf8078d36829c7a68113feab40ed36c0418ce8a42b045a8c1a109",
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/agents/rsl_rl_ppo_contact_cfg.py": "577fb3ae011508d3b2f9abdf5698a87d4b70acfb4deab3deed92838e335b1afa",
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_final_unseen_env_cfg.py": "e493698569d0ac2676899be14e4e04eb40204d8d6c069d839ca054b67f3e43e4",
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/__init__.py": "afaa6b52c6d2f4b7890188f0c5df6b6178c1beefdaf1e370b9cd69aaf860d290"
+  },
+  "env_source_config": {
+    "actions": {
+      "joint_effort": {
+        "asset_name": "robot",
+        "class_type": "isaaclab.envs.mdp.actions.joint_actions:JointEffortAction",
+        "clip": null,
+        "debug_vis": false,
+        "joint_names": [
+          ".*"
+        ],
+        "offset": 0.0,
+        "preserve_order": false,
+        "scale": 7.5
+      }
+    },
+    "commands": null,
+    "curriculum": null,
+    "decimation": 2,
+    "episode_length_s": 16.0,
+    "events": {
+      "reset_base": {
+        "func": "isaaclab.envs.mdp.events:reset_root_state_uniform",
+        "interval_range_s": null,
+        "is_global_time": false,
+        "min_step_count_between_reset": 0,
+        "mode": "reset",
+        "params": {
+          "pose_range": {},
+          "velocity_range": {}
+        }
+      },
+      "reset_robot_joints": {
+        "func": "isaaclab.envs.mdp.events:reset_joints_by_offset",
+        "interval_range_s": null,
+        "is_global_time": false,
+        "min_step_count_between_reset": 0,
+        "mode": "reset",
+        "params": {
+          "position_range": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              -0.2,
+              0.2
+            ]
+          },
+          "velocity_range": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              -0.1,
+              0.1
+            ]
+          }
+        }
+      }
+    },
+    "export_io_descriptors": false,
+    "io_descriptors_output_dir": null,
+    "is_finite_horizon": false,
+    "log_dir": null,
+    "observations": {
+      "policy": {
+        "actions": {
+          "clip": null,
+          "flatten_history_dim": true,
+          "func": "isaaclab.envs.mdp.observations:last_action",
+          "history_length": 0,
+          "modifiers": null,
+          "noise": null,
+          "params": {},
+          "scale": null
+        },
+        "base_ang_vel": {
+          "clip": null,
+          "flatten_history_dim": true,
+          "func": "isaaclab.envs.mdp.observations:base_ang_vel",
+          "history_length": 0,
+          "modifiers": null,
+          "noise": null,
+          "params": {},
+          "scale": null
+        },
+        "base_angle_to_target": {
+          "clip": null,
+          "flatten_history_dim": true,
+          "func": "isaaclab_tasks.manager_based.classic.humanoid.mdp.observations:base_angle_to_target",
+          "history_length": 0,
+          "modifiers": null,
+          "noise": null,
+          "params": {
+            "target_pos": {
+              "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+              "value": [
+                1000.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "scale": null
+        },
+        "base_heading_proj": {
+          "clip": null,
+          "flatten_history_dim": true,
+          "func": "isaaclab_tasks.manager_based.classic.humanoid.mdp.observations:base_heading_proj",
+          "history_length": 0,
+          "modifiers": null,
+          "noise": null,
+          "params": {
+            "target_pos": {
+              "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+              "value": [
+                1000.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "scale": null
+        },
+        "base_height": {
+          "clip": null,
+          "flatten_history_dim": true,
+          "func": "isaaclab.envs.mdp.observations:base_pos_z",
+          "history_length": 0,
+          "modifiers": null,
+          "noise": null,
+          "params": {},
+          "scale": null
+        },
+        "base_lin_vel": {
+          "clip": null,
+          "flatten_history_dim": true,
+          "func": "isaaclab.envs.mdp.observations:base_lin_vel",
+          "history_length": 0,
+          "modifiers": null,
+          "noise": null,
+          "params": {},
+          "scale": null
+        },
+        "base_up_proj": {
+          "clip": null,
+          "flatten_history_dim": true,
+          "func": "isaaclab_tasks.manager_based.classic.humanoid.mdp.observations:base_up_proj",
+          "history_length": 0,
+          "modifiers": null,
+          "noise": null,
+          "params": {},
+          "scale": null
+        },
+        "base_yaw_roll": {
+          "clip": null,
+          "flatten_history_dim": true,
+          "func": "isaaclab_tasks.manager_based.classic.humanoid.mdp.observations:base_yaw_roll",
+          "history_length": 0,
+          "modifiers": null,
+          "noise": null,
+          "params": {},
+          "scale": null
+        },
+        "concatenate_dim": -1,
+        "concatenate_terms": true,
+        "enable_corruption": false,
+        "feet_body_forces": {
+          "clip": null,
+          "flatten_history_dim": true,
+          "func": "isaaclab.envs.mdp.observations:body_incoming_wrench",
+          "history_length": 0,
+          "modifiers": null,
+          "noise": null,
+          "params": {
+            "asset_cfg": {
+              "body_ids": {
+                "__yaml_tag__": "tag:yaml.org,2002:python/object/apply:builtins.slice",
+                "value": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "body_names": [
+                "front_left_foot",
+                "front_right_foot",
+                "left_back_foot",
+                "right_back_foot"
+              ],
+              "fixed_tendon_ids": {
+                "__yaml_tag__": "tag:yaml.org,2002:python/object/apply:builtins.slice",
+                "value": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "fixed_tendon_names": null,
+              "joint_ids": {
+                "__yaml_tag__": "tag:yaml.org,2002:python/object/apply:builtins.slice",
+                "value": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "joint_names": null,
+              "name": "robot",
+              "object_collection_ids": {
+                "__yaml_tag__": "tag:yaml.org,2002:python/object/apply:builtins.slice",
+                "value": [
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "object_collection_names": null,
+              "preserve_order": false
+            }
+          },
+          "scale": 0.1
+        },
+        "flatten_history_dim": true,
+        "history_length": null,
+        "joint_pos_norm": {
+          "clip": null,
+          "flatten_history_dim": true,
+          "func": "isaaclab.envs.mdp.observations:joint_pos_limit_normalized",
+          "history_length": 0,
+          "modifiers": null,
+          "noise": null,
+          "params": {},
+          "scale": null
+        },
+        "joint_vel_rel": {
+          "clip": null,
+          "flatten_history_dim": true,
+          "func": "isaaclab.envs.mdp.observations:joint_vel_rel",
+          "history_length": 0,
+          "modifiers": null,
+          "noise": null,
+          "params": {},
+          "scale": 0.2
+        }
+      }
+    },
+    "recorders": {
+      "dataset_export_dir_path": "/tmp/isaaclab/logs",
+      "dataset_export_mode": {
+        "_name_": "EXPORT_ALL",
+        "_sort_order_": 1,
+        "_value_": 1
+      },
+      "dataset_file_handler_class_type": "isaaclab.utils.datasets.hdf5_dataset_file_handler:HDF5DatasetFileHandler",
+      "dataset_filename": "dataset",
+      "export_in_record_pre_reset": true
+    },
+    "rerender_on_reset": false,
+    "rewards": {
+      "action_l2": {
+        "func": "isaaclab.envs.mdp.rewards:action_l2",
+        "params": {},
+        "weight": -0.005
+      },
+      "alive": {
+        "func": "isaaclab.envs.mdp.rewards:is_alive",
+        "params": {},
+        "weight": 0.5
+      },
+      "energy": {
+        "func": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards:power_consumption",
+        "params": {
+          "gear_ratio": {
+            ".*": 15.0
+          }
+        },
+        "weight": -0.05
+      },
+      "joint_pos_limits": {
+        "func": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards:joint_pos_limits_penalty_ratio",
+        "params": {
+          "gear_ratio": {
+            ".*": 15.0
+          },
+          "threshold": 0.99
+        },
+        "weight": -0.1
+      },
+      "move_to_target": {
+        "func": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards:move_to_target_bonus",
+        "params": {
+          "target_pos": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              1000.0,
+              0.0,
+              0.0
+            ]
+          },
+          "threshold": 0.8
+        },
+        "weight": 0.5
+      },
+      "progress": {
+        "func": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards:progress_reward",
+        "params": {
+          "target_pos": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              1000.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "weight": 1.0
+      },
+      "upright": {
+        "func": "isaaclab_tasks.manager_based.classic.humanoid.mdp.rewards:upright_posture_bonus",
+        "params": {
+          "threshold": 0.93
+        },
+        "weight": 0.1
+      }
+    },
+    "scene": {
+      "clone_in_fabric": false,
+      "env_spacing": 5.0,
+      "feet_contacts": {
+        "class_type": "isaaclab.sensors.contact_sensor.contact_sensor:ContactSensor",
+        "debug_vis": false,
+        "filter_prim_paths_expr": [],
+        "force_threshold": 1.0,
+        "history_length": 0,
+        "max_contact_data_count_per_prim": 4,
+        "prim_path": "{ENV_REGEX_NS}/Robot/(front_left_foot|front_right_foot|left_back_foot|right_back_foot)",
+        "track_air_time": false,
+        "track_contact_points": false,
+        "track_pose": false,
+        "update_period": 0.0,
+        "visualizer_cfg": {
+          "markers": {
+            "contact": {
+              "activate_contact_sensors": false,
+              "collision_props": null,
+              "copy_from_source": true,
+              "func": "isaaclab.sim.spawners.shapes.shapes:spawn_sphere",
+              "mass_props": null,
+              "physics_material": null,
+              "physics_material_path": "material",
+              "radius": 0.02,
+              "rigid_props": null,
+              "semantic_tags": null,
+              "visible": true,
+              "visual_material": {
+                "diffuse_color": {
+                  "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+                  "value": [
+                    1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                "emissive_color": {
+                  "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+                  "value": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                "func": "isaaclab.sim.spawners.materials.visual_materials:spawn_preview_surface",
+                "metallic": 0.0,
+                "opacity": 1.0,
+                "roughness": 0.5
+              },
+              "visual_material_path": "material"
+            },
+            "no_contact": {
+              "activate_contact_sensors": false,
+              "collision_props": null,
+              "copy_from_source": true,
+              "func": "isaaclab.sim.spawners.shapes.shapes:spawn_sphere",
+              "mass_props": null,
+              "physics_material": null,
+              "physics_material_path": "material",
+              "radius": 0.02,
+              "rigid_props": null,
+              "semantic_tags": null,
+              "visible": false,
+              "visual_material": {
+                "diffuse_color": {
+                  "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+                  "value": [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                },
+                "emissive_color": {
+                  "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+                  "value": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                "func": "isaaclab.sim.spawners.materials.visual_materials:spawn_preview_surface",
+                "metallic": 0.0,
+                "opacity": 1.0,
+                "roughness": 0.5
+              },
+              "visual_material_path": "material"
+            }
+          },
+          "prim_path": "/Visuals/ContactSensor"
+        }
+      },
+      "filter_collisions": true,
+      "height_scanner": {
+        "attach_yaw_only": null,
+        "class_type": "isaaclab.sensors.ray_caster.ray_caster:RayCaster",
+        "debug_vis": false,
+        "drift_range": {
+          "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+          "value": [
+            0.0,
+            0.0
+          ]
+        },
+        "history_length": 0,
+        "max_distance": 1000000.0,
+        "mesh_prim_paths": [
+          "/World/ground"
+        ],
+        "offset": {
+          "pos": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.8,
+              0.0,
+              20.0
+            ]
+          },
+          "rot": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "pattern_cfg": {
+          "direction": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.0,
+              0.0,
+              -1.0
+            ]
+          },
+          "func": "isaaclab.sensors.ray_caster.patterns.patterns:grid_pattern",
+          "ordering": "xy",
+          "resolution": 0.2,
+          "size": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              1.6,
+              1.2
+            ]
+          }
+        },
+        "prim_path": "{ENV_REGEX_NS}/Robot/torso",
+        "ray_alignment": "yaw",
+        "ray_cast_drift_range": {
+          "x": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.0,
+              0.0
+            ]
+          },
+          "y": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.0,
+              0.0
+            ]
+          },
+          "z": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "update_period": 0.0,
+        "visualizer_cfg": {
+          "markers": {
+            "hit": {
+              "activate_contact_sensors": false,
+              "collision_props": null,
+              "copy_from_source": true,
+              "func": "isaaclab.sim.spawners.shapes.shapes:spawn_sphere",
+              "mass_props": null,
+              "physics_material": null,
+              "physics_material_path": "material",
+              "radius": 0.02,
+              "rigid_props": null,
+              "semantic_tags": null,
+              "visible": true,
+              "visual_material": {
+                "diffuse_color": {
+                  "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+                  "value": [
+                    1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                "emissive_color": {
+                  "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+                  "value": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                "func": "isaaclab.sim.spawners.materials.visual_materials:spawn_preview_surface",
+                "metallic": 0.0,
+                "opacity": 1.0,
+                "roughness": 0.5
+              },
+              "visual_material_path": "material"
+            }
+          },
+          "prim_path": "/Visuals/RayCaster"
+        }
+      },
+      "lazy_sensor_update": true,
+      "light": {
+        "class_type": null,
+        "collision_group": 0,
+        "debug_vis": false,
+        "init_state": {
+          "pos": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "rot": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "prim_path": "/World/light",
+        "spawn": {
+          "angle": 0.53,
+          "color": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.75,
+              0.75,
+              0.75
+            ]
+          },
+          "color_temperature": 6500.0,
+          "copy_from_source": true,
+          "enable_color_temperature": false,
+          "exposure": 0.0,
+          "func": "isaaclab.sim.spawners.lights.lights:spawn_light",
+          "intensity": 3000.0,
+          "normalize": false,
+          "prim_type": "DistantLight",
+          "semantic_tags": null,
+          "visible": true
+        }
+      },
+      "num_envs": 4,
+      "replicate_physics": true,
+      "robot": {
+        "actuator_value_resolution_debug_print": false,
+        "actuators": {
+          "body": {
+            "armature": null,
+            "class_type": "isaaclab.actuators.actuator_pd:ImplicitActuator",
+            "damping": 0.0,
+            "dynamic_friction": null,
+            "effort_limit": null,
+            "effort_limit_sim": null,
+            "friction": null,
+            "joint_names_expr": [
+              ".*"
+            ],
+            "stiffness": 0.0,
+            "velocity_limit": null,
+            "velocity_limit_sim": null,
+            "viscous_friction": null
+          }
+        },
+        "articulation_root_prim_path": null,
+        "class_type": "isaaclab.assets.articulation.articulation:Articulation",
+        "collision_group": 0,
+        "debug_vis": false,
+        "init_state": {
+          "ang_vel": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "joint_pos": {
+            ".*_leg": 0.0,
+            "front_left_foot": 0.785398,
+            "front_right_foot": -0.785398,
+            "left_back_foot": -0.785398,
+            "right_back_foot": 0.785398
+          },
+          "joint_vel": {
+            ".*": 0.0
+          },
+          "lin_vel": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "pos": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.0,
+              0.0,
+              0.5
+            ]
+          },
+          "rot": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "prim_path": "{ENV_REGEX_NS}/Robot",
+        "soft_joint_pos_limit_factor": 1.0,
+        "spawn": {
+          "activate_contact_sensors": true,
+          "articulation_props": {
+            "articulation_enabled": null,
+            "enabled_self_collisions": false,
+            "fix_root_link": null,
+            "sleep_threshold": 0.005,
+            "solver_position_iteration_count": 4,
+            "solver_velocity_iteration_count": 0,
+            "stabilization_threshold": 0.001
+          },
+          "collision_props": null,
+          "copy_from_source": false,
+          "deformable_props": null,
+          "fixed_tendons_props": null,
+          "func": "isaaclab.sim.spawners.from_files.from_files:spawn_from_usd",
+          "joint_drive_props": null,
+          "mass_props": null,
+          "rigid_props": {
+            "angular_damping": null,
+            "disable_gravity": false,
+            "enable_gyroscopic_forces": true,
+            "kinematic_enabled": null,
+            "linear_damping": null,
+            "max_angular_velocity": null,
+            "max_contact_impulse": null,
+            "max_depenetration_velocity": 10.0,
+            "max_linear_velocity": null,
+            "retain_accelerations": null,
+            "rigid_body_enabled": null,
+            "sleep_threshold": null,
+            "solver_position_iteration_count": null,
+            "solver_velocity_iteration_count": null,
+            "stabilization_threshold": null
+          },
+          "scale": null,
+          "semantic_tags": null,
+          "spatial_tendons_props": null,
+          "usd_path": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/IsaacSim/Ant/ant_instanceable.usd",
+          "variants": null,
+          "visible": true,
+          "visual_material": null,
+          "visual_material_path": "material"
+        }
+      },
+      "terrain": {
+        "class_type": "isaaclab_tasks.manager_based.classic.ant.ant_ood_terrain_env_cfg:AntOODTerrainImporter",
+        "collision_group": -1,
+        "debug_vis": false,
+        "env_spacing": null,
+        "max_init_terrain_level": null,
+        "num_envs": 1,
+        "physics_material": {
+          "compliant_contact_damping": 0.0,
+          "compliant_contact_stiffness": 0.0,
+          "dynamic_friction": 1.0,
+          "friction_combine_mode": "average",
+          "func": "isaaclab.sim.spawners.materials.physics_materials:spawn_rigid_body_material",
+          "restitution": 0.0,
+          "restitution_combine_mode": "average",
+          "static_friction": 1.0
+        },
+        "prim_path": "/World/ground",
+        "terrain_generator": {
+          "border_height": 1.0,
+          "border_width": 20.0,
+          "cache_dir": "/tmp/isaaclab/terrains",
+          "class_type": "isaaclab_tasks.manager_based.classic.ant.ant_ood_terrain_env_cfg:AntOODTerrainGenerator",
+          "color_scheme": "none",
+          "curriculum": false,
+          "difficulty_range": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              1.0,
+              1.0
+            ]
+          },
+          "horizontal_scale": 0.1,
+          "num_cols": 10,
+          "num_rows": 10,
+          "seed": 2404,
+          "size": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              40.0,
+              8.0
+            ]
+          },
+          "slope_threshold": 0.75,
+          "sub_terrains": {
+            "final_composite": {
+              "border_width": 0.0,
+              "flat_patch_sampling": null,
+              "function": "isaaclab_tasks.manager_based.classic.ant.ant_final_unseen_env_cfg:final_course_terrain",
+              "horizontal_scale": 0.1,
+              "proportion": 1.0,
+              "size": {
+                "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+                "value": [
+                  40.0,
+                  8.0
+                ]
+              },
+              "slope_threshold": null,
+              "vertical_scale": 0.005
+            }
+          },
+          "use_cache": false,
+          "vertical_scale": 0.005
+        },
+        "terrain_type": "generator",
+        "usd_path": null,
+        "visual_material": {
+          "diffuse_color": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "emissive_color": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "func": "isaaclab.sim.spawners.materials.visual_materials:spawn_preview_surface",
+          "metallic": 0.0,
+          "opacity": 1.0,
+          "roughness": 0.5
+        }
+      },
+      "torso_ground_ray": {
+        "attach_yaw_only": null,
+        "class_type": "isaaclab.sensors.ray_caster.ray_caster:RayCaster",
+        "debug_vis": false,
+        "drift_range": {
+          "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+          "value": [
+            0.0,
+            0.0
+          ]
+        },
+        "history_length": 0,
+        "max_distance": 1000000.0,
+        "mesh_prim_paths": [
+          "/World/ground"
+        ],
+        "offset": {
+          "pos": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.0,
+              0.0,
+              20.0
+            ]
+          },
+          "rot": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "pattern_cfg": {
+          "direction": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.0,
+              0.0,
+              -1.0
+            ]
+          },
+          "func": "isaaclab.sensors.ray_caster.patterns.patterns:grid_pattern",
+          "ordering": "xy",
+          "resolution": 0.1,
+          "size": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "prim_path": "{ENV_REGEX_NS}/Robot/torso",
+        "ray_alignment": "yaw",
+        "ray_cast_drift_range": {
+          "x": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.0,
+              0.0
+            ]
+          },
+          "y": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.0,
+              0.0
+            ]
+          },
+          "z": {
+            "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+            "value": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "update_period": 0.0,
+        "visualizer_cfg": {
+          "markers": {
+            "hit": {
+              "activate_contact_sensors": false,
+              "collision_props": null,
+              "copy_from_source": true,
+              "func": "isaaclab.sim.spawners.shapes.shapes:spawn_sphere",
+              "mass_props": null,
+              "physics_material": null,
+              "physics_material_path": "material",
+              "radius": 0.02,
+              "rigid_props": null,
+              "semantic_tags": null,
+              "visible": true,
+              "visual_material": {
+                "diffuse_color": {
+                  "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+                  "value": [
+                    1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                "emissive_color": {
+                  "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+                  "value": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                "func": "isaaclab.sim.spawners.materials.visual_materials:spawn_preview_surface",
+                "metallic": 0.0,
+                "opacity": 1.0,
+                "roughness": 0.5
+              },
+              "visual_material_path": "material"
+            }
+          },
+          "prim_path": "/Visuals/RayCaster"
+        }
+      }
+    },
+    "seed": 24,
+    "sim": {
+      "create_stage_in_memory": false,
+      "device": "cuda:0",
+      "dt": 0.008333333333333333,
+      "enable_scene_query_support": false,
+      "gravity": {
+        "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+        "value": [
+          0.0,
+          0.0,
+          -9.81
+        ]
+      },
+      "physics_material": {
+        "compliant_contact_damping": 0.0,
+        "compliant_contact_stiffness": 0.0,
+        "dynamic_friction": 1.0,
+        "friction_combine_mode": "average",
+        "func": "isaaclab.sim.spawners.materials.physics_materials:spawn_rigid_body_material",
+        "restitution": 0.0,
+        "restitution_combine_mode": "average",
+        "static_friction": 1.0
+      },
+      "physics_prim_path": "/physicsScene",
+      "physx": {
+        "bounce_threshold_velocity": 0.2,
+        "enable_ccd": false,
+        "enable_enhanced_determinism": false,
+        "enable_stabilization": false,
+        "friction_correlation_distance": 0.025,
+        "friction_offset_threshold": 0.04,
+        "gpu_collision_stack_size": 67108864,
+        "gpu_found_lost_aggregate_pairs_capacity": 33554432,
+        "gpu_found_lost_pairs_capacity": 2097152,
+        "gpu_heap_capacity": 67108864,
+        "gpu_max_num_partitions": 8,
+        "gpu_max_particle_contacts": 1048576,
+        "gpu_max_rigid_contact_count": 8388608,
+        "gpu_max_rigid_patch_count": 163840,
+        "gpu_max_soft_body_contacts": 1048576,
+        "gpu_temp_buffer_capacity": 16777216,
+        "gpu_total_aggregate_pairs_capacity": 2097152,
+        "max_position_iteration_count": 255,
+        "max_velocity_iteration_count": 255,
+        "min_position_iteration_count": 1,
+        "min_velocity_iteration_count": 0,
+        "solve_articulation_contact_last": false,
+        "solver_type": 1
+      },
+      "render": {
+        "antialiasing_mode": null,
+        "carb_settings": null,
+        "dlss_mode": null,
+        "dome_light_upper_lower_strategy": null,
+        "enable_ambient_occlusion": null,
+        "enable_direct_lighting": null,
+        "enable_dl_denoiser": null,
+        "enable_dlssg": null,
+        "enable_global_illumination": null,
+        "enable_reflections": null,
+        "enable_shadows": null,
+        "enable_translucency": null,
+        "rendering_mode": null,
+        "samples_per_pixel": null
+      },
+      "render_interval": 2,
+      "use_fabric": true
+    },
+    "teleop_devices": {
+      "devices": {}
+    },
+    "terminations": {
+      "time_out": {
+        "func": "isaaclab.envs.mdp.terminations:time_out",
+        "params": {},
+        "time_out": true
+      },
+      "torso_height": {
+        "func": "isaaclab_tasks.manager_based.classic.ant.ant_ood_terrain_env_cfg:torso_clearance_below_minimum",
+        "params": {
+          "minimum_height": 0.31
+        },
+        "time_out": false
+      }
+    },
+    "ui_window_class_type": "isaaclab.envs.ui.manager_based_rl_env_window:ManagerBasedRLEnvWindow",
+    "viewer": {
+      "asset_name": null,
+      "body_name": null,
+      "cam_prim_path": "/OmniverseKit_Persp",
+      "env_index": 0,
+      "eye": {
+        "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+        "value": [
+          7.5,
+          7.5,
+          7.5
+        ]
+      },
+      "lookat": {
+        "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+        "value": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "origin_type": "world",
+      "resolution": {
+        "__yaml_tag__": "tag:yaml.org,2002:python/tuple",
+        "value": [
+          1280,
+          720
+        ]
+      }
+    },
+    "wait_for_textures": true,
+    "xr": null
+  },
+  "agent_config": {
+    "algorithm": {
+      "class_name": "PPO",
+      "clip_param": 0.2,
+      "desired_kl": 0.01,
+      "entropy_coef": 0.0,
+      "gamma": 0.99,
+      "lam": 0.95,
+      "learning_rate": 0.0005,
+      "max_grad_norm": 1.0,
+      "normalize_advantage_per_mini_batch": false,
+      "num_learning_epochs": 5,
+      "num_mini_batches": 4,
+      "rnd_cfg": null,
+      "schedule": "adaptive",
+      "symmetry_cfg": null,
+      "use_clipped_value_loss": true,
+      "value_loss_coef": 1.0
+    },
+    "class_name": "OnPolicyRunner",
+    "clip_actions": null,
+    "device": "cuda:0",
+    "empirical_normalization": null,
+    "experiment_name": "ant",
+    "load_checkpoint": "model_.*.pt",
+    "load_run": ".*",
+    "logger": "tensorboard",
+    "max_iterations": 1000,
+    "neptune_project": "isaaclab",
+    "num_steps_per_env": 32,
+    "obs_groups": {},
+    "policy": {
+      "activation": "elu",
+      "actor_hidden_dims": [
+        400,
+        200,
+        100
+      ],
+      "actor_obs_normalization": false,
+      "class_name": "ActorCritic",
+      "critic_hidden_dims": [
+        400,
+        200,
+        100
+      ],
+      "critic_obs_normalization": false,
+      "init_noise_std": 1.0,
+      "noise_std_type": "scalar"
+    },
+    "resume": false,
+    "run_name": "",
+    "save_interval": 50,
+    "seed": 42,
+    "wandb_project": "isaaclab"
+  },
+  "reward_source": "AntEnvCfg.RewardsCfg: stock seven terms, weights and parameters unchanged",
+  "novelty": {
+    "training": "No pyramid ramp/regular stairs/uniform random noise generator; analytical connected composite",
+    "UnevenBlocks": "No HfDiscreteObstacles generator or box layout",
+    "SteppingStones": "No isolated stones or gaps",
+    "GapPath": "No trench; basin is continuous and shallow"
+  },
+  "freeze_rule": "No parameter, seed, friction, spawn, termination, reward or policy tuning after preregistration; code bugs documented separately"
+}

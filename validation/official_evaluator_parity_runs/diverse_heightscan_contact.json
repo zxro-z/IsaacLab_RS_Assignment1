@@ -1,0 +1,83 @@
+{
+  "task": "Isaac-Ant-Final-Unseen-v0",
+  "seed": 24,
+  "num_envs": 4,
+  "checkpoint": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_18-57-46_ablation_heightscan_contact_diverse_s42/model_999.pt",
+  "checkpoint_sha256": "2f36d5fc0280a9000b1719552ab1c68cb64861a22b9088440f19acd5217dfe48",
+  "actor_input_dim": 127,
+  "runtime_observation_dim": 127,
+  "official_reference_sha256": "70dd6d6674ca211f335b57fea5d8dca417fe670753adedf2d002a638b2b089d0",
+  "current_source_sha256": "88c8fca3c9b0556bcde6f168200ea54798be1c27ce43f134c347dafd84648d22",
+  "method": "official AST accounting on identical current policy observation/action trajectory",
+  "official_accumulator_dtype": "float64",
+  "current_accumulator_dtype": "torch.float32",
+  "tolerance": {
+    "rtol": 1e-06,
+    "atol": 1e-06
+  },
+  "all_first_episodes_completed": true,
+  "terminal_reward_included": true,
+  "terminal_step_counted": true,
+  "post_reset_excluded": true,
+  "official_max_episode_length": 960,
+  "official_cap_would_complete": true,
+  "episodes": [
+    {
+      "env_id": 0,
+      "official_episode_return": 76.99446955905296,
+      "current_episode_return": 76.9945068359375,
+      "official_episode_steps": 960,
+      "current_episode_steps": 960,
+      "absolute_return_difference": 3.727688454091549e-05,
+      "terminal_reward": 0.0844365581870079,
+      "terminal_step": 960,
+      "post_reset_transitions_observed": 0,
+      "post_reset_accounted_steps": 0,
+      "return_close": true,
+      "steps_equal": true
+    },
+    {
+      "env_id": 1,
+      "official_episode_return": 74.48728374601342,
+      "current_episode_return": 74.48726654052734,
+      "official_episode_steps": 960,
+      "current_episode_steps": 960,
+      "absolute_return_difference": 1.7205486074090004e-05,
+      "terminal_reward": 0.09350818395614624,
+      "terminal_step": 960,
+      "post_reset_transitions_observed": 0,
+      "post_reset_accounted_steps": 0,
+      "return_close": true,
+      "steps_equal": true
+    },
+    {
+      "env_id": 2,
+      "official_episode_return": 75.13077312568203,
+      "current_episode_return": 75.13081359863281,
+      "official_episode_steps": 960,
+      "current_episode_steps": 960,
+      "absolute_return_difference": 4.047295078635216e-05,
+      "terminal_reward": 0.08674442023038864,
+      "terminal_step": 960,
+      "post_reset_transitions_observed": 0,
+      "post_reset_accounted_steps": 0,
+      "return_close": true,
+      "steps_equal": true
+    },
+    {
+      "env_id": 3,
+      "official_episode_return": 62.96284935763106,
+      "current_episode_return": 62.96285629272461,
+      "official_episode_steps": 789,
+      "current_episode_steps": 789,
+      "absolute_return_difference": 6.935093551874161e-06,
+      "terminal_reward": 0.012218896299600601,
+      "terminal_step": 789,
+      "post_reset_transitions_observed": 171,
+      "post_reset_accounted_steps": 0,
+      "return_close": true,
+      "steps_equal": true
+    }
+  ],
+  "parity": true
+}

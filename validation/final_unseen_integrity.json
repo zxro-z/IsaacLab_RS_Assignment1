@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "changed": [],
+  "protected_previous_files": 396,
+  "raw_rows": 400,
+  "policy_count": 4,
+  "policy_observation_only_differences": true,
+  "source_unchanged_after_preregistration": true,
+  "preregister_sha256": "5a06d1a934fcec84a3e842358f925c234bf5574e2f1cbf04a65e02182fe95ab2",
+  "shared_official_physical_hashes": {
+    "terrain_mesh_sha256": "c0e1eb34d72dbc86d0a64774a27878aeb9acd9de2174cb0853f99703234cc282",
+    "env_origins_sha256": "cd6e637900ffe35bf76ff3c805ff8085e42d3afdc63d5c036d8f57c22ac9d957",
+    "robot_material_sha256": "37aa67b2f006497c1e88625a1461557e8b5d5db2c425bbbed6076de236f01fe5"
+  }
+}

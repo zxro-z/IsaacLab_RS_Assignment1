@@ -1,0 +1,20 @@
+{
+  "selected": "HfRandomUniformTerrainCfg + central spawn platform",
+  "rejected": "HfDiscreteObstaclesTerrainCfg is already Dev UnevenBlocks primitive",
+  "interpolation": "native bicubic; quantized mesh heights, not sharp isolated blocks",
+  "terrains": {
+    "UnevenBlocks": {
+      "primitive_overlap": false,
+      "exact_layout_overlap": false,
+      "interpretation": "Different primitive, shared irregular-height concept; development-exposed, not final unseen."
+    },
+    "SteppingStones": {
+      "primitive_overlap": false,
+      "exact_layout_overlap": false
+    },
+    "GapPath": {
+      "primitive_overlap": false,
+      "exact_layout_overlap": false
+    }
+  }
+}

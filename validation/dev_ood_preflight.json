@@ -1,0 +1,38 @@
+{
+  "task": "Isaac-Ant-DevOOD-UnevenBlocks-v0",
+  "checkpoint": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42/model_999.pt",
+  "seed": 24,
+  "num_envs": 1,
+  "observation_dim": 60,
+  "terrain_seed": 2401,
+  "terrain_mesh_sha256": "f5c91db2ccaea1d55a8b53e028f82d81cf52285c2457b9ae2c5b9411f065b45c",
+  "env_origins_sha256": "0f1a463fd90702e6cf66321428e6e8252f43f96e6f564d6e16579c5ef230a6bc",
+  "robot_material_sha256": "de50fb2329a296dcc79c26066d14cc5feef91cde57682f0a9171f7db8452709d",
+  "aggregates": {
+    "reward_mean": 47.24455261230469,
+    "reward_std": 0.0,
+    "episode_length_mean": 699.0,
+    "episode_length_std": 0.0,
+    "forward_displacement_mean": 43.961334228515625,
+    "forward_displacement_std": 0.0,
+    "forward_velocity_mean": 3.769609212875366,
+    "timeout_count": 0,
+    "timeout_ratio": 0.0,
+    "fall_count": 1,
+    "fall_ratio": 1.0,
+    "progress_2m_count": 1,
+    "progress_2m_ratio": 1.0
+  },
+  "episodes": [
+    {
+      "env_id": 0,
+      "episode_return": 47.24455261230469,
+      "episode_length": 699,
+      "forward_displacement_m": 43.961334228515625,
+      "forward_velocity_mean_mps": 3.769609212875366,
+      "time_out": false,
+      "fall": true,
+      "progress_2m": true
+    }
+  ]
+}

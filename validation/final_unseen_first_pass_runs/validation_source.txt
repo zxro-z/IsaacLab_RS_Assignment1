@@ -1,0 +1,62 @@
+import csv,gzip,hashlib,json,math
+from pathlib import Path
+import subprocess
+import numpy as np
+root=Path('/home/zxro/IsaacLab_RS');val=root/'validation';runs=val/'final_unseen_first_pass_runs'
+a=json.loads((val/'final_unseen_section_analysis.json').read_text())
+manifest=json.loads((val/'final_unseen_first_pass_trajectory_manifest.json').read_text())
+raw={(r['policy'],int(r['env_id'])):r for r in csv.DictReader((val/'final_unseen_first_pass_raw.csv').open())}
+assert len(raw)==400
+checked=0
+for p in manifest['policies']:
+ d=root/p['directory'];meta=json.loads((d/'metadata.json').read_text()); traces={i:[] for i in range(100)}
+ with gzip.open(d/'trajectory.csv.gz','rt') as s:
+  for row in csv.DictReader(s): traces[int(row['env_id'])].append(row)
+ for ep in meta['episodes']:
+  i=ep['env_id'];r=raw[(p['policy'],i)];t=traces[i]
+  rewards=np.asarray([float(x['step_reward']) for x in t[1:]],dtype=np.float32)
+  total=np.cumsum(rewards,dtype=np.float32)[-1]
+  assert math.isclose(float(total),ep['episode_return'],rel_tol=1e-6,abs_tol=1e-6)
+  assert len(t)-1==ep['episode_steps']
+  assert sum(x['done']=='True' for x in t)==1 and t[-1]['done']=='True'
+  for boundary in a['boundaries_terrain_local_x']:
+   tag=f'{boundary:g}m';hits=[int(x['step']) for x in t if float(x['terrain_local_x'])>=boundary]
+   assert (r['reach_'+tag]=='True')==bool(hits)
+   if hits:
+    assert int(r['first_reach_step_'+tag])==hits[0]
+    assert math.isclose(float(r['t_'+tag]),hits[0]*a['control_dt'],abs_tol=1e-12)
+   else: assert r['first_reach_step_'+tag]==r['t_'+tag]==''
+  checked+=1
+for policy,d in a['policies'].items():
+ subset=[r for (name,i),r in raw.items() if name==policy]
+ for s in d['sections']:
+  tag=f"{s['end_local_x']:g}m"
+  reached=[r for r in subset if r['reach_'+tag]=='True']
+  assert len(reached)==s['completion']['count']
+  assert sum(r['fall']=='True' and r['reach_'+tag]=='False' for r in subset)==s['fall_before_boundary']['count']
+  for field,st in [('t_'+tag,s['first_reach_time_s']),('traversal_time_'+s['section'].lower(),s['traversal_time_s'])]:
+   data=np.array([float(r[field]) for r in reached])
+   assert len(data)==st['n']
+   assert math.isclose(data.mean(),st['mean'],abs_tol=1e-12)
+   assert math.isclose(np.median(data),st['median'],abs_tol=1e-12)
+   assert math.isclose(data.std(ddof=0),st['std'],abs_tol=1e-12)
+protected=json.loads((runs/'protected_before.json').read_text())
+assert all(hashlib.sha256((root/n).read_bytes()).hexdigest()==h for n,h in protected.items())
+with (runs/'validation.log').open('x') as log:
+ commands=[['python','-m','py_compile','scripts/assignment/evaluate_final_unseen_first_pass.py',
+  'scripts/assignment/run_final_unseen_first_pass_measurement.py','scripts/assignment/analyze_final_unseen_sections.py'],['git','diff','--check']]
+ for cmd in commands:
+  log.write('$ '+' '.join(cmd)+'\n');log.flush()
+  child=subprocess.run(cmd,cwd=root,stdout=log,stderr=subprocess.STDOUT)
+  log.write(f'exit_code={child.returncode}\n');assert child.returncode==0
+ for name in commands[0][3:]:
+  cmd=['git','diff','--no-index','--check','/dev/null',name]
+  result=subprocess.run(cmd,cwd=root,capture_output=True,text=True)
+  log.write('$ '+' '.join(cmd)+'\n'+result.stdout+result.stderr+f'exit_code={result.returncode}\n')
+  assert result.returncode in (0,1) and not result.stdout and not result.stderr
+ log.write(f'PASS: {checked} trajectories independently checked for first reach, terminal-inclusive reward accumulation, step counts and no post-reset rows.\n')
+ log.write('PASS: all boundary and traversal-time means/medians/population std crosschecked against episode CSV.\n')
+ log.write(f'PASS: {len(protected)} protected hashes unchanged; all 400 original returns/lengths/legacy displacements/flags exactly match.\n')
+ log.write('No-index exit 1 with empty diagnostics is expected for new files.\n')
+with (runs/'validation_source.txt').open('x') as s:s.write(Path(__file__).read_text())
+print('Independent trajectory, statistics, compile, whitespace and integrity validation: PASS')

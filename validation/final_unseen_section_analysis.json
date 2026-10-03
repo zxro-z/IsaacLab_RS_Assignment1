@@ -1,0 +1,1758 @@
+{
+  "timestamp": "2026-10-03T12:59:58.871874+00:00",
+  "task": "Isaac-Ant-Final-Unseen-v0",
+  "seed": 24,
+  "terrain_seed": 2404,
+  "num_envs_per_policy": 100,
+  "measurement_only": true,
+  "post_hoc": true,
+  "consistency_pass": true,
+  "boundaries_terrain_local_x": [
+    4.0,
+    10.0,
+    18.0,
+    25.0,
+    40.0
+  ],
+  "sections": [
+    {
+      "name": "Flat",
+      "start": 0.0,
+      "end": 4.0
+    },
+    {
+      "name": "Ridge",
+      "start": 4.0,
+      "end": 10.0
+    },
+    {
+      "name": "Terraces",
+      "start": 10.0,
+      "end": 18.0
+    },
+    {
+      "name": "Basin",
+      "start": 18.0,
+      "end": 25.0
+    },
+    {
+      "name": "Landing",
+      "start": 25.0,
+      "end": 40.0
+    }
+  ],
+  "spawn_local_xyz": [
+    2.0,
+    4.0,
+    0.0
+  ],
+  "coordinate_definition": "Fixed initial tile: x_local = root_world_x - env_origin_x + spawn_local_x. No modulo wrapping.",
+  "first_pass_definition": "First logged post-control-step root x_local >= boundary, including terminal pose before auto-reset. Initial step 0 included.",
+  "time_definition": "first_reach_step * control_dt; no interpolation; temporal sampling resolution is control_dt",
+  "control_dt": 0.016666666666666666,
+  "physics_dt": 0.008333333333333333,
+  "decimation": 2,
+  "statistics": {
+    "rate_ci": "Wilson 95%",
+    "std": "population ddof=0",
+    "bootstrap": "IID episodes, percentile 95%, conditional on reaching boundary/completing section",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 240403,
+    "limitation": "CIs describe episode variation within one fixed Final realization and training seed; no multiplicity correction or causal/generalization test."
+  },
+  "metric_definitions": {
+    "section_completion": "Unconditional reach endpoint / 100",
+    "conditional_completion": "Reach endpoint / reach previous endpoint; Flat denominator 100",
+    "fall_before": "Fall occurred in first episode AND boundary never reached, divided by 100",
+    "failure_localization": "First section endpoint never reached by a fallen episode; after-course category if all reached",
+    "timeout_split": "Actual truncated signal before/after first reach of local x=course end, irrespective of terminal x; overlaps fall on simultaneous termination",
+    "legacy_timeout": "Frozen evaluator get_term(time_out): false when a later torso_height term also fires; preserved for original consistency",
+    "post_course": "Signed terminal x_local minus course-end x among first-pass completers; also log movement since sampled first crossing",
+    "legacy_final_displacement": "Preserved evaluator displacement at pre-terminal step N-1; true terminal displacement kept separately",
+    "lateral": "Report exits from y_local [0,width] before first course-end crossing or episode end; endpoint reach alone is an x-progress measure"
+  },
+  "policies": {
+    "Base": {
+      "actor_input_dim": 60,
+      "sections": [
+        {
+          "section": "Flat",
+          "start_local_x": 0.0,
+          "end_local_x": 4.0,
+          "completion": {
+            "count": 97,
+            "denominator": 100,
+            "rate": 0.97,
+            "wilson_ci95": [
+              0.9154806357094724,
+              0.9897454759759611
+            ]
+          },
+          "conditional_completion": {
+            "count": 97,
+            "denominator": 100,
+            "rate": 0.97,
+            "wilson_ci95": [
+              0.9154806357094724,
+              0.9897454759759611
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 97,
+            "mean": 1.052233676975945,
+            "median": 0.9666666666666667,
+            "std": 0.2903825819603389,
+            "mean_bootstrap_ci95": [
+              0.9989690721649485,
+              1.1152920962199313
+            ],
+            "median_bootstrap_ci95": [
+              0.9166666666666666,
+              1.0333333333333332
+            ]
+          },
+          "traversal_time_s": {
+            "n": 97,
+            "mean": 1.052233676975945,
+            "median": 0.9666666666666667,
+            "std": 0.2903825819603389,
+            "mean_bootstrap_ci95": [
+              0.999995704467354,
+              1.1144372852233677
+            ],
+            "median_bootstrap_ci95": [
+              0.9166666666666666,
+              1.0333333333333332
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 3,
+            "denominator": 100,
+            "rate": 0.03,
+            "wilson_ci95": [
+              0.010254524024038925,
+              0.0845193642905276
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        },
+        {
+          "section": "Ridge",
+          "start_local_x": 4.0,
+          "end_local_x": 10.0,
+          "completion": {
+            "count": 96,
+            "denominator": 100,
+            "rate": 0.96,
+            "wilson_ci95": [
+              0.9016292856411208,
+              0.9843366960084523
+            ]
+          },
+          "conditional_completion": {
+            "count": 96,
+            "denominator": 97,
+            "rate": 0.9896907216494846,
+            "wilson_ci95": [
+              0.943895009757101,
+              0.9981778351917131
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 96,
+            "mean": 2.5039930555555556,
+            "median": 2.3833333333333333,
+            "std": 0.3644880414488,
+            "mean_bootstrap_ci95": [
+              2.4355902777777776,
+              2.5817708333333336
+            ],
+            "median_bootstrap_ci95": [
+              2.3333333333333335,
+              2.4833333333333334
+            ]
+          },
+          "traversal_time_s": {
+            "n": 96,
+            "mean": 1.4569444444444446,
+            "median": 1.4166666666666667,
+            "std": 0.17341655765565123,
+            "mean_bootstrap_ci95": [
+              1.4234331597222218,
+              1.4935807291666667
+            ],
+            "median_bootstrap_ci95": [
+              1.375,
+              1.4666666666666666
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 4,
+            "denominator": 100,
+            "rate": 0.04,
+            "wilson_ci95": [
+              0.01566330399154762,
+              0.0983707143588792
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        },
+        {
+          "section": "Terraces",
+          "start_local_x": 10.0,
+          "end_local_x": 18.0,
+          "completion": {
+            "count": 93,
+            "denominator": 100,
+            "rate": 0.93,
+            "wilson_ci95": [
+              0.8625048526092651,
+              0.9656807389327273
+            ]
+          },
+          "conditional_completion": {
+            "count": 93,
+            "denominator": 96,
+            "rate": 0.96875,
+            "wilson_ci95": [
+              0.9121132067546303,
+              0.989315929628799
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 93,
+            "mean": 4.740681003584229,
+            "median": 4.666666666666667,
+            "std": 0.5020891977711402,
+            "mean_bootstrap_ci95": [
+              4.642652329749104,
+              4.845161290322579
+            ],
+            "median_bootstrap_ci95": [
+              4.516666666666667,
+              4.766666666666667
+            ]
+          },
+          "traversal_time_s": {
+            "n": 93,
+            "mean": 2.232258064516129,
+            "median": 2.1666666666666665,
+            "std": 0.36095921634427947,
+            "mean_bootstrap_ci95": [
+              2.1623655913978492,
+              2.309681899641577
+            ],
+            "median_bootstrap_ci95": [
+              2.1333333333333333,
+              2.2
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 7,
+            "denominator": 100,
+            "rate": 0.07,
+            "wilson_ci95": [
+              0.03431926106727268,
+              0.137495147390735
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        },
+        {
+          "section": "Basin",
+          "start_local_x": 18.0,
+          "end_local_x": 25.0,
+          "completion": {
+            "count": 93,
+            "denominator": 100,
+            "rate": 0.93,
+            "wilson_ci95": [
+              0.8625048526092651,
+              0.9656807389327273
+            ]
+          },
+          "conditional_completion": {
+            "count": 93,
+            "denominator": 93,
+            "rate": 1.0,
+            "wilson_ci95": [
+              0.960332497388265,
+              1.0
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 93,
+            "mean": 6.443906810035842,
+            "median": 6.383333333333333,
+            "std": 0.5752553063990303,
+            "mean_bootstrap_ci95": [
+              6.331541218637992,
+              6.563445340501793
+            ],
+            "median_bootstrap_ci95": [
+              6.3,
+              6.5
+            ]
+          },
+          "traversal_time_s": {
+            "n": 93,
+            "mean": 1.703225806451613,
+            "median": 1.6166666666666667,
+            "std": 0.2524344795282454,
+            "mean_bootstrap_ci95": [
+              1.6532258064516132,
+              1.755201612903226
+            ],
+            "median_bootstrap_ci95": [
+              1.5666666666666667,
+              1.6666666666666667
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 7,
+            "denominator": 100,
+            "rate": 0.07,
+            "wilson_ci95": [
+              0.03431926106727268,
+              0.137495147390735
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        },
+        {
+          "section": "Landing",
+          "start_local_x": 25.0,
+          "end_local_x": 40.0,
+          "completion": {
+            "count": 92,
+            "denominator": 100,
+            "rate": 0.92,
+            "wilson_ci95": [
+              0.8500189229905127,
+              0.9589065385156194
+            ]
+          },
+          "conditional_completion": {
+            "count": 92,
+            "denominator": 93,
+            "rate": 0.989247311827957,
+            "wilson_ci95": [
+              0.94158082764513,
+              0.9980993579713445
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 92,
+            "mean": 10.192028985507246,
+            "median": 10.108333333333334,
+            "std": 0.6748880666758621,
+            "mean_bootstrap_ci95": [
+              10.057966485507245,
+              10.335525362318839
+            ],
+            "median_bootstrap_ci95": [
+              9.991666666666667,
+              10.216666666666667
+            ]
+          },
+          "traversal_time_s": {
+            "n": 92,
+            "mean": 3.7541666666666673,
+            "median": 3.6666666666666665,
+            "std": 0.45133741809852795,
+            "mean_bootstrap_ci95": [
+              3.663573369565216,
+              3.847644927536231
+            ],
+            "median_bootstrap_ci95": [
+              3.6083333333333334,
+              3.75
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 8,
+            "denominator": 100,
+            "rate": 0.08,
+            "wilson_ci95": [
+              0.041093461484380624,
+              0.14998107700948735
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        }
+      ],
+      "fall_localization_first_uncompleted_section": {
+        "Flat": 3,
+        "Ridge": 1,
+        "Terraces": 3,
+        "Basin": 0,
+        "Landing": 1,
+        "After course": 11
+      },
+      "fall_total": 19,
+      "timeout_total": 82,
+      "legacy_timeout_total": 81,
+      "simultaneous_fall_timeout_count": 1,
+      "timeout_before_course_end": 0,
+      "timeout_after_course_end": 82,
+      "course_completed": 92,
+      "lateral_exit_before_first_pass": 3,
+      "post_course_net_distance_m": {
+        "n": 92,
+        "mean": 22.009368440379266,
+        "median": 21.77121925354004,
+        "std": 3.7663032509511685,
+        "mean_bootstrap_ci95": [
+          21.20727239899013,
+          22.753097985101782
+        ],
+        "median_bootstrap_ci95": [
+          20.988555908203125,
+          23.1744441986084
+        ]
+      },
+      "post_course_distance_since_crossing_m": {
+        "n": 92,
+        "mean": 21.9731560168059,
+        "median": 21.756868362426758,
+        "std": 3.763001645560845,
+        "mean_bootstrap_ci95": [
+          21.201852539311286,
+          22.728589005055635
+        ],
+        "median_bootstrap_ci95": [
+          20.981197357177734,
+          23.188343048095703
+        ]
+      },
+      "unreached_course_end_final_displacement_m": {
+        "n": 8,
+        "mean": 7.8201402723789215,
+        "median": 6.8428497314453125,
+        "std": 7.603799682195201,
+        "mean_bootstrap_ci95": [
+          2.666799056529999,
+          13.274066269397736
+        ],
+        "median_bootstrap_ci95": [
+          0.569915771484375,
+          13.311416625976562
+        ]
+      },
+      "legacy_mean_displacement_m": 55.77150111436844,
+      "course_end_reached_without_lateral_exit": {
+        "count": 89,
+        "denominator": 100,
+        "rate": 0.89,
+        "wilson_ci95": [
+          0.8136870349691969,
+          0.9374580364293543
+        ]
+      }
+    },
+    "Original HeightScan": {
+      "actor_input_dim": 123,
+      "sections": [
+        {
+          "section": "Flat",
+          "start_local_x": 0.0,
+          "end_local_x": 4.0,
+          "completion": {
+            "count": 98,
+            "denominator": 100,
+            "rate": 0.98,
+            "wilson_ci95": [
+              0.929988209271456,
+              0.9944980324498376
+            ]
+          },
+          "conditional_completion": {
+            "count": 98,
+            "denominator": 100,
+            "rate": 0.98,
+            "wilson_ci95": [
+              0.929988209271456,
+              0.9944980324498376
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 98,
+            "mean": 1.0168367346938778,
+            "median": 0.925,
+            "std": 0.2791152089640621,
+            "mean_bootstrap_ci95": [
+              0.9656462585034012,
+              1.074829931972789
+            ],
+            "median_bootstrap_ci95": [
+              0.8833333333333333,
+              0.9833333333333333
+            ]
+          },
+          "traversal_time_s": {
+            "n": 98,
+            "mean": 1.0168367346938778,
+            "median": 0.925,
+            "std": 0.2791152089640621,
+            "mean_bootstrap_ci95": [
+              0.9651360544217688,
+              1.0755144557823129
+            ],
+            "median_bootstrap_ci95": [
+              0.8833333333333333,
+              0.9833333333333333
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 2,
+            "denominator": 100,
+            "rate": 0.02,
+            "wilson_ci95": [
+              0.00550196755016235,
+              0.07001179072854388
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        },
+        {
+          "section": "Ridge",
+          "start_local_x": 4.0,
+          "end_local_x": 10.0,
+          "completion": {
+            "count": 97,
+            "denominator": 100,
+            "rate": 0.97,
+            "wilson_ci95": [
+              0.9154806357094724,
+              0.9897454759759611
+            ]
+          },
+          "conditional_completion": {
+            "count": 97,
+            "denominator": 98,
+            "rate": 0.9897959183673469,
+            "wilson_ci95": [
+              0.9444451900865797,
+              0.9981964522432024
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 97,
+            "mean": 2.3620274914089348,
+            "median": 2.2333333333333334,
+            "std": 0.3563186974260575,
+            "mean_bootstrap_ci95": [
+              2.292783505154639,
+              2.433848797250859
+            ],
+            "median_bootstrap_ci95": [
+              2.2,
+              2.35
+            ]
+          },
+          "traversal_time_s": {
+            "n": 97,
+            "mean": 1.3527491408934709,
+            "median": 1.2833333333333332,
+            "std": 0.23187665595313553,
+            "mean_bootstrap_ci95": [
+              1.30893470790378,
+              1.4008591065292095
+            ],
+            "median_bootstrap_ci95": [
+              1.25,
+              1.3333333333333333
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 3,
+            "denominator": 100,
+            "rate": 0.03,
+            "wilson_ci95": [
+              0.010254524024038925,
+              0.0845193642905276
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        },
+        {
+          "section": "Terraces",
+          "start_local_x": 10.0,
+          "end_local_x": 18.0,
+          "completion": {
+            "count": 97,
+            "denominator": 100,
+            "rate": 0.97,
+            "wilson_ci95": [
+              0.9154806357094724,
+              0.9897454759759611
+            ]
+          },
+          "conditional_completion": {
+            "count": 97,
+            "denominator": 97,
+            "rate": 1.0,
+            "wilson_ci95": [
+              0.9619059574740523,
+              1.0
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 97,
+            "mean": 4.266323024054984,
+            "median": 4.216666666666667,
+            "std": 0.5245517334686953,
+            "mean_bootstrap_ci95": [
+              4.163569587628866,
+              4.3750902061855665
+            ],
+            "median_bootstrap_ci95": [
+              4.05,
+              4.366666666666666
+            ]
+          },
+          "traversal_time_s": {
+            "n": 97,
+            "mean": 1.9042955326460484,
+            "median": 1.8333333333333333,
+            "std": 0.3429312224242291,
+            "mean_bootstrap_ci95": [
+              1.8384879725085912,
+              1.976975945017182
+            ],
+            "median_bootstrap_ci95": [
+              1.7333333333333334,
+              1.9166666666666667
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 3,
+            "denominator": 100,
+            "rate": 0.03,
+            "wilson_ci95": [
+              0.010254524024038925,
+              0.0845193642905276
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        },
+        {
+          "section": "Basin",
+          "start_local_x": 18.0,
+          "end_local_x": 25.0,
+          "completion": {
+            "count": 96,
+            "denominator": 100,
+            "rate": 0.96,
+            "wilson_ci95": [
+              0.9016292856411208,
+              0.9843366960084523
+            ]
+          },
+          "conditional_completion": {
+            "count": 96,
+            "denominator": 97,
+            "rate": 0.9896907216494846,
+            "wilson_ci95": [
+              0.943895009757101,
+              0.9981778351917131
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 96,
+            "mean": 5.855729166666666,
+            "median": 5.733333333333333,
+            "std": 0.6694206490339308,
+            "mean_bootstrap_ci95": [
+              5.725169270833332,
+              5.99392795138889
+            ],
+            "median_bootstrap_ci95": [
+              5.583333333333333,
+              5.85
+            ]
+          },
+          "traversal_time_s": {
+            "n": 96,
+            "mean": 1.581597222222222,
+            "median": 1.4833333333333334,
+            "std": 0.3452008872886577,
+            "mean_bootstrap_ci95": [
+              1.5177083333333334,
+              1.6548611111111111
+            ],
+            "median_bootstrap_ci95": [
+              1.4333333333333333,
+              1.5166666666666666
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 4,
+            "denominator": 100,
+            "rate": 0.04,
+            "wilson_ci95": [
+              0.01566330399154762,
+              0.0983707143588792
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        },
+        {
+          "section": "Landing",
+          "start_local_x": 25.0,
+          "end_local_x": 40.0,
+          "completion": {
+            "count": 94,
+            "denominator": 100,
+            "rate": 0.94,
+            "wilson_ci95": [
+              0.8752318455410406,
+              0.9722138760368118
+            ]
+          },
+          "conditional_completion": {
+            "count": 94,
+            "denominator": 96,
+            "rate": 0.9791666666666666,
+            "wilson_ci95": [
+              0.9271928648221579,
+              0.9942680301475697
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 94,
+            "mean": 9.209574468085107,
+            "median": 9.033333333333333,
+            "std": 0.8252605053344708,
+            "mean_bootstrap_ci95": [
+              9.049645390070921,
+              9.379973404255317
+            ],
+            "median_bootstrap_ci95": [
+              8.933333333333334,
+              9.258333333333333
+            ]
+          },
+          "traversal_time_s": {
+            "n": 94,
+            "mean": 3.3716312056737587,
+            "median": 3.3,
+            "std": 0.44672984222459033,
+            "mean_bootstrap_ci95": [
+              3.283510638297872,
+              3.4657801418439713
+            ],
+            "median_bootstrap_ci95": [
+              3.175,
+              3.4
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 6,
+            "denominator": 100,
+            "rate": 0.06,
+            "wilson_ci95": [
+              0.027786123963188192,
+              0.1247681544589592
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        }
+      ],
+      "fall_localization_first_uncompleted_section": {
+        "Flat": 2,
+        "Ridge": 1,
+        "Terraces": 0,
+        "Basin": 1,
+        "Landing": 2,
+        "After course": 17
+      },
+      "fall_total": 23,
+      "timeout_total": 77,
+      "legacy_timeout_total": 77,
+      "simultaneous_fall_timeout_count": 0,
+      "timeout_before_course_end": 0,
+      "timeout_after_course_end": 77,
+      "course_completed": 94,
+      "lateral_exit_before_first_pass": 7,
+      "post_course_net_distance_m": {
+        "n": 94,
+        "mean": 27.527797820720266,
+        "median": 28.107513427734375,
+        "std": 6.429857958045276,
+        "mean_bootstrap_ci95": [
+          26.17386778161881,
+          28.788729410983144
+        ],
+        "median_bootstrap_ci95": [
+          26.569801330566406,
+          29.778686141967764
+        ]
+      },
+      "post_course_distance_since_crossing_m": {
+        "n": 94,
+        "mean": 27.490950523538793,
+        "median": 28.092174530029297,
+        "std": 6.43025206404248,
+        "mean_bootstrap_ci95": [
+          26.156083555424466,
+          28.74600463623696
+        ],
+        "median_bootstrap_ci95": [
+          26.50732421875,
+          29.636760711669922
+        ]
+      },
+      "unreached_course_end_final_displacement_m": {
+        "n": 6,
+        "mean": 15.097973306973776,
+        "median": 10.572682619094849,
+        "std": 14.672999253013659,
+        "mean_bootstrap_ci95": [
+          4.2321533759435015,
+          26.878657658894856
+        ],
+        "median_bootstrap_ci95": [
+          0.9004193544387817,
+          33.820817947387695
+        ]
+      },
+      "legacy_mean_displacement_m": 62.43707022428512,
+      "course_end_reached_without_lateral_exit": {
+        "count": 87,
+        "denominator": 100,
+        "rate": 0.87,
+        "wilson_ci95": [
+          0.7901964855992357,
+          0.9224283257275948
+        ]
+      }
+    },
+    "HeightScan+Contact": {
+      "actor_input_dim": 127,
+      "sections": [
+        {
+          "section": "Flat",
+          "start_local_x": 0.0,
+          "end_local_x": 4.0,
+          "completion": {
+            "count": 96,
+            "denominator": 100,
+            "rate": 0.96,
+            "wilson_ci95": [
+              0.9016292856411208,
+              0.9843366960084523
+            ]
+          },
+          "conditional_completion": {
+            "count": 96,
+            "denominator": 100,
+            "rate": 0.96,
+            "wilson_ci95": [
+              0.9016292856411208,
+              0.9843366960084523
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 96,
+            "mean": 1.0807291666666667,
+            "median": 1.0,
+            "std": 0.2400367463791086,
+            "mean_bootstrap_ci95": [
+              1.0348958333333333,
+              1.1317708333333334
+            ],
+            "median_bootstrap_ci95": [
+              0.9666666666666667,
+              1.0333333333333332
+            ]
+          },
+          "traversal_time_s": {
+            "n": 96,
+            "mean": 1.0807291666666667,
+            "median": 1.0,
+            "std": 0.2400367463791086,
+            "mean_bootstrap_ci95": [
+              1.0348958333333333,
+              1.1310763888888886
+            ],
+            "median_bootstrap_ci95": [
+              0.9583333333333333,
+              1.0333333333333332
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 4,
+            "denominator": 100,
+            "rate": 0.04,
+            "wilson_ci95": [
+              0.01566330399154762,
+              0.0983707143588792
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        },
+        {
+          "section": "Ridge",
+          "start_local_x": 4.0,
+          "end_local_x": 10.0,
+          "completion": {
+            "count": 96,
+            "denominator": 100,
+            "rate": 0.96,
+            "wilson_ci95": [
+              0.9016292856411208,
+              0.9843366960084523
+            ]
+          },
+          "conditional_completion": {
+            "count": 96,
+            "denominator": 96,
+            "rate": 1.0,
+            "wilson_ci95": [
+              0.9615244121423243,
+              1.0
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 96,
+            "mean": 2.496701388888889,
+            "median": 2.433333333333333,
+            "std": 0.2808162271379574,
+            "mean_bootstrap_ci95": [
+              2.442361111111111,
+              2.5541666666666667
+            ],
+            "median_bootstrap_ci95": [
+              2.3666666666666667,
+              2.466666666666667
+            ]
+          },
+          "traversal_time_s": {
+            "n": 96,
+            "mean": 1.4159722222222222,
+            "median": 1.3833333333333333,
+            "std": 0.12575965159436395,
+            "mean_bootstrap_ci95": [
+              1.3925347222222222,
+              1.4427083333333333
+            ],
+            "median_bootstrap_ci95": [
+              1.3666666666666667,
+              1.4
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 4,
+            "denominator": 100,
+            "rate": 0.04,
+            "wilson_ci95": [
+              0.01566330399154762,
+              0.0983707143588792
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        },
+        {
+          "section": "Terraces",
+          "start_local_x": 10.0,
+          "end_local_x": 18.0,
+          "completion": {
+            "count": 95,
+            "denominator": 100,
+            "rate": 0.95,
+            "wilson_ci95": [
+              0.8882495307680808,
+              0.9784563208456319
+            ]
+          },
+          "conditional_completion": {
+            "count": 95,
+            "denominator": 96,
+            "rate": 0.9895833333333334,
+            "wilson_ci95": [
+              0.9433338237728424,
+              0.9981588297831838
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 95,
+            "mean": 4.360877192982456,
+            "median": 4.283333333333333,
+            "std": 0.3817761539201502,
+            "mean_bootstrap_ci95": [
+              4.286140350877193,
+              4.439473684210526
+            ],
+            "median_bootstrap_ci95": [
+              4.216666666666667,
+              4.35
+            ]
+          },
+          "traversal_time_s": {
+            "n": 95,
+            "mean": 1.8638596491228068,
+            "median": 1.7833333333333332,
+            "std": 0.2053616497845108,
+            "mean_bootstrap_ci95": [
+              1.824561403508772,
+              1.9070175438596493
+            ],
+            "median_bootstrap_ci95": [
+              1.7666666666666666,
+              1.8166666666666667
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 5,
+            "denominator": 100,
+            "rate": 0.05,
+            "wilson_ci95": [
+              0.02154367915436796,
+              0.11175046923191913
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        },
+        {
+          "section": "Basin",
+          "start_local_x": 18.0,
+          "end_local_x": 25.0,
+          "completion": {
+            "count": 94,
+            "denominator": 100,
+            "rate": 0.94,
+            "wilson_ci95": [
+              0.8752318455410406,
+              0.9722138760368118
+            ]
+          },
+          "conditional_completion": {
+            "count": 94,
+            "denominator": 95,
+            "rate": 0.9894736842105263,
+            "wilson_ci95": [
+              0.9427612985868637,
+              0.9981394237376521
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 94,
+            "mean": 5.944148936170214,
+            "median": 5.875,
+            "std": 0.3746843229763036,
+            "mean_bootstrap_ci95": [
+              5.8709219858156025,
+              6.024645390070923
+            ],
+            "median_bootstrap_ci95": [
+              5.791666666666666,
+              5.975
+            ]
+          },
+          "traversal_time_s": {
+            "n": 94,
+            "mean": 1.5994680851063836,
+            "median": 1.5666666666666667,
+            "std": 0.11393592740458816,
+            "mean_bootstrap_ci95": [
+              1.577836879432624,
+              1.6230496453900711
+            ],
+            "median_bootstrap_ci95": [
+              1.55,
+              1.5833333333333333
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 6,
+            "denominator": 100,
+            "rate": 0.06,
+            "wilson_ci95": [
+              0.027786123963188192,
+              0.1247681544589592
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        },
+        {
+          "section": "Landing",
+          "start_local_x": 25.0,
+          "end_local_x": 40.0,
+          "completion": {
+            "count": 94,
+            "denominator": 100,
+            "rate": 0.94,
+            "wilson_ci95": [
+              0.8752318455410406,
+              0.9722138760368118
+            ]
+          },
+          "conditional_completion": {
+            "count": 94,
+            "denominator": 94,
+            "rate": 1.0,
+            "wilson_ci95": [
+              0.9607379237084551,
+              0.9999999999999999
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 94,
+            "mean": 9.416312056737588,
+            "median": 9.316666666666666,
+            "std": 0.4828193569671789,
+            "mean_bootstrap_ci95": [
+              9.322872340425535,
+              9.513125
+            ],
+            "median_bootstrap_ci95": [
+              9.233333333333333,
+              9.4
+            ]
+          },
+          "traversal_time_s": {
+            "n": 94,
+            "mean": 3.4721631205673757,
+            "median": 3.3666666666666667,
+            "std": 0.3050344736735,
+            "mean_bootstrap_ci95": [
+              3.41436170212766,
+              3.537588652482269
+            ],
+            "median_bootstrap_ci95": [
+              3.3333333333333335,
+              3.4
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 6,
+            "denominator": 100,
+            "rate": 0.06,
+            "wilson_ci95": [
+              0.027786123963188192,
+              0.1247681544589592
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        }
+      ],
+      "fall_localization_first_uncompleted_section": {
+        "Flat": 4,
+        "Ridge": 0,
+        "Terraces": 1,
+        "Basin": 1,
+        "Landing": 0,
+        "After course": 10
+      },
+      "fall_total": 16,
+      "timeout_total": 84,
+      "legacy_timeout_total": 84,
+      "simultaneous_fall_timeout_count": 0,
+      "timeout_before_course_end": 0,
+      "timeout_after_course_end": 84,
+      "course_completed": 94,
+      "lateral_exit_before_first_pass": 1,
+      "post_course_net_distance_m": {
+        "n": 94,
+        "mean": 27.605977281611015,
+        "median": 28.905303955078125,
+        "std": 4.139625887311755,
+        "mean_bootstrap_ci95": [
+          26.75466922800592,
+          28.427688502250835
+        ],
+        "median_bootstrap_ci95": [
+          27.705135345458984,
+          29.558238983154297
+        ]
+      },
+      "post_course_distance_since_crossing_m": {
+        "n": 94,
+        "mean": 27.569841790706555,
+        "median": 28.870132446289062,
+        "std": 4.140485792952301,
+        "mean_bootstrap_ci95": [
+          26.729720456549465,
+          28.39737007973042
+        ],
+        "median_bootstrap_ci95": [
+          27.71198272705078,
+          29.48419189453125
+        ]
+      },
+      "unreached_course_end_final_displacement_m": {
+        "n": 6,
+        "mean": 5.160365998744965,
+        "median": 1.1521644592285156,
+        "std": 6.676686479151756,
+        "mean_bootstrap_ci95": [
+          0.4603295723597209,
+          10.893577774365744
+        ],
+        "median_bootstrap_ci95": [
+          0.11441212892532349,
+          14.214521408081055
+        ]
+      },
+      "legacy_mean_displacement_m": 61.913650699853896,
+      "course_end_reached_without_lateral_exit": {
+        "count": 93,
+        "denominator": 100,
+        "rate": 0.93,
+        "wilson_ci95": [
+          0.8625048526092651,
+          0.9656807389327273
+        ]
+      }
+    },
+    "Diverse HeightScan+Contact": {
+      "actor_input_dim": 127,
+      "sections": [
+        {
+          "section": "Flat",
+          "start_local_x": 0.0,
+          "end_local_x": 4.0,
+          "completion": {
+            "count": 97,
+            "denominator": 100,
+            "rate": 0.97,
+            "wilson_ci95": [
+              0.9154806357094724,
+              0.9897454759759611
+            ]
+          },
+          "conditional_completion": {
+            "count": 97,
+            "denominator": 100,
+            "rate": 0.97,
+            "wilson_ci95": [
+              0.9154806357094724,
+              0.9897454759759611
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 97,
+            "mean": 0.99553264604811,
+            "median": 0.8833333333333333,
+            "std": 0.28525741940568017,
+            "mean_bootstrap_ci95": [
+              0.9417482817869416,
+              1.0554982817869416
+            ],
+            "median_bootstrap_ci95": [
+              0.8333333333333334,
+              0.9833333333333333
+            ]
+          },
+          "traversal_time_s": {
+            "n": 97,
+            "mean": 0.99553264604811,
+            "median": 0.8833333333333333,
+            "std": 0.28525741940568017,
+            "mean_bootstrap_ci95": [
+              0.940893470790378,
+              1.0551546391752575
+            ],
+            "median_bootstrap_ci95": [
+              0.8333333333333334,
+              0.9833333333333333
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 3,
+            "denominator": 100,
+            "rate": 0.03,
+            "wilson_ci95": [
+              0.010254524024038925,
+              0.0845193642905276
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        },
+        {
+          "section": "Ridge",
+          "start_local_x": 4.0,
+          "end_local_x": 10.0,
+          "completion": {
+            "count": 95,
+            "denominator": 100,
+            "rate": 0.95,
+            "wilson_ci95": [
+              0.8882495307680808,
+              0.9784563208456319
+            ]
+          },
+          "conditional_completion": {
+            "count": 95,
+            "denominator": 97,
+            "rate": 0.979381443298969,
+            "wilson_ci95": [
+              0.9279124175258422,
+              0.9943273148977336
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 95,
+            "mean": 2.3450877192982458,
+            "median": 2.216666666666667,
+            "std": 0.35975847717040393,
+            "mean_bootstrap_ci95": [
+              2.2761359649122808,
+              2.42
+            ],
+            "median_bootstrap_ci95": [
+              2.1666666666666665,
+              2.3
+            ]
+          },
+          "traversal_time_s": {
+            "n": 95,
+            "mean": 1.3442105263157897,
+            "median": 1.2833333333333332,
+            "std": 0.17950172132704495,
+            "mean_bootstrap_ci95": [
+              1.31,
+              1.3814035087719296
+            ],
+            "median_bootstrap_ci95": [
+              1.25,
+              1.3166666666666667
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 5,
+            "denominator": 100,
+            "rate": 0.05,
+            "wilson_ci95": [
+              0.02154367915436796,
+              0.11175046923191913
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        },
+        {
+          "section": "Terraces",
+          "start_local_x": 10.0,
+          "end_local_x": 18.0,
+          "completion": {
+            "count": 93,
+            "denominator": 100,
+            "rate": 0.93,
+            "wilson_ci95": [
+              0.8625048526092651,
+              0.9656807389327273
+            ]
+          },
+          "conditional_completion": {
+            "count": 93,
+            "denominator": 95,
+            "rate": 0.9789473684210527,
+            "wilson_ci95": [
+              0.9264588050529105,
+              0.9942074931355945
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 93,
+            "mean": 4.090501792114695,
+            "median": 4.016666666666667,
+            "std": 0.39619906966629126,
+            "mean_bootstrap_ci95": [
+              4.011827956989247,
+              4.1722222222222225
+            ],
+            "median_bootstrap_ci95": [
+              3.9499999999999997,
+              4.133333333333333
+            ]
+          },
+          "traversal_time_s": {
+            "n": 93,
+            "mean": 1.7514336917562723,
+            "median": 1.7,
+            "std": 0.21326466068172173,
+            "mean_bootstrap_ci95": [
+              1.7093189964157707,
+              1.7953405017921145
+            ],
+            "median_bootstrap_ci95": [
+              1.6666666666666667,
+              1.75
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 7,
+            "denominator": 100,
+            "rate": 0.07,
+            "wilson_ci95": [
+              0.03431926106727268,
+              0.137495147390735
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        },
+        {
+          "section": "Basin",
+          "start_local_x": 18.0,
+          "end_local_x": 25.0,
+          "completion": {
+            "count": 91,
+            "denominator": 100,
+            "rate": 0.91,
+            "wilson_ci95": [
+              0.837737871472837,
+              0.9519274599974348
+            ]
+          },
+          "conditional_completion": {
+            "count": 91,
+            "denominator": 93,
+            "rate": 0.978494623655914,
+            "wilson_ci95": [
+              0.9249453736530886,
+              0.9940825001915952
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 91,
+            "mean": 5.642307692307693,
+            "median": 5.616666666666666,
+            "std": 0.46889387213206546,
+            "mean_bootstrap_ci95": [
+              5.547252747252747,
+              5.7386492673992695
+            ],
+            "median_bootstrap_ci95": [
+              5.45,
+              5.716666666666667
+            ]
+          },
+          "traversal_time_s": {
+            "n": 91,
+            "mean": 1.5551282051282054,
+            "median": 1.4666666666666666,
+            "std": 0.2460021281523975,
+            "mean_bootstrap_ci95": [
+              1.5067765567765568,
+              1.6071474358974358
+            ],
+            "median_bootstrap_ci95": [
+              1.4333333333333333,
+              1.5166666666666666
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 9,
+            "denominator": 100,
+            "rate": 0.09,
+            "wilson_ci95": [
+              0.04807254000256516,
+              0.1622621285271631
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        },
+        {
+          "section": "Landing",
+          "start_local_x": 25.0,
+          "end_local_x": 40.0,
+          "completion": {
+            "count": 85,
+            "denominator": 100,
+            "rate": 0.85,
+            "wilson_ci95": [
+              0.7671644040916763,
+              0.9069401471634337
+            ]
+          },
+          "conditional_completion": {
+            "count": 85,
+            "denominator": 91,
+            "rate": 0.9340659340659341,
+            "wilson_ci95": [
+              0.8635353380058843,
+              0.9694337135283846
+            ]
+          },
+          "first_reach_time_s": {
+            "n": 85,
+            "mean": 9.010588235294117,
+            "median": 8.85,
+            "std": 0.8235061621367978,
+            "mean_bootstrap_ci95": [
+              8.850392156862746,
+              9.1955
+            ],
+            "median_bootstrap_ci95": [
+              8.7,
+              9.066666666666666
+            ]
+          },
+          "traversal_time_s": {
+            "n": 85,
+            "mean": 3.3668627450980386,
+            "median": 3.2333333333333334,
+            "std": 0.6496278176175416,
+            "mean_bootstrap_ci95": [
+              3.2462696078431366,
+              3.517254901960784
+            ],
+            "median_bootstrap_ci95": [
+              3.1333333333333333,
+              3.3333333333333335
+            ]
+          },
+          "fall_before_boundary": {
+            "count": 15,
+            "denominator": 100,
+            "rate": 0.15,
+            "wilson_ci95": [
+              0.0930598528365663,
+              0.23283559590832364
+            ]
+          },
+          "timeout_before_boundary": {
+            "count": 0,
+            "denominator": 100,
+            "rate": 0.0,
+            "wilson_ci95": [
+              3.469446951953614e-18,
+              0.03699349820698568
+            ]
+          }
+        }
+      ],
+      "fall_localization_first_uncompleted_section": {
+        "Flat": 3,
+        "Ridge": 2,
+        "Terraces": 2,
+        "Basin": 2,
+        "Landing": 6,
+        "After course": 18
+      },
+      "fall_total": 33,
+      "timeout_total": 67,
+      "legacy_timeout_total": 67,
+      "simultaneous_fall_timeout_count": 0,
+      "timeout_before_course_end": 0,
+      "timeout_after_course_end": 67,
+      "course_completed": 85,
+      "lateral_exit_before_first_pass": 5,
+      "post_course_net_distance_m": {
+        "n": 85,
+        "mean": 28.585853576660156,
+        "median": 30.95770263671875,
+        "std": 7.909787680309413,
+        "mean_bootstrap_ci95": [
+          26.832278588238886,
+          30.212020628312054
+        ],
+        "median_bootstrap_ci95": [
+          28.781578063964844,
+          32.389137268066406
+        ]
+      },
+      "post_course_distance_since_crossing_m": {
+        "n": 85,
+        "mean": 28.54677927353803,
+        "median": 30.889434814453125,
+        "std": 7.909566032059967,
+        "mean_bootstrap_ci95": [
+          26.816806977215936,
+          30.152632880491367
+        ],
+        "median_bootstrap_ci95": [
+          28.769119262695312,
+          32.358280181884766
+        ]
+      },
+      "unreached_course_end_final_displacement_m": {
+        "n": 15,
+        "mean": 18.40864240328471,
+        "median": 19.64217185974121,
+        "std": 13.436210304570553,
+        "mean_bootstrap_ci95": [
+          11.584123300711314,
+          25.28784389813741
+        ],
+        "median_bootstrap_ci95": [
+          7.901878356933594,
+          32.2573127746582
+        ]
+      },
+      "legacy_mean_displacement_m": 59.29523152589798,
+      "course_end_reached_without_lateral_exit": {
+        "count": 80,
+        "denominator": 100,
+        "rate": 0.8,
+        "wilson_ci95": [
+          0.7111708344068411,
+          0.8666330666689676
+        ]
+      }
+    }
+  },
+  "integrity": {
+    "protected_count": 468,
+    "changed": []
+  },
+  "trajectory_manifest_sha256": "c3abc49a0d70b76916047be8cbc4778fa5878839983a30b71cef0489f7ec1cae",
+  "consistency_max_absolute_differences": {
+    "return_difference": 0.0,
+    "length_difference": 0,
+    "legacy_displacement_difference": 0.0
+  }
+}

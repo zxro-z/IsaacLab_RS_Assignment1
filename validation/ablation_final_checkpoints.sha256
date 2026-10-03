@@ -1,0 +1,4 @@
+a7304b58e1d06ba656b910d33edfdbcd9e08c28c8e541f80c095073242ff2570  logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42/model_999.pt
+716a6bbb860078beb41766b31f3d35ff0775f875c4411f5c5c7055be95379aca  logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42/model_999.pt
+d6b93941aa3732519f323e4c05e049621ad0ea66da86948eda8c66111722cd6c  logs/rsl_rl/ant/2026-10-03_01-01-49_ablation_contact_obs64_s42/model_999.pt
+8fa361827664fce1a42a2f4d42152853c81a6a8cf63deb3174aca5b9d80d937a  logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/model_999.pt

@@ -1,0 +1,111 @@
+{
+  "timestamp": "2026-10-03T12:46:13.136084+00:00",
+  "reason": "Official assignment play_one_episode.py was checked after the original Final preregistration.",
+  "unchanged": [
+    "checkpoints",
+    "checkpoint SHA256",
+    "training",
+    "Final terrain geometry/config",
+    "terrain seed",
+    "reward definition",
+    "termination definition",
+    "observation definition",
+    "sensor definition"
+  ],
+  "evaluation_protocol": [
+    "verified first-episode accounting with official play_one_episode.py",
+    "terminal-step reward included",
+    "terminal step counted",
+    "post-reset episodes excluded",
+    "additional logging affects measurement only",
+    "Same-trajectory reference accounting retains current policy-specific observation construction"
+  ],
+  "declaration": "No tuning, retraining, policy selection, or terrain modification was performed based on Final results.",
+  "original_preregister_sha256": "5a06d1a934fcec84a3e842358f925c234bf5574e2f1cbf04a65e02182fe95ab2",
+  "official_reference_url": "https://github.com/cailab-hy/IsaacLab_RS/blob/main/scripts/reinforcement_learning/rsl_rl/play_one_episode.py",
+  "official_reference_sha256": "70dd6d6674ca211f335b57fea5d8dca417fe670753adedf2d002a638b2b089d0",
+  "source_hashes": {
+    "scripts/assignment/evaluate_final_unseen.py": {
+      "before": null,
+      "after": "78ad92cfcb616a1fdd915831db081d3bc74c562c6fbe0721a5e7055803b4c230",
+      "changed": false,
+      "note": "Current fingerprint; this source was read only and not included in the pre-test hash snapshot."
+    },
+    "scripts/reinforcement_learning/rsl_rl/play_one_episode.py": {
+      "before": null,
+      "after": "88c8fca3c9b0556bcde6f168200ea54798be1c27ce43f134c347dafd84648d22",
+      "changed": false,
+      "note": "Current fingerprint; this source was read only and not included in the pre-test hash snapshot."
+    },
+    "scripts/reinforcement_learning/rsl_rl/ant_observation_adapter.py": {
+      "before": null,
+      "after": "afa1bea3509d14f246635940be457b3105ac1c3a81d2db75c3272bfde56012db",
+      "changed": false,
+      "note": "Current fingerprint; this source was read only and not included in the pre-test hash snapshot."
+    },
+    "source/isaaclab_rl/isaaclab_rl/rsl_rl/vecenv_wrapper.py": {
+      "before": null,
+      "after": "96fcd3a849a2b0996f16db15b38408b2fed3cc17be201f557b22df735421f1be",
+      "changed": false,
+      "note": "Current fingerprint; this source was read only and not included in the pre-test hash snapshot."
+    },
+    "scripts/reinforcement_learning/rsl_rl/cli_args.py": {
+      "before": null,
+      "after": "77bac7b249dba8734d838b0881935231e7fd2596692eb636b9c1bffaad8fcaf1",
+      "changed": false,
+      "note": "Current fingerprint; this source was read only and not included in the pre-test hash snapshot."
+    }
+  },
+  "added_instrumentation_source_hashes": {
+    "scripts/assignment/check_official_evaluator_parity.py": {
+      "before": null,
+      "after": "1d01ea23a62fc7005c35ce932be9618e5c89e370950d8e74ca981584c849f4b9"
+    },
+    "scripts/assignment/run_official_evaluator_parity.py": {
+      "before": null,
+      "after": "559f298a688f643510616d68ec7219db29c0042c85ceb14f5e7a2073ab0f9e65"
+    }
+  },
+  "checkpoint_sha256": {
+    "base": "a7304b58e1d06ba656b910d33edfdbcd9e08c28c8e541f80c095073242ff2570",
+    "original_heightscan": "716a6bbb860078beb41766b31f3d35ff0775f875c4411f5c5c7055be95379aca",
+    "heightscan_contact": "8fa361827664fce1a42a2f4d42152853c81a6a8cf63deb3174aca5b9d80d937a",
+    "diverse_heightscan_contact": "2f36d5fc0280a9000b1719552ab1c68cb64861a22b9088440f19acd5217dfe48"
+  },
+  "original_results_sha256": {
+    "final_unseen_raw.csv": "5ffa27a649fd55180dec2a66d97667eb576585ba778a207235d129540576b9c6",
+    "final_unseen_results.csv": "a2356cd295ef5f4200265ef86a0ae747c6d03084e03cbfd2a336389ecad03c84",
+    "final_unseen_summary.md": "c1b154ca2572b3c6ce72c30b03a4c76cdfcf4eeb46d6291268aa5e18c774ad17"
+  },
+  "integrity": {
+    "protected_file_count": 447,
+    "changed": [],
+    "original_raw_rows": 400
+  },
+  "overall_parity": true,
+  "final_reevaluation_required": false,
+  "accumulator_precision_difference": "Official float64 vs existing float32; all returns pass rtol=1e-6, atol=1e-6. No tolerance relaxation.",
+  "std_definition": "Population std in both evaluators. No summary recalculation or overwrite.",
+  "std_crosscheck": [
+    {
+      "policy": "Base",
+      "raw_population_std_float64": 15.94249807653634,
+      "published_std_float32": 15.942499160766602
+    },
+    {
+      "policy": "Original HeightScan",
+      "raw_population_std_float64": 15.074703846261036,
+      "published_std_float32": 15.07470417022705
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "raw_population_std_float64": 16.747947377566863,
+      "published_std_float32": 16.747947692871094
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "raw_population_std_float64": 21.282496870350997,
+      "published_std_float32": 21.282495498657227
+    }
+  ]
+}

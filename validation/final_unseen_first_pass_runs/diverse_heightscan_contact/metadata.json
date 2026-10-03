@@ -1,0 +1,2133 @@
+{
+  "task": "Isaac-Ant-Final-Unseen-v0",
+  "seed": 24,
+  "num_envs": 100,
+  "physics_dt": 0.008333333333333333,
+  "decimation": 2,
+  "control_dt": 0.016666666666666666,
+  "terrain_seed": 2404,
+  "course_design": {
+    "size_m": [
+      40.0,
+      8.0
+    ],
+    "spawn_local_xyz": [
+      2.0,
+      4.0,
+      0.0
+    ],
+    "horizontal_scale": 0.1,
+    "vertical_scale": 0.005,
+    "slope_threshold": 0.75,
+    "layout": [
+      10,
+      10
+    ],
+    "terrain_seed": 2404,
+    "evaluation_seed": 24,
+    "spawn_flat_x": [
+      0.0,
+      4.0
+    ],
+    "ridge": {
+      "x": [
+        4.0,
+        10.0
+      ],
+      "center_height": 0.02,
+      "cross_amplitude": 0.04,
+      "cross_scale": 1.5
+    },
+    "terraces": [
+      {
+        "x": [
+          10.0,
+          12.2
+        ],
+        "height": 0.04,
+        "y_offset": -0.3
+      },
+      {
+        "x": [
+          12.2,
+          15.6
+        ],
+        "height": 0.075,
+        "y_offset": 0.4
+      },
+      {
+        "x": [
+          15.6,
+          18.0
+        ],
+        "height": 0.025,
+        "y_offset": -0.2
+      }
+    ],
+    "terrace_lateral_half_extent": 3.6,
+    "terrace_lateral_taper": 0.6,
+    "basin": {
+      "x": [
+        18.0,
+        25.0
+      ],
+      "depth": 0.07,
+      "lateral_scale": 1.7
+    },
+    "landing": {
+      "x": [
+        25.0,
+        40.0
+      ],
+      "amplitudes": [
+        0.025,
+        0.015
+      ],
+      "x_wavelengths": [
+        4.0,
+        7.0
+      ],
+      "y_wavelength": 5.0,
+      "phase": 1.0471975511965976,
+      "end_taper_m": 2.0
+    },
+    "lateral_envelope": "cos(pi*y/width)^2, y measured from centerline",
+    "friction": {
+      "static": 1.0,
+      "dynamic": 1.0,
+      "restitution": 0.0,
+      "combine": "average"
+    },
+    "termination": {
+      "torso_height": "root_z-local_terrain_z < 0.31 or missing terrain hit",
+      "time_out": "original 16 seconds"
+    },
+    "novelty": "analytic asymmetric ridge + irregular connected offset terraces + smooth basin + deterministic Fourier landing",
+    "no": [
+      "isolated stepping stones",
+      "explicit gaps/trenches",
+      "discrete obstacle generator",
+      "uniform noise generator",
+      "curriculum"
+    ]
+  },
+  "env_origins_xy": [
+    [
+      -38.0,
+      -36.0
+    ],
+    [
+      82.0,
+      -36.0
+    ],
+    [
+      -38.0,
+      -36.0
+    ],
+    [
+      162.0,
+      -36.0
+    ],
+    [
+      -38.0,
+      -36.0
+    ],
+    [
+      -78.0,
+      -36.0
+    ],
+    [
+      -118.0,
+      -36.0
+    ],
+    [
+      162.0,
+      -36.0
+    ],
+    [
+      122.0,
+      -36.0
+    ],
+    [
+      -38.0,
+      -36.0
+    ],
+    [
+      122.0,
+      -28.0
+    ],
+    [
+      -198.0,
+      -28.0
+    ],
+    [
+      -158.0,
+      -28.0
+    ],
+    [
+      -118.0,
+      -28.0
+    ],
+    [
+      -78.0,
+      -28.0
+    ],
+    [
+      -158.0,
+      -28.0
+    ],
+    [
+      122.0,
+      -28.0
+    ],
+    [
+      -78.0,
+      -28.0
+    ],
+    [
+      -158.0,
+      -28.0
+    ],
+    [
+      -78.0,
+      -28.0
+    ],
+    [
+      162.0,
+      -20.0
+    ],
+    [
+      122.0,
+      -20.0
+    ],
+    [
+      2.0,
+      -20.0
+    ],
+    [
+      42.0,
+      -20.0
+    ],
+    [
+      -118.0,
+      -20.0
+    ],
+    [
+      42.0,
+      -20.0
+    ],
+    [
+      -158.0,
+      -20.0
+    ],
+    [
+      -38.0,
+      -20.0
+    ],
+    [
+      122.0,
+      -20.0
+    ],
+    [
+      42.0,
+      -20.0
+    ],
+    [
+      -158.0,
+      -12.0
+    ],
+    [
+      -38.0,
+      -12.0
+    ],
+    [
+      -118.0,
+      -12.0
+    ],
+    [
+      122.0,
+      -12.0
+    ],
+    [
+      -38.0,
+      -12.0
+    ],
+    [
+      -198.0,
+      -12.0
+    ],
+    [
+      -198.0,
+      -12.0
+    ],
+    [
+      -38.0,
+      -12.0
+    ],
+    [
+      -158.0,
+      -12.0
+    ],
+    [
+      2.0,
+      -12.0
+    ],
+    [
+      162.0,
+      -4.0
+    ],
+    [
+      -118.0,
+      -4.0
+    ],
+    [
+      82.0,
+      -4.0
+    ],
+    [
+      -158.0,
+      -4.0
+    ],
+    [
+      -78.0,
+      -4.0
+    ],
+    [
+      -78.0,
+      -4.0
+    ],
+    [
+      122.0,
+      -4.0
+    ],
+    [
+      122.0,
+      -4.0
+    ],
+    [
+      42.0,
+      -4.0
+    ],
+    [
+      -158.0,
+      -4.0
+    ],
+    [
+      -158.0,
+      4.0
+    ],
+    [
+      -118.0,
+      4.0
+    ],
+    [
+      -38.0,
+      4.0
+    ],
+    [
+      -198.0,
+      4.0
+    ],
+    [
+      42.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      122.0,
+      4.0
+    ],
+    [
+      -78.0,
+      4.0
+    ],
+    [
+      -118.0,
+      4.0
+    ],
+    [
+      82.0,
+      4.0
+    ],
+    [
+      -118.0,
+      12.0
+    ],
+    [
+      2.0,
+      12.0
+    ],
+    [
+      122.0,
+      12.0
+    ],
+    [
+      82.0,
+      12.0
+    ],
+    [
+      42.0,
+      12.0
+    ],
+    [
+      2.0,
+      12.0
+    ],
+    [
+      162.0,
+      12.0
+    ],
+    [
+      -198.0,
+      12.0
+    ],
+    [
+      82.0,
+      12.0
+    ],
+    [
+      82.0,
+      12.0
+    ],
+    [
+      2.0,
+      20.0
+    ],
+    [
+      162.0,
+      20.0
+    ],
+    [
+      -158.0,
+      20.0
+    ],
+    [
+      122.0,
+      20.0
+    ],
+    [
+      2.0,
+      20.0
+    ],
+    [
+      82.0,
+      20.0
+    ],
+    [
+      162.0,
+      20.0
+    ],
+    [
+      122.0,
+      20.0
+    ],
+    [
+      2.0,
+      20.0
+    ],
+    [
+      82.0,
+      20.0
+    ],
+    [
+      42.0,
+      28.0
+    ],
+    [
+      -38.0,
+      28.0
+    ],
+    [
+      162.0,
+      28.0
+    ],
+    [
+      -198.0,
+      28.0
+    ],
+    [
+      -198.0,
+      28.0
+    ],
+    [
+      82.0,
+      28.0
+    ],
+    [
+      -78.0,
+      28.0
+    ],
+    [
+      -78.0,
+      28.0
+    ],
+    [
+      42.0,
+      28.0
+    ],
+    [
+      162.0,
+      28.0
+    ],
+    [
+      162.0,
+      36.0
+    ],
+    [
+      -38.0,
+      36.0
+    ],
+    [
+      -38.0,
+      36.0
+    ],
+    [
+      42.0,
+      36.0
+    ],
+    [
+      162.0,
+      36.0
+    ],
+    [
+      -158.0,
+      36.0
+    ],
+    [
+      -38.0,
+      36.0
+    ],
+    [
+      -118.0,
+      36.0
+    ],
+    [
+      2.0,
+      36.0
+    ],
+    [
+      -38.0,
+      36.0
+    ]
+  ],
+  "initial_root_xy": [
+    [
+      -38.0,
+      -36.0
+    ],
+    [
+      82.0,
+      -36.0
+    ],
+    [
+      -38.0,
+      -36.0
+    ],
+    [
+      162.0,
+      -36.0
+    ],
+    [
+      -38.0,
+      -36.0
+    ],
+    [
+      -78.0,
+      -36.0
+    ],
+    [
+      -118.0,
+      -36.0
+    ],
+    [
+      162.0,
+      -36.0
+    ],
+    [
+      122.0,
+      -36.0
+    ],
+    [
+      -38.0,
+      -36.0
+    ],
+    [
+      122.0,
+      -28.0
+    ],
+    [
+      -198.0,
+      -28.0
+    ],
+    [
+      -158.0,
+      -28.0
+    ],
+    [
+      -118.0,
+      -28.0
+    ],
+    [
+      -78.0,
+      -28.0
+    ],
+    [
+      -158.0,
+      -28.0
+    ],
+    [
+      122.0,
+      -28.0
+    ],
+    [
+      -78.0,
+      -28.0
+    ],
+    [
+      -158.0,
+      -28.0
+    ],
+    [
+      -78.0,
+      -28.0
+    ],
+    [
+      162.0,
+      -20.0
+    ],
+    [
+      122.0,
+      -20.0
+    ],
+    [
+      2.0,
+      -20.0
+    ],
+    [
+      42.0,
+      -20.0
+    ],
+    [
+      -118.0,
+      -20.0
+    ],
+    [
+      42.0,
+      -20.0
+    ],
+    [
+      -158.0,
+      -20.0
+    ],
+    [
+      -38.0,
+      -20.0
+    ],
+    [
+      122.0,
+      -20.0
+    ],
+    [
+      42.0,
+      -20.0
+    ],
+    [
+      -158.0,
+      -12.0
+    ],
+    [
+      -38.0,
+      -12.0
+    ],
+    [
+      -118.0,
+      -12.0
+    ],
+    [
+      122.0,
+      -12.0
+    ],
+    [
+      -38.0,
+      -12.0
+    ],
+    [
+      -198.0,
+      -12.0
+    ],
+    [
+      -198.0,
+      -12.0
+    ],
+    [
+      -38.0,
+      -12.0
+    ],
+    [
+      -158.0,
+      -12.0
+    ],
+    [
+      2.0,
+      -12.0
+    ],
+    [
+      162.0,
+      -4.0
+    ],
+    [
+      -118.0,
+      -4.0
+    ],
+    [
+      82.0,
+      -4.0
+    ],
+    [
+      -158.0,
+      -4.0
+    ],
+    [
+      -78.0,
+      -4.0
+    ],
+    [
+      -78.0,
+      -4.0
+    ],
+    [
+      122.0,
+      -4.0
+    ],
+    [
+      122.0,
+      -4.0
+    ],
+    [
+      42.0,
+      -4.0
+    ],
+    [
+      -158.0,
+      -4.0
+    ],
+    [
+      -158.0,
+      4.0
+    ],
+    [
+      -118.0,
+      4.0
+    ],
+    [
+      -38.0,
+      4.0
+    ],
+    [
+      -198.0,
+      4.0
+    ],
+    [
+      42.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      122.0,
+      4.0
+    ],
+    [
+      -78.0,
+      4.0
+    ],
+    [
+      -118.0,
+      4.0
+    ],
+    [
+      82.0,
+      4.0
+    ],
+    [
+      -118.0,
+      12.0
+    ],
+    [
+      2.0,
+      12.0
+    ],
+    [
+      122.0,
+      12.0
+    ],
+    [
+      82.0,
+      12.0
+    ],
+    [
+      42.0,
+      12.0
+    ],
+    [
+      2.0,
+      12.0
+    ],
+    [
+      162.0,
+      12.0
+    ],
+    [
+      -198.0,
+      12.0
+    ],
+    [
+      82.0,
+      12.0
+    ],
+    [
+      82.0,
+      12.0
+    ],
+    [
+      2.0,
+      20.0
+    ],
+    [
+      162.0,
+      20.0
+    ],
+    [
+      -158.0,
+      20.0
+    ],
+    [
+      122.0,
+      20.0
+    ],
+    [
+      2.0,
+      20.0
+    ],
+    [
+      82.0,
+      20.0
+    ],
+    [
+      162.0,
+      20.0
+    ],
+    [
+      122.0,
+      20.0
+    ],
+    [
+      2.0,
+      20.0
+    ],
+    [
+      82.0,
+      20.0
+    ],
+    [
+      42.0,
+      28.0
+    ],
+    [
+      -38.0,
+      28.0
+    ],
+    [
+      162.0,
+      28.0
+    ],
+    [
+      -198.0,
+      28.0
+    ],
+    [
+      -198.0,
+      28.0
+    ],
+    [
+      82.0,
+      28.0
+    ],
+    [
+      -78.0,
+      28.0
+    ],
+    [
+      -78.0,
+      28.0
+    ],
+    [
+      42.0,
+      28.0
+    ],
+    [
+      162.0,
+      28.0
+    ],
+    [
+      162.0,
+      36.0
+    ],
+    [
+      -38.0,
+      36.0
+    ],
+    [
+      -38.0,
+      36.0
+    ],
+    [
+      42.0,
+      36.0
+    ],
+    [
+      162.0,
+      36.0
+    ],
+    [
+      -158.0,
+      36.0
+    ],
+    [
+      -38.0,
+      36.0
+    ],
+    [
+      -118.0,
+      36.0
+    ],
+    [
+      2.0,
+      36.0
+    ],
+    [
+      -38.0,
+      36.0
+    ]
+  ],
+  "initial_terrain_local_xy": [
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ],
+    [
+      2.0,
+      4.0
+    ]
+  ],
+  "checkpoint": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_18-57-46_ablation_heightscan_contact_diverse_s42/model_999.pt",
+  "checkpoint_sha256": "2f36d5fc0280a9000b1719552ab1c68cb64861a22b9088440f19acd5217dfe48",
+  "actor_input_dim": 127,
+  "critic_input_dim": 127,
+  "observation_dim": 127,
+  "source_sha256": "88c8fca3c9b0556bcde6f168200ea54798be1c27ce43f134c347dafd84648d22",
+  "observation_runtime_checks": true,
+  "timing": "step 0 initial pose; row k true post-control-step k pose; terminal pose before auto-reset",
+  "coordinate": "terrain_local_xy = root_world_xy - env_origin_xy + spawn_local_xy; fixed initial tile, no modulo",
+  "legacy_displacement": "last pre-control-step root x minus initial x, preserved for consistency",
+  "all_first_episodes_completed": true,
+  "episodes": [
+    {
+      "env_id": 0,
+      "episode_return": 76.78607177734375,
+      "episode_steps": 960,
+      "legacy_final_displacement": 69.28977966308594,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 1,
+      "episode_return": 78.83972930908203,
+      "episode_steps": 960,
+      "legacy_final_displacement": 72.41639709472656,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 2,
+      "episode_return": 78.84857940673828,
+      "episode_steps": 960,
+      "legacy_final_displacement": 71.73075866699219,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 3,
+      "episode_return": 64.38688659667969,
+      "episode_steps": 819,
+      "legacy_final_displacement": 57.95599365234375,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 4,
+      "episode_return": 80.203369140625,
+      "episode_steps": 960,
+      "legacy_final_displacement": 72.71163940429688,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 5,
+      "episode_return": 69.6026611328125,
+      "episode_steps": 960,
+      "legacy_final_displacement": 63.05554962158203,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 6,
+      "episode_return": 76.57010650634766,
+      "episode_steps": 960,
+      "legacy_final_displacement": 69.17930603027344,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 7,
+      "episode_return": 64.05059814453125,
+      "episode_steps": 752,
+      "legacy_final_displacement": 57.98638916015625,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 8,
+      "episode_return": 77.91333770751953,
+      "episode_steps": 960,
+      "legacy_final_displacement": 70.42236328125,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 9,
+      "episode_return": 63.241451263427734,
+      "episode_steps": 799,
+      "legacy_final_displacement": 58.07298278808594,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 10,
+      "episode_return": 74.38262176513672,
+      "episode_steps": 960,
+      "legacy_final_displacement": 68.04135131835938,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 11,
+      "episode_return": 67.64069366455078,
+      "episode_steps": 960,
+      "legacy_final_displacement": 61.75367736816406,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 12,
+      "episode_return": 1.4595195055007935,
+      "episode_steps": 72,
+      "legacy_final_displacement": 1.2266998291015625,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 13,
+      "episode_return": 78.271240234375,
+      "episode_steps": 960,
+      "legacy_final_displacement": 71.07850646972656,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 14,
+      "episode_return": 50.78245162963867,
+      "episode_steps": 609,
+      "legacy_final_displacement": 46.17141342163086,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 15,
+      "episode_return": 72.7017593383789,
+      "episode_steps": 960,
+      "legacy_final_displacement": 65.52001190185547,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 16,
+      "episode_return": 81.00320434570312,
+      "episode_steps": 960,
+      "legacy_final_displacement": 73.16294860839844,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 17,
+      "episode_return": 69.49446868896484,
+      "episode_steps": 960,
+      "legacy_final_displacement": 62.375431060791016,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 18,
+      "episode_return": 74.0832748413086,
+      "episode_steps": 960,
+      "legacy_final_displacement": 66.74652099609375,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 19,
+      "episode_return": 37.565879821777344,
+      "episode_steps": 495,
+      "legacy_final_displacement": 34.39639663696289,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 20,
+      "episode_return": 65.06192016601562,
+      "episode_steps": 907,
+      "legacy_final_displacement": 57.97404479980469,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 21,
+      "episode_return": 13.220328330993652,
+      "episode_steps": 214,
+      "legacy_final_displacement": 11.828628540039062,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 22,
+      "episode_return": 79.37068939208984,
+      "episode_steps": 960,
+      "legacy_final_displacement": 71.70561218261719,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 23,
+      "episode_return": 75.6226577758789,
+      "episode_steps": 960,
+      "legacy_final_displacement": 67.98356628417969,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 24,
+      "episode_return": 80.94515991210938,
+      "episode_steps": 960,
+      "legacy_final_displacement": 73.68121337890625,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 25,
+      "episode_return": 50.13040542602539,
+      "episode_steps": 750,
+      "legacy_final_displacement": 44.85511016845703,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 26,
+      "episode_return": 76.73579406738281,
+      "episode_steps": 960,
+      "legacy_final_displacement": 70.00513458251953,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 27,
+      "episode_return": 67.69046020507812,
+      "episode_steps": 960,
+      "legacy_final_displacement": 60.145423889160156,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 28,
+      "episode_return": 51.80808639526367,
+      "episode_steps": 960,
+      "legacy_final_displacement": 47.93867492675781,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 29,
+      "episode_return": 41.887451171875,
+      "episode_steps": 687,
+      "legacy_final_displacement": 39.32987976074219,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 30,
+      "episode_return": 84.79166412353516,
+      "episode_steps": 960,
+      "legacy_final_displacement": 77.40911102294922,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 31,
+      "episode_return": 35.561153411865234,
+      "episode_steps": 499,
+      "legacy_final_displacement": 32.2573127746582,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 32,
+      "episode_return": 72.9281234741211,
+      "episode_steps": 960,
+      "legacy_final_displacement": 65.89900207519531,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 33,
+      "episode_return": 34.699432373046875,
+      "episode_steps": 520,
+      "legacy_final_displacement": 31.208114624023438,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 34,
+      "episode_return": 59.520511627197266,
+      "episode_steps": 673,
+      "legacy_final_displacement": 54.63629150390625,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 35,
+      "episode_return": 79.82164764404297,
+      "episode_steps": 960,
+      "legacy_final_displacement": 72.8528823852539,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 36,
+      "episode_return": 77.26421356201172,
+      "episode_steps": 960,
+      "legacy_final_displacement": 70.04132080078125,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 37,
+      "episode_return": 74.29667663574219,
+      "episode_steps": 960,
+      "legacy_final_displacement": 67.42738342285156,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 38,
+      "episode_return": 73.77053833007812,
+      "episode_steps": 960,
+      "legacy_final_displacement": 66.53175354003906,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 39,
+      "episode_return": 73.73206329345703,
+      "episode_steps": 960,
+      "legacy_final_displacement": 66.39729309082031,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 40,
+      "episode_return": 63.556095123291016,
+      "episode_steps": 775,
+      "legacy_final_displacement": 57.98565673828125,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 41,
+      "episode_return": 77.95343780517578,
+      "episode_steps": 960,
+      "legacy_final_displacement": 70.62571716308594,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 42,
+      "episode_return": 76.8876724243164,
+      "episode_steps": 960,
+      "legacy_final_displacement": 69.97737121582031,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 43,
+      "episode_return": 40.99216842651367,
+      "episode_steps": 547,
+      "legacy_final_displacement": 37.993690490722656,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 44,
+      "episode_return": 69.28466796875,
+      "episode_steps": 960,
+      "legacy_final_displacement": 62.42953109741211,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 45,
+      "episode_return": 81.19792938232422,
+      "episode_steps": 960,
+      "legacy_final_displacement": 74.44669342041016,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 46,
+      "episode_return": 77.0723876953125,
+      "episode_steps": 960,
+      "legacy_final_displacement": 70.35298156738281,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 47,
+      "episode_return": 22.844932556152344,
+      "episode_steps": 381,
+      "legacy_final_displacement": 20.355667114257812,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 48,
+      "episode_return": 67.24932098388672,
+      "episode_steps": 960,
+      "legacy_final_displacement": 60.89183044433594,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 49,
+      "episode_return": 6.428842067718506,
+      "episode_steps": 122,
+      "legacy_final_displacement": 5.6402740478515625,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 50,
+      "episode_return": 71.53758239746094,
+      "episode_steps": 960,
+      "legacy_final_displacement": 64.42024993896484,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 51,
+      "episode_return": 78.3981704711914,
+      "episode_steps": 960,
+      "legacy_final_displacement": 71.23216247558594,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 52,
+      "episode_return": 75.32378387451172,
+      "episode_steps": 960,
+      "legacy_final_displacement": 67.90985107421875,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 53,
+      "episode_return": 76.1498031616211,
+      "episode_steps": 960,
+      "legacy_final_displacement": 69.44210815429688,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 54,
+      "episode_return": 82.90047454833984,
+      "episode_steps": 960,
+      "legacy_final_displacement": 75.60626983642578,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 55,
+      "episode_return": 77.63495635986328,
+      "episode_steps": 960,
+      "legacy_final_displacement": 70.48617553710938,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 56,
+      "episode_return": 76.15322875976562,
+      "episode_steps": 960,
+      "legacy_final_displacement": 68.811279296875,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 57,
+      "episode_return": 83.71842956542969,
+      "episode_steps": 960,
+      "legacy_final_displacement": 76.61113739013672,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 58,
+      "episode_return": 77.40072631835938,
+      "episode_steps": 960,
+      "legacy_final_displacement": 70.28520202636719,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 59,
+      "episode_return": 69.25980377197266,
+      "episode_steps": 936,
+      "legacy_final_displacement": 63.157958984375,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 60,
+      "episode_return": 63.46332550048828,
+      "episode_steps": 960,
+      "legacy_final_displacement": 57.43118667602539,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 61,
+      "episode_return": 81.7661361694336,
+      "episode_steps": 960,
+      "legacy_final_displacement": 74.59904479980469,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 62,
+      "episode_return": 77.82426452636719,
+      "episode_steps": 960,
+      "legacy_final_displacement": 70.78424072265625,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 63,
+      "episode_return": 78.7845458984375,
+      "episode_steps": 960,
+      "legacy_final_displacement": 71.64617919921875,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 64,
+      "episode_return": 76.49775695800781,
+      "episode_steps": 960,
+      "legacy_final_displacement": 69.9414291381836,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 65,
+      "episode_return": 71.99231719970703,
+      "episode_steps": 960,
+      "legacy_final_displacement": 65.68566131591797,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 66,
+      "episode_return": 64.56361389160156,
+      "episode_steps": 879,
+      "legacy_final_displacement": 57.957977294921875,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 67,
+      "episode_return": 12.591206550598145,
+      "episode_steps": 186,
+      "legacy_final_displacement": 11.020782470703125,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 68,
+      "episode_return": 79.56251525878906,
+      "episode_steps": 960,
+      "legacy_final_displacement": 72.64610290527344,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 69,
+      "episode_return": 78.61105346679688,
+      "episode_steps": 960,
+      "legacy_final_displacement": 71.2474365234375,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 70,
+      "episode_return": -1.028857946395874,
+      "episode_steps": 79,
+      "legacy_final_displacement": -0.9740149974822998,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 71,
+      "episode_return": 64.0997543334961,
+      "episode_steps": 821,
+      "legacy_final_displacement": 57.99742126464844,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 72,
+      "episode_return": 30.372562408447266,
+      "episode_steps": 368,
+      "legacy_final_displacement": 27.797393798828125,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 73,
+      "episode_return": 76.95680236816406,
+      "episode_steps": 960,
+      "legacy_final_displacement": 68.87359619140625,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 74,
+      "episode_return": 0.825911283493042,
+      "episode_steps": 59,
+      "legacy_final_displacement": 0.93157958984375,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 75,
+      "episode_return": 80.61105346679688,
+      "episode_steps": 960,
+      "legacy_final_displacement": 73.48402404785156,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 76,
+      "episode_return": 63.620018005371094,
+      "episode_steps": 799,
+      "legacy_final_displacement": 57.92277526855469,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 77,
+      "episode_return": 84.62901306152344,
+      "episode_steps": 960,
+      "legacy_final_displacement": 77.09280395507812,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 78,
+      "episode_return": 21.955842971801758,
+      "episode_steps": 337,
+      "legacy_final_displacement": 19.64217185974121,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 79,
+      "episode_return": 85.58866882324219,
+      "episode_steps": 960,
+      "legacy_final_displacement": 78.48733520507812,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 80,
+      "episode_return": 80.7372817993164,
+      "episode_steps": 960,
+      "legacy_final_displacement": 73.51890563964844,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 81,
+      "episode_return": 77.2281265258789,
+      "episode_steps": 960,
+      "legacy_final_displacement": 70.28990173339844,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 82,
+      "episode_return": 63.31510925292969,
+      "episode_steps": 749,
+      "legacy_final_displacement": 57.93475341796875,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 83,
+      "episode_return": 80.17193603515625,
+      "episode_steps": 960,
+      "legacy_final_displacement": 73.51749420166016,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 84,
+      "episode_return": 51.01748275756836,
+      "episode_steps": 623,
+      "legacy_final_displacement": 46.8743896484375,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 85,
+      "episode_return": 82.0845947265625,
+      "episode_steps": 960,
+      "legacy_final_displacement": 74.95135498046875,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 86,
+      "episode_return": 75.3646011352539,
+      "episode_steps": 960,
+      "legacy_final_displacement": 68.68683624267578,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 87,
+      "episode_return": 67.55804443359375,
+      "episode_steps": 960,
+      "legacy_final_displacement": 61.25579071044922,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 88,
+      "episode_return": 71.92240905761719,
+      "episode_steps": 960,
+      "legacy_final_displacement": 65.14395904541016,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 89,
+      "episode_return": 63.72161102294922,
+      "episode_steps": 762,
+      "legacy_final_displacement": 57.98072814941406,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 90,
+      "episode_return": 64.52687072753906,
+      "episode_steps": 833,
+      "legacy_final_displacement": 57.98640441894531,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 91,
+      "episode_return": 8.73642349243164,
+      "episode_steps": 128,
+      "legacy_final_displacement": 7.901878356933594,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 92,
+      "episode_return": 80.84416961669922,
+      "episode_steps": 960,
+      "legacy_final_displacement": 73.7348403930664,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 93,
+      "episode_return": 82.54779052734375,
+      "episode_steps": 960,
+      "legacy_final_displacement": 75.84379577636719,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 94,
+      "episode_return": 38.157798767089844,
+      "episode_steps": 514,
+      "legacy_final_displacement": 34.90306091308594,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 95,
+      "episode_return": 79.5057144165039,
+      "episode_steps": 960,
+      "legacy_final_displacement": 72.2958755493164,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 96,
+      "episode_return": 78.3116683959961,
+      "episode_steps": 927,
+      "legacy_final_displacement": 71.43032836914062,
+      "fall": true,
+      "timeout": false
+    },
+    {
+      "env_id": 97,
+      "episode_return": 75.4396743774414,
+      "episode_steps": 960,
+      "legacy_final_displacement": 68.15267944335938,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 98,
+      "episode_return": 79.38164520263672,
+      "episode_steps": 960,
+      "legacy_final_displacement": 72.7556381225586,
+      "fall": false,
+      "timeout": true
+    },
+    {
+      "env_id": 99,
+      "episode_return": 75.23786163330078,
+      "episode_steps": 960,
+      "legacy_final_displacement": 68.08573150634766,
+      "fall": false,
+      "timeout": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-10-03T12:40:55.486937+00:00",
+  "task": "Isaac-Ant-Final-Unseen-v0",
+  "seed": 24,
+  "num_envs": 4,
+  "official_reference": "https://github.com/cailab-hy/IsaacLab_RS/blob/main/scripts/reinforcement_learning/rsl_rl/play_one_episode.py",
+  "official_reference_snapshot": "validation/official_evaluator_parity_runs/provided_play_one_episode.py",
+  "tolerance": {
+    "rtol": 1e-06,
+    "atol": 1e-06
+  },
+  "policies": {
+    "base": {
+      "parity": false,
+      "status": "runtime_failed",
+      "exit_code": 1,
+      "log": "/home/zxro/IsaacLab_RS/validation/official_evaluator_parity_runs/base.log"
+    }
+  },
+  "overall_parity": false,
+  "integrity": {
+    "protected_file_count": 447,
+    "changed": [],
+    "original_raw_rows": 400
+  },
+  "full_final_reevaluation_performed": false
+}

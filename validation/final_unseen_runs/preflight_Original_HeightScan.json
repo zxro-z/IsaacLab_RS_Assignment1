@@ -1,0 +1,18 @@
+{
+  "status": "preflight_pass",
+  "task": "Isaac-Ant-Final-Unseen-v0",
+  "checkpoint": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42/model_999.pt",
+  "seed": 24,
+  "num_envs": 1,
+  "steps": 20,
+  "finite_observation_reward": true,
+  "actor_input_dim": 123,
+  "critic_input_dim": 123,
+  "observation_dim": 123,
+  "height_scan_enabled": true,
+  "height_scan_pattern": "original",
+  "scan_dim": 63,
+  "terrain_mesh_sha256": "c0e1eb34d72dbc86d0a64774a27878aeb9acd9de2174cb0853f99703234cc282",
+  "env_origins_sha256": "59b1f8cdb95fea788a8a79de4eafe3d53ad0f0e9ca3f49642bb115c6debca1af",
+  "robot_material_sha256": "de50fb2329a296dcc79c26066d14cc5feef91cde57682f0a9171f7db8452709d"
+}

@@ -1,0 +1,36 @@
+{
+  "result": "PASS",
+  "differences": [],
+  "normalizations": [
+    {
+      "field": "scene.num_envs",
+      "from": 4096,
+      "to": 4,
+      "reason": "requested 4-env diagnostic; source training default verified as 4096"
+    },
+    {
+      "field": "scene.terrain.num_envs",
+      "from": 4096,
+      "to": 4,
+      "reason": "InteractiveScene._add_entities_from_cfg assigns scene.num_envs"
+    },
+    {
+      "field": "log_dir",
+      "from": null,
+      "to": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42",
+      "reason": "train.py assigns the output run directory"
+    },
+    {
+      "field": "io_descriptors_output_dir",
+      "from": null,
+      "to": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42",
+      "reason": "train.py assigns the output run directory"
+    }
+  ],
+  "runtime_expansion_proof": {
+    "importer": "source/isaaclab/isaaclab/scene/interactive_scene.py:_add_entities_from_cfg",
+    "sub_terrain_size_and_HF_scales": "source/isaaclab/isaaclab/terrains/terrain_generator.py:TerrainGenerator.__init__",
+    "entity_prim_paths": "source/isaaclab/isaaclab/scene/interactive_scene.py:_add_entities_from_cfg"
+  },
+  "entire_terrain_subtree_compared": true
+}

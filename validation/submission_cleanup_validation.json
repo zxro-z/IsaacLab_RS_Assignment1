@@ -1,0 +1,118 @@
+{
+  "inventory_before": {
+    "files": 3640,
+    "logical_bytes": 919882638,
+    "tracked_files": 1816
+  },
+  "classification": {
+    "KEEP": 2011,
+    "ARCHIVE": 1130,
+    "REMOVE-GENERATED": 499
+  },
+  "archive": {
+    "path": "/home/zxro/IsaacLab_RS_assignment1_archive_20261004",
+    "archived_files": 1130,
+    "generated_files_relocated": 499,
+    "deleted_files": 0,
+    "bytes": 799166763,
+    "all_sha256_verified": true,
+    "manifest": "/home/zxro/IsaacLab_RS_assignment1_archive_20261004/ARCHIVE_MANIFEST.md"
+  },
+  "integrity": {
+    "retained_preexisting_files": 2011,
+    "missing": [],
+    "changed_frozen_files": [],
+    "allowed_edits": [
+      "README.md",
+      ".gitignore"
+    ],
+    "checkpoint_sha256": {
+      "logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42/model_999.pt": "a7304b58e1d06ba656b910d33edfdbcd9e08c28c8e541f80c095073242ff2570",
+      "logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42/model_999.pt": "716a6bbb860078beb41766b31f3d35ff0775f875c4411f5c5c7055be95379aca",
+      "logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/model_999.pt": "8fa361827664fce1a42a2f4d42152853c81a6a8cf63deb3174aca5b9d80d937a",
+      "logs/rsl_rl/ant/2026-10-03_18-57-46_ablation_heightscan_contact_diverse_s42/model_999.pt": "2f36d5fc0280a9000b1719552ab1c68cb64861a22b9088440f19acd5217dfe48"
+    },
+    "raw_episodes": 400,
+    "episodes_per_policy": {
+      "Base": 100,
+      "Original HeightScan": 100,
+      "HeightScan+Contact": 100,
+      "Diverse HeightScan+Contact": 100
+    },
+    "final_results_unchanged": true,
+    "source_config_evaluator_unchanged": true,
+    "figures_byte_identical": true,
+    "simulation_or_training_run": false
+  },
+  "validation": {
+    "git_diff_check": "PASS",
+    "bash_command_syntax": "PASS",
+    "readme_broken_links": [],
+    "command_checkpoint_exists": true,
+    "command_task_registered": true,
+    "command_adapter_flags_match_127D": true,
+    "checkpoints_and_params_not_gitignored": true,
+    "python_sources_modified": false,
+    "cache_files_remaining": [],
+    "symlinks": [],
+    "secret_scan": "No candidates in scoped text-pattern scan; not an exhaustive security audit",
+    "historical_absolute_paths": "72 files in original provenance/scripts retain machine paths; README and submission command are relative",
+    "py_compile": "PASS (six retained evaluator/adapter/offline-analysis scripts; bytecode stored outside repo in /tmp)",
+    "readme_local_links_checked": 64
+  },
+  "size_after_before_report": {
+    "files": 2022,
+    "logical_bytes": 123515370,
+    "largest_files": [
+      {
+        "path": "validation/final_unseen_reward_runs/original_heightscan/trajectory.csv.gz",
+        "bytes": 7879298
+      },
+      {
+        "path": "validation/final_unseen_reward_runs/heightscan_contact/trajectory.csv.gz",
+        "bytes": 7845807
+      },
+      {
+        "path": "validation/final_unseen_reward_runs/base/trajectory.csv.gz",
+        "bytes": 7805073
+      },
+      {
+        "path": "validation/final_unseen_reward_runs/diverse_heightscan_contact/trajectory.csv.gz",
+        "bytes": 7312694
+      },
+      {
+        "path": "validation/final_unseen_first_pass_runs/heightscan_contact/trajectory.csv.gz",
+        "bytes": 4144645
+      },
+      {
+        "path": "validation/final_unseen_first_pass_runs/original_heightscan/trajectory.csv.gz",
+        "bytes": 4126107
+      },
+      {
+        "path": "validation/final_unseen_first_pass_runs/base/trajectory.csv.gz",
+        "bytes": 4077361
+      },
+      {
+        "path": "validation/final_unseen_first_pass_runs/diverse_heightscan_contact/trajectory.csv.gz",
+        "bytes": 3816287
+      }
+    ],
+    "files_above_50_MiB": []
+  },
+  "git_status_before": " M scripts/reinforcement_learning/rsl_rl/play.py\n M source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/__init__.py\n?? README.assignment.md\n?? scripts/assignment/\n?? scripts/reinforcement_learning/rsl_rl/ant_observation_adapter.py\n?? scripts/reinforcement_learning/rsl_rl/play_one_episode.py\n?? scripts/reinforcement_learning/rsl_rl/rollout_metrics.py\n?? scripts/reinforcement_learning/rsl_rl/rollout_telemetry.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/agents/rsl_rl_ppo_contact_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/agents/rsl_rl_ppo_lr_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_compact_terrain_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_compact_terrain_observations.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_contact_observations.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_dev_ood_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_final_unseen_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_friction_random_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_heightscan_variants_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_ood_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_ood_terrain_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_teammate_terrain_transfer_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_ablation_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_diverse_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py\n?? validation/\n",
+  "git_status_after": " M .gitignore\n M README.md\n M scripts/reinforcement_learning/rsl_rl/play.py\n M source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/__init__.py\n?? SUBMISSION_COMMAND.txt\n?? docs/README.isaaclab.md\n?? docs/figures/\n?? logs/\n?? scripts/assignment/\n?? scripts/reinforcement_learning/rsl_rl/ant_observation_adapter.py\n?? scripts/reinforcement_learning/rsl_rl/play_one_episode.py\n?? scripts/reinforcement_learning/rsl_rl/rollout_metrics.py\n?? scripts/reinforcement_learning/rsl_rl/rollout_telemetry.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/agents/rsl_rl_ppo_contact_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/agents/rsl_rl_ppo_lr_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_compact_terrain_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_compact_terrain_observations.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_contact_observations.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_dev_ood_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_final_unseen_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_friction_random_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_heightscan_variants_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_ood_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_ood_terrain_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_teammate_terrain_transfer_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_ablation_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_diverse_env_cfg.py\n?? source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_terrain_heightscan_env_cfg.py\n?? validation/\n",
+  "checkpoint_audit": {
+    "checkpoint_files_before": 195,
+    "checkpoint_files_retained": 4,
+    "duplicate_byte_identical_groups": [
+      [
+        "logs/rsl_rl/ant/2026-10-01_05-01-44_ant_terrain_heightscan/model_999.pt",
+        "logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42/model_999.pt"
+      ],
+      [
+        "logs/rsl_rl/ant/2026-10-02_00-46-02_contact_127d/model_999.pt",
+        "logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/model_999.pt"
+      ]
+    ]
+  }
+}

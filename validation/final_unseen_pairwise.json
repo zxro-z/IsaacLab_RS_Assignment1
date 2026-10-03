@@ -1,0 +1,32 @@
+[
+  {
+    "from": "Base",
+    "to": "Original HeightScan",
+    "reward_percent": 11.581262369684657,
+    "displacement_percent": 11.951561422186412,
+    "fall_ratio_delta_pp": 4.000000000000001,
+    "timeout_ratio_delta_pp": -4.0000000000000036,
+    "progress_2m_ratio_delta_pp": 0.9999990463256836,
+    "progress_5m_ratio_delta_pp": 0.9999990463256836
+  },
+  {
+    "from": "Original HeightScan",
+    "to": "HeightScan+Contact",
+    "reward_percent": 3.1084081922324547,
+    "displacement_percent": -0.8383135778255242,
+    "fall_ratio_delta_pp": -7.000000000000001,
+    "timeout_ratio_delta_pp": 6.999999999999995,
+    "progress_2m_ratio_delta_pp": -1.9999980926513672,
+    "progress_5m_ratio_delta_pp": -0.9999990463256836
+  },
+  {
+    "from": "HeightScan+Contact",
+    "to": "Diverse HeightScan+Contact",
+    "reward_percent": -6.2243360289191205,
+    "displacement_percent": -4.229141410394835,
+    "fall_ratio_delta_pp": 17.0,
+    "timeout_ratio_delta_pp": -16.999999999999993,
+    "progress_2m_ratio_delta_pp": 0.9999990463256836,
+    "progress_5m_ratio_delta_pp": 0.9999990463256836
+  }
+]

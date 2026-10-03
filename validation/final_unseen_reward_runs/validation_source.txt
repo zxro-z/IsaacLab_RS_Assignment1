@@ -1,0 +1,93 @@
+import csv,gzip,hashlib,json,math
+from pathlib import Path
+import subprocess,sys
+import numpy as np
+root=Path('/home/zxro/IsaacLab_RS');val=root/'validation';runs=val/'final_unseen_reward_runs'
+sys.path.insert(0,str(root/'scripts/assignment'))
+import analyze_final_unseen_reward_components as m
+from analyze_final_unseen_statistics import POLICIES,PAIRS
+result=json.loads((val/'final_unseen_reward_decomposition.json').read_text())
+manifest=json.loads((val/'final_unseen_reward_measurement_manifest.json').read_text())
+raw={(r['policy'],int(r['env_id'])):r for r in csv.DictReader((val/'final_unseen_raw.csv').open())}
+first={(r['policy'],int(r['env_id'])):r for r in csv.DictReader((val/'final_unseen_first_pass_raw.csv').open())}
+episodes={(r['policy'],int(r['env_id'])):r for r in csv.DictReader((val/'final_unseen_reward_components_episode.csv').open())}
+assert len(raw)==len(episodes)==len(first)==400
+step_count=0;max_step=0.;max_episode=0.
+values=np.zeros((100,4,5,8));lengths=np.zeros((100,4),int)
+for j,entry in enumerate(manifest['policies']):
+ policy=entry['policy'];directory=root/entry['directory']
+ groups={i:[] for i in range(100)}
+ with gzip.open(directory/'trajectory.csv.gz','rt') as stream:
+  for r in csv.DictReader(stream):
+   if int(r['step']):groups[int(r['env_id'])].append(r)
+ for i,rows in groups.items():
+  total=np.asarray([float(r['total_reward']) for r in rows],dtype=np.float64)
+  components=np.asarray([[float(r['reward_'+k]) for k in m.TERMS] for r in rows],dtype=np.float64)
+  e=episodes[policy,i];old=raw[policy,i];n=len(rows)
+  assert [int(r['step']) for r in rows]==list(range(1,n+1))
+  assert float(np.cumsum(total.astype(np.float32),dtype=np.float32)[-1])==float(old['episode_return'])==float(e['episode_return'])
+  assert n==int(old['episode_length'])==int(e['episode_steps'])
+  assert e['fall']==old['fall'] and e['timeout']==old['time_out']
+  assert float(e['final_displacement'])==float(old['forward_displacement_m'])
+  assert np.isfinite(components).all() and np.isfinite(total).all()
+  err=np.abs(components.sum(1)-total);assert np.allclose(components.sum(1),total,rtol=1e-6,atol=1e-6)
+  max_step=max(max_step,float(err.max()));step_count+=n
+  summed=components.sum(0);recorded=np.array([float(e[t+'_sum']) for t in m.TERMS])
+  assert np.allclose(summed,recorded,atol=1e-12)
+  native=float(old['episode_return']);assert np.isclose(summed.sum(),native,rtol=2e-6,atol=1e-6)
+  max_episode=max(max_episode,abs(float(summed.sum())-native))
+  hit=int(first[policy,i]['first_reach_step_40m']) if first[policy,i]['reach_40m']=='True' else n
+  assert int(e['pre40_steps'])==hit and int(e['post40_steps'])==n-hit
+  pre=components[:hit].sum(0);post=components[hit:].sum(0)
+  assert np.allclose(pre,[float(e[t+'_pre40']) for t in m.TERMS],atol=1e-12)
+  assert np.allclose(post,[float(e[t+'_post40']) for t in m.TERMS],atol=1e-12)
+  values[i,j,0]=np.r_[summed,native]
+  values[i,j,1]=np.r_[pre,total[:hit].sum()];values[i,j,2]=np.r_[post,total[hit:].sum()]
+  values[i,j,3]=values[i,j,0]/n;values[i,j,4]=values[i,j,0]/(n*result['control_dt']);lengths[i,j]=n
+assert step_count==result['identity']['step_count']==351119
+assert max_step==result['identity']['step_max_absolute_error']
+assert max_episode==result['identity']['episode_max_absolute_native_error']
+# Independent fixed-RNG multiplicities and elementwise weighted sums reproduce all paired CIs.
+rng=np.random.default_rng(2404);weights=rng.multinomial(100,np.full(100,.01),size=50000)
+for ref,new in PAIRS:
+ name=f'{POLICIES[ref]} → {POLICIES[new]}'
+ for s,scope in enumerate(m.MEASURES):
+  for k,term in enumerate(m.TERMS+('total_reward_from_env',)):
+   delta=values[:,new,s,k]-values[:,ref,s,k];samples=np.sum(weights*delta[None,:],axis=1)/100
+   r=result['pairwise'][name][scope][term]
+   assert np.isclose(r['observed_delta'],delta.mean(),atol=1e-12)
+   assert np.isclose(r['median_paired_delta'],np.median(delta),atol=1e-12)
+   assert np.allclose([r['ci95_low'],r['ci95_high']],np.quantile(samples,[.025,.975]),atol=1e-12)
+   assert np.isclose(r['bootstrap_median_delta'],np.median(samples),atol=1e-12)
+ duration=(lengths[:,new,None]-lengths[:,ref,None])*(values[:,new,3,:7]+values[:,ref,3,:7])/2
+ rate=(values[:,new,3,:7]-values[:,ref,3,:7])*(lengths[:,new,None]+lengths[:,ref,None])/2
+ assert np.allclose(duration+rate,values[:,new,0,:7]-values[:,ref,0,:7],atol=1e-12)
+ for scope,d in [('duration_associated',duration),('rate_associated',rate)]:
+  for k,term in enumerate(m.TERMS):
+   samples=np.sum(weights*d[:,k][None,:],axis=1)/100;r=result['pairwise'][name][scope][term]
+   assert np.allclose([r['ci95_low'],r['ci95_high']],np.quantile(samples,[.025,.975]),atol=1e-12)
+for r in result['total_delta_reconciliation']:
+ assert np.isclose(r['sum_component_deltas'],r['total_return_delta'],**r['tolerance'])
+protected=json.loads((runs/'protected_before.json').read_text())
+assert all(hashlib.sha256((root/n).read_bytes()).hexdigest()==h for n,h in protected.items())
+assert hashlib.sha256((root/'scripts/assignment/analyze_final_unseen_reward_components.py').read_bytes()).hexdigest()==result['integrity']['source_sha256']
+with (runs/'validation.log').open('x') as log:
+ cmd=['python','-m','py_compile','scripts/assignment/evaluate_final_unseen_reward_components.py',
+  'scripts/assignment/run_final_unseen_reward_measurement.py','scripts/assignment/analyze_final_unseen_reward_components.py']
+ for command in [cmd,['git','diff','--check']]:
+  log.write('$ '+' '.join(command)+'\n');log.flush()
+  child=subprocess.run(command,cwd=root,stdout=log,stderr=subprocess.STDOUT)
+  log.write(f'exit_code={child.returncode}\n');assert child.returncode==0
+ for name in cmd[3:]:
+  command=['git','diff','--no-index','--check','/dev/null',name]
+  child=subprocess.run(command,cwd=root,capture_output=True,text=True)
+  log.write('$ '+' '.join(command)+'\n'+child.stdout+child.stderr+f'exit_code={child.returncode}\n')
+  assert child.returncode in (0,1) and not child.stdout and not child.stderr
+ log.write('No-index exit 1 without diagnostics is expected for new files.\n')
+ log.write(f'PASS: all 400 original episode returns/lengths/displacements/fall/timeout; {step_count} terminal-inclusive first-episode transitions.\n')
+ log.write(f'PASS: step max error {max_step:.12g}; episode max native error {max_episode:.12g}; specified tolerances and theoretical float32 bounds.\n')
+ log.write('PASS: all pre/post endpoint splits, sums and no missing/NaN values.\n')
+ log.write('PASS: independently reproduced all paired CIs/medians, duration-rate identity and total-delta reconciliation.\n')
+ log.write(f'PASS: {len(protected)} protected hashes unchanged.\n')
+with (runs/'validation_source.txt').open('x') as stream:stream.write(Path(__file__).read_text())
+print('Independent reward identity, original reproduction, bootstrap, compile, whitespace and integrity: PASS')

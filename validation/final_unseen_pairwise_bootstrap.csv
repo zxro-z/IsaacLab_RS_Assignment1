@@ -1,0 +1,34 @@
+comparison,metric,n_pairs,reference_mean,new_mean,observed_delta,bootstrap_median_delta,ci95_low,ci95_high,relative_change_percent,published_relative_change_percent,unit,condition
+Base → Original HeightScan,episode_return,100,60.50434998631477,67.5115257847309,7.007175798416138,6.95423005849123,3.9862399708181586,10.265582737877967,11.581276057012529,11.581262369684657,stock reward,all paired first episodes
+Base → Original HeightScan,final_displacement_m,100,55.77150111436844,62.43707022428512,6.665569109916687,6.616261742115022,3.8739670457840005,9.673209947705274,11.951568411701631,11.951561422186412,m,all paired first episodes
+Base → Original HeightScan,episode_length_steps,100,889.94,890.28,0.34,-0.24500000000000455,-35.629999999999995,39.25,0.0382048227970333,,steps,all paired first episodes
+Base → Original HeightScan,mean_forward_velocity_mps,100,3.612651987913996,4.112684069275856,0.5000320813618601,0.49834091052412965,0.40153464368218555,0.6080369145078584,13.841136180144122,,m/s,all paired first episodes
+Base → Original HeightScan,fall,100,0.19,0.23,0.04,0.04000000000000001,-0.03999999999999998,0.12,,,proportion,all paired first episodes
+Base → Original HeightScan,timeout,100,0.81,0.77,-0.04,-0.040000000000000036,-0.12,0.039999999999999925,,,proportion,all paired first episodes
+Base → Original HeightScan,reached_40m,100,0.92,0.94,0.02,0.020000000000000018,-0.030000000000000027,0.07999999999999996,,,proportion,all paired first episodes
+Base → Original HeightScan,corridor_valid_40m,100,0.89,0.87,-0.02,-0.020000000000000018,-0.10000000000000009,0.06000000000000005,,,proportion,all paired first episodes
+Base → Original HeightScan,reached_25m,100,0.93,0.96,0.03,0.029999999999999916,-0.010000000000000009,0.07999999999999996,,,proportion,all paired first episodes
+Base → Original HeightScan,reached_18m,100,0.93,0.97,0.04,0.039999999999999925,0.010000000000000009,0.07999999999999996,,,proportion,all paired first episodes
+Base → Original HeightScan,t_40m_joint_completers,89,10.197565543071162,9.238389513108615,-0.9591760299625467,-0.9591760299625466,-1.151498127340824,-0.7640449438202247,,,s,conditional on both policies completing the course
+Original HeightScan → HeightScan+Contact,episode_return,100,67.5115257847309,69.61005904115737,2.0985332564264536,2.103673713654274,-0.43905472899973885,4.643493834352123,3.1084073897513504,3.1084081922324547,stock reward,all paired first episodes
+Original HeightScan → HeightScan+Contact,final_displacement_m,100,62.43707022428512,61.913650699853896,-0.5234195244312286,-0.5255612975358979,-2.819901747405535,1.795337921112781,-0.8383153190100201,-0.8383135778255242,m,all paired first episodes
+Original HeightScan → HeightScan+Contact,episode_length_steps,100,890.28,901.56,11.28,11.610000000000014,-19.480000000000018,40.39999999999998,1.2670171182099983,,steps,all paired first episodes
+Original HeightScan → HeightScan+Contact,mean_forward_velocity_mps,100,4.112684069275856,3.9613989186286926,-0.15128515064716339,-0.1504629445075989,-0.24087610844522708,-0.06567430458962888,-3.678501632968879,,m/s,all paired first episodes
+Original HeightScan → HeightScan+Contact,fall,100,0.23,0.16,-0.07,-0.07,-0.14,0.0,,,proportion,all paired first episodes
+Original HeightScan → HeightScan+Contact,timeout,100,0.77,0.84,0.07,0.06999999999999995,0.0,0.14,,,proportion,all paired first episodes
+Original HeightScan → HeightScan+Contact,reached_40m,100,0.94,0.94,0.0,0.0,-0.04999999999999993,0.04999999999999993,,,proportion,all paired first episodes
+Original HeightScan → HeightScan+Contact,corridor_valid_40m,100,0.87,0.93,0.06,0.05999999999999994,-0.009999999999999898,0.13,,,proportion,all paired first episodes
+Original HeightScan → HeightScan+Contact,reached_25m,100,0.96,0.94,-0.02,-0.020000000000000018,-0.05999999999999994,0.020000000000000018,,,proportion,all paired first episodes
+Original HeightScan → HeightScan+Contact,reached_18m,100,0.97,0.95,-0.02,-0.020000000000000018,-0.04999999999999993,0.0,,,proportion,all paired first episodes
+Original HeightScan → HeightScan+Contact,t_40m_joint_completers,91,9.160622710622711,9.434065934065936,0.2734432234432234,0.273992673992674,0.10073260073260075,0.4424908424908425,,,s,conditional on both policies completing the course
+HeightScan+Contact → Diverse HeightScan+Contact,episode_return,100,69.61005904115737,65.27729613900185,-4.332762902155519,-4.315767025537788,-8.52964606198669,-0.1986397605091368,-6.224334473834809,-6.2243360289191205,stock reward,all paired first episodes
+HeightScan+Contact → Diverse HeightScan+Contact,final_displacement_m,100,61.913650699853896,59.29523152589798,-2.6184191739559175,-2.599977710843085,-6.4064480701983,1.0984132282733992,-4.229146794540567,-4.229141410394835,m,all paired first episodes
+HeightScan+Contact → Diverse HeightScan+Contact,episode_length_steps,100,901.56,829.41,-72.15,-71.84499999999997,-120.64099999999998,-25.17999999999995,-8.002795155064554,,steps,all paired first episodes
+HeightScan+Contact → Diverse HeightScan+Contact,mean_forward_velocity_mps,100,3.9613989186286926,4.125711515545845,0.16431259691715241,0.16352315813302964,0.05742223740369058,0.27803064127266397,4.147842726579833,,m/s,all paired first episodes
+HeightScan+Contact → Diverse HeightScan+Contact,fall,100,0.16,0.33,0.17,0.16999999999999998,0.08000000000000002,0.26,,,proportion,all paired first episodes
+HeightScan+Contact → Diverse HeightScan+Contact,timeout,100,0.84,0.67,-0.17,-0.17000000000000004,-0.26,-0.08000000000000007,,,proportion,all paired first episodes
+HeightScan+Contact → Diverse HeightScan+Contact,reached_40m,100,0.94,0.85,-0.09,-0.08999999999999997,-0.16999999999999993,-0.020000000000000018,,,proportion,all paired first episodes
+HeightScan+Contact → Diverse HeightScan+Contact,corridor_valid_40m,100,0.93,0.8,-0.13,-0.13,-0.21000000000000008,-0.050000000000000044,,,proportion,all paired first episodes
+HeightScan+Contact → Diverse HeightScan+Contact,reached_25m,100,0.94,0.91,-0.03,-0.029999999999999916,-0.08999999999999997,0.029999999999999916,,,proportion,all paired first episodes
+HeightScan+Contact → Diverse HeightScan+Contact,reached_18m,100,0.95,0.93,-0.02,-0.020000000000000018,-0.06999999999999995,0.029999999999999916,,,proportion,all paired first episodes
+HeightScan+Contact → Diverse HeightScan+Contact,t_40m_joint_completers,82,9.4239837398374,9.00548780487805,-0.41849593495934956,-0.4213414634146343,-0.6205284552845528,-0.2020325203252031,,,s,conditional on both policies completing the course

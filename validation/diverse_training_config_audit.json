@@ -1,0 +1,377 @@
+{
+  "source_config_audit": {
+    "result": "PASS",
+    "excluded_fields": [
+      "scene.terrain.terrain_generator.sub_terrains"
+    ],
+    "shared_terrain_parameters_unchanged": true,
+    "observation_dim": 127,
+    "saved_127d_terrain_reward_observations_ppo_match_source": true,
+    "reward_matches_stock_ant": true,
+    "ppo_entry_point": "isaaclab_tasks.manager_based.classic.ant.agents.rsl_rl_ppo_cfg:AntPPORunnerCfg",
+    "old_mix": {
+      "flat": {
+        "function": "isaaclab.terrains.trimesh.mesh_terrains:flat_terrain",
+        "proportion": 0.3,
+        "size": [
+          10.0,
+          10.0
+        ],
+        "flat_patch_sampling": null
+      },
+      "up_easy": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_sloped_terrain",
+        "proportion": 0.15,
+        "size": [
+          10.0,
+          10.0
+        ],
+        "flat_patch_sampling": null,
+        "border_width": 0.25,
+        "horizontal_scale": 0.1,
+        "vertical_scale": 0.005,
+        "slope_threshold": null,
+        "slope_range": [
+          0.0,
+          0.05
+        ],
+        "platform_width": 2.0,
+        "inverted": true
+      },
+      "down_easy": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_sloped_terrain",
+        "proportion": 0.15,
+        "size": [
+          10.0,
+          10.0
+        ],
+        "flat_patch_sampling": null,
+        "border_width": 0.25,
+        "horizontal_scale": 0.1,
+        "vertical_scale": 0.005,
+        "slope_threshold": null,
+        "slope_range": [
+          0.0,
+          0.05
+        ],
+        "platform_width": 2.0,
+        "inverted": false
+      },
+      "up_medium": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_sloped_terrain",
+        "proportion": 0.1,
+        "size": [
+          10.0,
+          10.0
+        ],
+        "flat_patch_sampling": null,
+        "border_width": 0.25,
+        "horizontal_scale": 0.1,
+        "vertical_scale": 0.005,
+        "slope_threshold": null,
+        "slope_range": [
+          0.05,
+          0.1
+        ],
+        "platform_width": 2.0,
+        "inverted": true
+      },
+      "down_medium": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_sloped_terrain",
+        "proportion": 0.1,
+        "size": [
+          10.0,
+          10.0
+        ],
+        "flat_patch_sampling": null,
+        "border_width": 0.25,
+        "horizontal_scale": 0.1,
+        "vertical_scale": 0.005,
+        "slope_threshold": null,
+        "slope_range": [
+          0.05,
+          0.1
+        ],
+        "platform_width": 2.0,
+        "inverted": false
+      },
+      "up_harder": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_sloped_terrain",
+        "proportion": 0.05,
+        "size": [
+          10.0,
+          10.0
+        ],
+        "flat_patch_sampling": null,
+        "border_width": 0.25,
+        "horizontal_scale": 0.1,
+        "vertical_scale": 0.005,
+        "slope_threshold": null,
+        "slope_range": [
+          0.1,
+          0.15
+        ],
+        "platform_width": 2.0,
+        "inverted": true
+      },
+      "down_harder": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_sloped_terrain",
+        "proportion": 0.05,
+        "size": [
+          10.0,
+          10.0
+        ],
+        "flat_patch_sampling": null,
+        "border_width": 0.25,
+        "horizontal_scale": 0.1,
+        "vertical_scale": 0.005,
+        "slope_threshold": null,
+        "slope_range": [
+          0.1,
+          0.15
+        ],
+        "platform_width": 2.0,
+        "inverted": false
+      },
+      "low_up_stairs": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_stairs_terrain",
+        "proportion": 0.1,
+        "size": [
+          10.0,
+          10.0
+        ],
+        "flat_patch_sampling": null,
+        "border_width": 0.0,
+        "horizontal_scale": 0.1,
+        "vertical_scale": 0.005,
+        "slope_threshold": null,
+        "step_height_range": [
+          0.025,
+          0.05
+        ],
+        "step_width": 0.4,
+        "platform_width": 2.0,
+        "inverted": true
+      }
+    },
+    "new_mix": {
+      "flat": {
+        "function": "isaaclab.terrains.trimesh.mesh_terrains:flat_terrain",
+        "proportion": 0.2,
+        "size": [
+          10.0,
+          10.0
+        ],
+        "flat_patch_sampling": null
+      },
+      "up_easy": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_sloped_terrain",
+        "proportion": 0.125,
+        "size": [
+          10.0,
+          10.0
+        ],
+        "flat_patch_sampling": null,
+        "border_width": 0.25,
+        "horizontal_scale": 0.1,
+        "vertical_scale": 0.005,
+        "slope_threshold": null,
+        "slope_range": [
+          0.0,
+          0.05
+        ],
+        "platform_width": 2.0,
+        "inverted": true
+      },
+      "down_easy": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_sloped_terrain",
+        "proportion": 0.125,
+        "size": [
+          10.0,
+          10.0
+        ],
+        "flat_patch_sampling": null,
+        "border_width": 0.25,
+        "horizontal_scale": 0.1,
+        "vertical_scale": 0.005,
+        "slope_threshold": null,
+        "slope_range": [
+          0.0,
+          0.05
+        ],
+        "platform_width": 2.0,
+        "inverted": false
+      },
+      "up_medium": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_sloped_terrain",
+        "proportion": 0.08333333333333333,
+        "size": [
+          10.0,
+          10.0
+        ],
+        "flat_patch_sampling": null,
+        "border_width": 0.25,
+        "horizontal_scale": 0.1,
+        "vertical_scale": 0.005,
+        "slope_threshold": null,
+        "slope_range": [
+          0.05,
+          0.1
+        ],
+        "platform_width": 2.0,
+        "inverted": true
+      },
+      "down_medium": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_sloped_terrain",
+        "proportion": 0.08333333333333333,
+        "size": [
+          10.0,
+          10.0
+        ],
+        "flat_patch_sampling": null,
+        "border_width": 0.25,
+        "horizontal_scale": 0.1,
+        "vertical_scale": 0.005,
+        "slope_threshold": null,
+        "slope_range": [
+          0.05,
+          0.1
+        ],
+        "platform_width": 2.0,
+        "inverted": false
+      },
+      "up_harder": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_sloped_terrain",
+        "proportion": 0.041666666666666664,
+        "size": [
+          10.0,
+          10.0
+        ],
+        "flat_patch_sampling": null,
+        "border_width": 0.25,
+        "horizontal_scale": 0.1,
+        "vertical_scale": 0.005,
+        "slope_threshold": null,
+        "slope_range": [
+          0.1,
+          0.15
+        ],
+        "platform_width": 2.0,
+        "inverted": true
+      },
+      "down_harder": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_sloped_terrain",
+        "proportion": 0.041666666666666664,
+        "size": [
+          10.0,
+          10.0
+        ],
+        "flat_patch_sampling": null,
+        "border_width": 0.25,
+        "horizontal_scale": 0.1,
+        "vertical_scale": 0.005,
+        "slope_threshold": null,
+        "slope_range": [
+          0.1,
+          0.15
+        ],
+        "platform_width": 2.0,
+        "inverted": false
+      },
+      "low_up_stairs": {
+        "function": "isaaclab.terrains.height_field.hf_terrains:pyramid_stairs_terrain",
+        "proportion": 0.1,
+        "size": [
+          10.0,
+          10.0
+        ],
+        "flat_patch_sampling": null,
+        "border_width": 0.0,
+        "horizontal_scale": 0.1,
+        "vertical_scale": 0.005,
+        "slope_threshold": null,
+        "step_height_range": [
+          0.025,
+          0.05
+        ],
+        "step_width": 0.4,
+        "platform_width": 2.0,
+        "inverted": true
+      },
+      "random_uniform": {
+        "function": "isaaclab_tasks.manager_based.classic.ant.ant_terrain_diverse_env_cfg:random_uniform_with_spawn_platform",
+        "proportion": 0.2,
+        "size": [
+          10.0,
+          10.0
+        ],
+        "flat_patch_sampling": null,
+        "border_width": 0.0,
+        "horizontal_scale": 0.1,
+        "vertical_scale": 0.005,
+        "slope_threshold": null,
+        "noise_range": [
+          -0.05,
+          0.05
+        ],
+        "noise_step": 0.025,
+        "downsampled_scale": 0.4,
+        "platform_width": 2.0
+      }
+    },
+    "same_fields": [
+      "observations",
+      "reward",
+      "termination",
+      "robot",
+      "reset",
+      "friction",
+      "physics",
+      "episode_length",
+      "actions",
+      "PPO",
+      "scanner",
+      "contact_sensor"
+    ]
+  },
+  "runtime_config_audit": {
+    "result": "PASS",
+    "differences": [],
+    "normalizations": [
+      {
+        "field": "scene.num_envs",
+        "from": 4096,
+        "to": 4,
+        "reason": "requested 4-env diagnostic; source training default verified as 4096"
+      },
+      {
+        "field": "scene.terrain.num_envs",
+        "from": 4096,
+        "to": 4,
+        "reason": "InteractiveScene._add_entities_from_cfg assigns scene.num_envs"
+      },
+      {
+        "field": "log_dir",
+        "from": null,
+        "to": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42",
+        "reason": "train.py assigns the output run directory"
+      },
+      {
+        "field": "io_descriptors_output_dir",
+        "from": null,
+        "to": "/home/zxro/IsaacLab_RS/logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42",
+        "reason": "train.py assigns the output run directory"
+      }
+    ],
+    "runtime_expansion_proof": {
+      "importer": "source/isaaclab/isaaclab/scene/interactive_scene.py:_add_entities_from_cfg",
+      "sub_terrain_size_and_HF_scales": "source/isaaclab/isaaclab/terrains/terrain_generator.py:TerrainGenerator.__init__",
+      "entity_prim_paths": "source/isaaclab/isaaclab/scene/interactive_scene.py:_add_entities_from_cfg"
+    },
+    "entire_terrain_subtree_compared": true
+  },
+  "ood_leakage_audit": "PASS",
+  "reward_audit": "MATCHES_BASIC_ANT",
+  "actor_critic_input_dim": 127,
+  "result": "PASS"
+}

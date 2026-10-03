@@ -1,0 +1,4065 @@
+{
+  "timestamp": "2026-10-03T13:36:10.552940+00:00",
+  "task": "Isaac-Ant-Final-Unseen-v0",
+  "seed": 24,
+  "terrain_seed": 2404,
+  "num_envs": 100,
+  "first_episode_only": true,
+  "measurement_only": true,
+  "consistency_pass": true,
+  "tolerance": {
+    "rtol": 1e-06,
+    "atol": 1e-06
+  },
+  "comparisons": [
+    {
+      "policy": "Base",
+      "env_id": 0,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 1,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 2,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 3,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 4,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 5,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 6,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 7,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 8,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 9,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 10,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 11,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 12,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 13,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 14,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 15,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 16,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 17,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 18,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 19,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 20,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 21,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 22,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 23,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 24,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 25,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 26,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 27,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 28,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 29,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 30,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 31,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 32,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 33,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 34,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 35,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 36,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 37,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 38,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 39,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 40,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 41,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 42,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 43,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 44,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 45,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 46,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 47,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 48,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 49,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 50,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 51,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 52,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 53,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 54,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 55,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 56,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 57,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 58,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 59,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 60,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 61,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 62,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 63,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 64,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 65,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 66,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 67,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 68,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 69,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 70,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 71,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 72,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 73,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 74,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 75,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 76,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 77,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 78,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 79,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 80,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 81,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 82,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 83,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 84,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 85,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 86,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 87,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 88,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 89,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 90,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 91,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 92,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 93,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 94,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 95,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 96,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 97,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 98,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Base",
+      "env_id": 99,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 0,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 1,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 2,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 3,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 4,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 5,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 6,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 7,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 8,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 9,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 10,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 11,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 12,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 13,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 14,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 15,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 16,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 17,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 18,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 19,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 20,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 21,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 22,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 23,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 24,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 25,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 26,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 27,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 28,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 29,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 30,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 31,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 32,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 33,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 34,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 35,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 36,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 37,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 38,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 39,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 40,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 41,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 42,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 43,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 44,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 45,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 46,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 47,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 48,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 49,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 50,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 51,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 52,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 53,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 54,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 55,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 56,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 57,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 58,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 59,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 60,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 61,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 62,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 63,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 64,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 65,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 66,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 67,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 68,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 69,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 70,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 71,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 72,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 73,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 74,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 75,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 76,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 77,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 78,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 79,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 80,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 81,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 82,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 83,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 84,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 85,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 86,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 87,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 88,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 89,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 90,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 91,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 92,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 93,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 94,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 95,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 96,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 97,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 98,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Original HeightScan",
+      "env_id": 99,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 0,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 1,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 2,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 3,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 4,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 5,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 6,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 7,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 8,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 9,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 10,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 11,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 12,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 13,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 14,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 15,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 16,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 17,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 18,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 19,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 20,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 21,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 22,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 23,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 24,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 25,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 26,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 27,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 28,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 29,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 30,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 31,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 32,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 33,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 34,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 35,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 36,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 37,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 38,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 39,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 40,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 41,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 42,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 43,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 44,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 45,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 46,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 47,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 48,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 49,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 50,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 51,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 52,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 53,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 54,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 55,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 56,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 57,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 58,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 59,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 60,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 61,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 62,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 63,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 64,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 65,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 66,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 67,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 68,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 69,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 70,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 71,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 72,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 73,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 74,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 75,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 76,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 77,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 78,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 79,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 80,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 81,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 82,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 83,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 84,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 85,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 86,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 87,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 88,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 89,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 90,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 91,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 92,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 93,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 94,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 95,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 96,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 97,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 98,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "env_id": 99,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 0,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 1,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 2,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 3,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 4,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 5,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 6,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 7,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 8,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 9,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 10,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 11,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 12,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 13,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 14,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 15,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 16,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 17,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 18,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 19,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 20,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 21,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 22,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 23,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 24,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 25,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 26,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 27,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 28,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 29,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 30,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 31,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 32,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 33,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 34,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 35,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 36,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 37,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 38,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 39,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 40,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 41,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 42,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 43,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 44,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 45,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 46,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 47,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 48,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 49,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 50,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 51,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 52,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 53,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 54,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 55,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 56,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 57,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 58,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 59,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 60,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 61,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 62,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 63,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 64,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 65,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 66,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 67,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 68,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 69,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 70,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 71,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 72,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 73,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 74,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 75,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 76,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 77,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 78,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 79,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 80,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 81,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 82,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 83,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 84,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 85,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 86,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 87,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 88,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 89,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 90,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 91,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 92,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 93,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 94,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 95,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 96,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 97,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 98,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "env_id": 99,
+      "return_difference": 0.0,
+      "steps_difference": 0,
+      "displacement_difference": 0.0,
+      "fall_equal": true,
+      "timeout_equal": true,
+      "pass": true
+    }
+  ],
+  "policies": [
+    {
+      "policy": "Base",
+      "key": "base",
+      "directory": "validation/final_unseen_reward_runs/base",
+      "checkpoint_sha256": "a7304b58e1d06ba656b910d33edfdbcd9e08c28c8e541f80c095073242ff2570",
+      "actor_input_dim": 60,
+      "trajectory_sha256": "cd98fa1a408535bee1dcb146067b5d01ac9f4f7c3cfb0b3f12726e02eced8f34",
+      "matched_trajectory_rows": 89094,
+      "max_existing_trajectory_x_error": 0.0,
+      "max_existing_step_reward_error": 0.0
+    },
+    {
+      "policy": "Original HeightScan",
+      "key": "original_heightscan",
+      "directory": "validation/final_unseen_reward_runs/original_heightscan",
+      "checkpoint_sha256": "716a6bbb860078beb41766b31f3d35ff0775f875c4411f5c5c7055be95379aca",
+      "actor_input_dim": 123,
+      "trajectory_sha256": "b7f724d16fc6b6dcecc8e4d97b5d28d6e78c3f1e4c3aead6b555e48f92f707d8",
+      "matched_trajectory_rows": 89128,
+      "max_existing_trajectory_x_error": 0.0,
+      "max_existing_step_reward_error": 0.0
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "key": "heightscan_contact",
+      "directory": "validation/final_unseen_reward_runs/heightscan_contact",
+      "checkpoint_sha256": "8fa361827664fce1a42a2f4d42152853c81a6a8cf63deb3174aca5b9d80d937a",
+      "actor_input_dim": 127,
+      "trajectory_sha256": "5f374bdc91045f15010d1f50dacf552171058d959c2c552062e3f0feec9b22f7",
+      "matched_trajectory_rows": 90256,
+      "max_existing_trajectory_x_error": 0.0,
+      "max_existing_step_reward_error": 0.0
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "key": "diverse_heightscan_contact",
+      "directory": "validation/final_unseen_reward_runs/diverse_heightscan_contact",
+      "checkpoint_sha256": "2f36d5fc0280a9000b1719552ab1c68cb64861a22b9088440f19acd5217dfe48",
+      "actor_input_dim": 127,
+      "trajectory_sha256": "a55e70cf8ce393e5541724bf289c613bda4352c62e781f9eec935771cea6a22e",
+      "matched_trajectory_rows": 83041,
+      "max_existing_trajectory_x_error": 0.0,
+      "max_existing_step_reward_error": 0.0
+    }
+  ],
+  "protected_count": 533,
+  "changed": [],
+  "reward_definition_unchanged": true
+}

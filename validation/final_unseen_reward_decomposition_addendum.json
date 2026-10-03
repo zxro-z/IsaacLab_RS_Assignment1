@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-10-03T13:45:01.479676+00:00",
+  "purpose": "Measurement-only stock reward buffer instrumentation and post-hoc decomposition",
+  "unchanged": [
+    "reward definition and weights",
+    "env.step total reward",
+    "training",
+    "checkpoints",
+    "Final terrain/config/seed",
+    "termination",
+    "observation",
+    "sensor",
+    "original Final results",
+    "first-pass results",
+    "statistical results",
+    "preregistration",
+    "official parity"
+  ],
+  "existing_final_results_reproduced": true,
+  "all_existing_step_trajectories_reproduced": true,
+  "identity_checks_pass": true,
+  "protected_count": 533,
+  "protected_changed": [],
+  "source_hashes": {
+    "scripts/assignment/evaluate_final_unseen_reward_components.py": "89988135353aacfbbf30b8e16c3b5cd0204a10438b3586485bc84fcf7d7890e5",
+    "scripts/assignment/run_final_unseen_reward_measurement.py": "06f6d762168e4674f3c76ece3ab032bd4a72bdb1fb00bfdf1e42a7d72699ce89",
+    "scripts/assignment/analyze_final_unseen_reward_components.py": "bea67610f32d5f37747ee3721fabd1511fcc215680b0cca305e92b893e1bff67"
+  },
+  "declaration": "No tuning, retraining, policy selection, or policy/environment/reward modification was performed based on Final results."
+}
