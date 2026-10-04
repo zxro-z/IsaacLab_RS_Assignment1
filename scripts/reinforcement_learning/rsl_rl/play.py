@@ -23,6 +23,8 @@ parser.add_argument("--video_name", type=str, default=None, help="Label for a un
 parser.add_argument(
     "--follow_robot", action="store_true", help="Track env_0's robot root with a stable third-person camera."
 )
+parser.add_argument("--terrain_relief_video", action="store_true",
+                    help="Opt-in visual-only gray terrain, grazing light and yaw-follow camera for single-episode videos.")
 parser.add_argument(
     "--disable_fabric", action="store_true", default=False, help="Disable fabric and use USD I/O operations."
 )
@@ -60,6 +62,9 @@ cli_args.add_rsl_rl_args(parser)
 AppLauncher.add_app_launcher_args(parser)
 # parse the arguments
 args_cli, hydra_args = parser.parse_known_args()
+if args_cli.terrain_relief_video and not (args_cli.video and args_cli.follow_robot
+                                       and args_cli.rollout_telemetry_dir and args_cli.num_envs == 1):
+    parser.error("--terrain_relief_video requires --video --follow_robot --num_envs 1 --rollout_telemetry_dir")
 if args_cli.compact_terrain and (args_cli.foot_contacts or args_cli.height_scan_pattern not in (None, "original")):
     parser.error("--compact_terrain requires Original scan and no --foot_contacts")
 if args_cli.rollout_telemetry_dir and (not args_cli.video or args_cli.num_envs != 1):
@@ -176,6 +181,12 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
     if isinstance(env.unwrapped, DirectMARLEnv):
         env = multi_agent_to_single_agent(env)
 
+    relief = None
+    if args_cli.terrain_relief_video:
+        from rollout_visualization import TerrainReliefVisualization
+
+        relief = TerrainReliefVisualization(env.unwrapped)
+
     # wrap for video recording
     if args_cli.video:
         video_root = os.path.join(log_dir, "videos", "play")
@@ -193,7 +204,12 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
         }
         print(f"[INFO] Recording playback video to: {video_folder}")
         print_dict(video_kwargs, nesting=4)
-        env = gym.wrappers.RecordVideo(env, **video_kwargs)
+        if relief is not None:
+            from rollout_visualization import FirstEpisodeReliefVideo
+
+            env = FirstEpisodeReliefVideo(env, **video_kwargs)
+        else:
+            env = gym.wrappers.RecordVideo(env, **video_kwargs)
 
     # wrap around environment for rsl-rl
     env = RslRlVecEnvWrapper(env, clip_actions=agent_cfg.clip_actions)
@@ -205,6 +221,8 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
         # The wrapper resets the robot onto its assigned terrain origin. Center the
         # camera there immediately, rather than showing its authored spawn location.
         env.unwrapped.viewport_camera_controller.update_view_to_asset_root("robot")
+        if relief is not None:
+            relief.update_camera()
         if args_cli.video:
             # Initialize the RGB render product before capturing the first frame.
             # These are render-only updates: no extra physics or policy steps.
@@ -268,6 +286,8 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
             actions = policy(obs)
             if telemetry is not None:
                 telemetry.begin(obs)
+            if relief is not None:
+                relief.update_camera()
             # env stepping
             obs, rewards, dones, _ = env.step(actions)
             if telemetry is not None:
@@ -292,6 +312,8 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
             time.sleep(sleep_time)
 
     # close the simulator
+    if relief is not None:
+        relief.finalize(args_cli.rollout_telemetry_dir)
     env.close()
     if telemetry is not None:
         telemetry.finalize()

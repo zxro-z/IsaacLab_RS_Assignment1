@@ -38,6 +38,11 @@ docker/.container.cfg
 **/output/*
 **/outputs/*
 **/videos/*
+!/docs/videos/base_final_unseen.mp4
+!/docs/videos/heightscan_final_unseen.mp4
+!/docs/videos/contact_final_unseen.mp4
+!/docs/videos/diverse_final_unseen.mp4
+!/docs/videos/rollout_manifest.json
 **/wandb/*
 **/.neptune/*
 docker/artifacts/

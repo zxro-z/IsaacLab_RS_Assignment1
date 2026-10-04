@@ -167,6 +167,30 @@ Final unseen에서 policy당 100개의 첫 episode를 평가하였다. 표의 ±
 
 [Final summary](validation/final_unseen_summary.md) · [Raw 400 episodes](validation/final_unseen_raw.csv)
 
+## Qualitative Rollout Videos
+
+각 policy의 seed 24, 단일 environment의 env 0 첫 episode를 동일한 Final unseen terrain과 visualization 설정으로 녹화하였다. 여러 rollout 중 성능이 좋은 episode를 선별하지 않았다. 이 영상은 정성적 예시이며, 정량적 결론은 위의 policy당 100-environment 평가에 근거한다. 단일-env 녹화는 기존 100-env 평가의 특정 episode를 재현한 것으로 해석하지 않는다.
+
+모든 영상은 동일한 robot-following third-person camera, 1280×720 resolution, 60 fps를 사용한다. Camera eye offset은 (−3.8, −3.2, 1.8), look-at offset은 (1.0, 0, −0.15)이며 decision-time robot yaw에 맞춰 회전한다. 최대 episode duration은 16 s이다. Held-out 지형 형상을 더 잘 볼 수 있도록 회색 visual material과 비스듬한 조명을 사용하였으며 simulation dynamics와 평가 조건은 변경하지 않았다. 첫 종료 직후 실행을 끝내므로 두 번째 episode는 진행하지 않는다. 마지막 한 프레임은 직전 frame을 유지하여 auto-reset pose를 제외하였다.
+
+### Base — 60-D
+
+[▶ Watch Base rollout](docs/videos/base_final_unseen.mp4)
+
+### HeightScan — 123-D
+
+[▶ Watch HeightScan rollout](docs/videos/heightscan_final_unseen.mp4)
+
+### HeightScan + Contact — 127-D
+
+[▶ Watch HeightScan + Contact rollout](docs/videos/contact_final_unseen.mp4)
+
+### Diverse HeightScan + Contact — 127-D
+
+[▶ Watch Diverse rollout](docs/videos/diverse_final_unseen.mp4)
+
+[Rollout provenance and video validation](docs/videos/rollout_manifest.json)
+
 ## 10. First-Pass Course Analysis
 
 First-pass는 초기 tile의 terrain-local boundary를 처음 통과한 sampled step으로 정의하였다. X coordinate는 초기 tile을 기준으로 유지하며 반복 tile에 대한 modulo를 적용하지 않았다.

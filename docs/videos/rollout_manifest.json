@@ -1,0 +1,689 @@
+{
+  "purpose": "Matched qualitative examples only; quantitative conclusions remain based on the frozen 100-env Final evaluation.",
+  "task": "Isaac-Ant-Final-Unseen-v0",
+  "seed": 24,
+  "terrain_seed": 2404,
+  "num_envs": 1,
+  "env_id": 0,
+  "episode_index": 0,
+  "selection": "Same seed24 env0 first episode re-recorded once per policy with one matched visualization preset; no policy/episode selection.",
+  "deterministic_inference": "Existing runner.get_inference_policy",
+  "first_episode_only": true,
+  "initial_state_equality": true,
+  "env_origin_equality": true,
+  "env_origin": [
+    -38.0,
+    -4.0,
+    0.0
+  ],
+  "initial_state": {
+    "terrain_z": 0.0,
+    "ground_hit_valid": true,
+    "clearance": 0.5,
+    "roll": 0.0,
+    "pitch": 0.0,
+    "yaw": 0.0,
+    "termination": false,
+    "timeout": false,
+    "fall": false,
+    "position_0": -38.0,
+    "position_1": -4.0,
+    "position_2": 0.5,
+    "linear_velocity_0": 0.0,
+    "linear_velocity_1": 0.0,
+    "linear_velocity_2": 0.0,
+    "angular_velocity_0": 0.0,
+    "angular_velocity_1": 0.0,
+    "angular_velocity_2": 0.0,
+    "action_0": 0.0,
+    "action_1": 0.0,
+    "action_2": 0.0,
+    "action_3": 0.0,
+    "action_4": 0.0,
+    "action_5": 0.0,
+    "action_6": 0.0,
+    "action_7": 0.0,
+    "joint_position_0": 0.18070028722286224,
+    "joint_position_1": 0.06894399225711823,
+    "joint_position_2": -0.13031038641929626,
+    "joint_position_3": -0.00447981059551239,
+    "joint_position_4": 0.8767105340957642,
+    "joint_position_5": -0.5872693061828613,
+    "joint_position_6": -0.6558698415756226,
+    "joint_position_7": 0.6732783913612366,
+    "joint_velocity_0": -0.0,
+    "joint_velocity_1": -0.0,
+    "joint_velocity_2": -0.0,
+    "joint_velocity_3": -0.0,
+    "joint_velocity_4": -0.0,
+    "joint_velocity_5": 0.0,
+    "joint_velocity_6": -0.0,
+    "joint_velocity_7": 0.0,
+    "foot_force_N_0": 0.0,
+    "foot_force_N_1": 0.0,
+    "foot_force_N_2": 0.0,
+    "foot_force_N_3": 0.0,
+    "foot_contact_0": 0.0,
+    "foot_contact_1": 0.0,
+    "foot_contact_2": 0.0,
+    "foot_contact_3": 0.0,
+    "foot_position_0": -37.639198303222656,
+    "foot_position_1": -3.5673129558563232,
+    "foot_position_2": 0.5,
+    "foot_position_3": -38.41330337524414,
+    "foot_position_4": -3.614253044128418,
+    "foot_position_5": 0.5,
+    "foot_position_6": -38.42428970336914,
+    "foot_position_7": -4.372316360473633,
+    "foot_position_8": 0.5,
+    "foot_position_9": -37.60089874267578,
+    "foot_position_10": -4.400893688201904,
+    "foot_position_11": 0.5,
+    "torso_to_foot_world_0": 0.36080169677734375,
+    "torso_to_foot_world_1": 0.43268704414367676,
+    "torso_to_foot_world_2": 0.0,
+    "torso_to_foot_world_3": -0.4133033752441406,
+    "torso_to_foot_world_4": 0.38574695587158203,
+    "torso_to_foot_world_5": 0.0,
+    "torso_to_foot_world_6": -0.4242897033691406,
+    "torso_to_foot_world_7": -0.3723163604736328,
+    "torso_to_foot_world_8": 0.0,
+    "torso_to_foot_world_9": 0.39910125732421875,
+    "torso_to_foot_world_10": -0.4008936882019043,
+    "torso_to_foot_world_11": 0.0
+  },
+  "terrain_equality_basis": "Identical runtime mesh/origin/robot-material hashes across all four recordings. Before/after visual changes also preserve explicit physics bindings and material attributes. Mesh hash matches existing Final summary.",
+  "camera": {
+    "origin_type": "asset_root",
+    "asset_name": "robot",
+    "env_index": 0,
+    "eye_heading_frame": [
+      -3.8,
+      -3.2,
+      1.8
+    ],
+    "lookat_heading_frame": [
+      1,
+      0,
+      -0.15
+    ],
+    "logic": "Yaw-only rotation from decision-time root quaternion; native asset-root translation; no roll/pitch rotation.",
+    "resolution": [
+      1280,
+      720
+    ],
+    "fps": 60
+  },
+  "control_dt": 0.016666666666666666,
+  "episode_limit_s": 16,
+  "video_terminal_caveat": "Hold previous frame for one 1/60-second frame; no reset image, no extra step.",
+  "source_sha256": {
+    "scripts/reinforcement_learning/rsl_rl/play.py": "a141c2ee12d8d0153ed36c3bc89a071e5f57eaf2ecc7faae1b16e2f45bf9999b",
+    "scripts/reinforcement_learning/rsl_rl/rollout_telemetry.py": "a62d43a39dac42c0bc94a837701e0e75018d825784345dead6cd979bf3651734",
+    "scripts/reinforcement_learning/rsl_rl/ant_observation_adapter.py": "afa1bea3509d14f246635940be457b3105ac1c3a81d2db75c3272bfde56012db",
+    "source/isaaclab_tasks/isaaclab_tasks/manager_based/classic/ant/ant_final_unseen_env_cfg.py": "e493698569d0ac2676899be14e4e04eb40204d8d6c069d839ca054b67f3e43e4",
+    "scripts/reinforcement_learning/rsl_rl/rollout_visualization.py": "021b54aef817120e06d2a99d6cba422338cb5a97056c209370ef064840aed887"
+  },
+  "lfs": "Existing *.mp4 rule in .gitattributes; no history migration.",
+  "outputs": [
+    {
+      "policy": "Base",
+      "checkpoint": "logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42/model_999.pt",
+      "checkpoint_sha256": "a7304b58e1d06ba656b910d33edfdbcd9e08c28c8e541f80c095073242ff2570",
+      "actor_input_dim": 60,
+      "runtime_observation_dim": 60,
+      "env_id": 0,
+      "episode_index": 0,
+      "episode_steps": 960,
+      "episode_duration_s": 16.0,
+      "termination": "time_out",
+      "path": "docs/videos/base_final_unseen.mp4",
+      "size_bytes": 3944347,
+      "sha256": "ea28496891c4b36042698ff43bdb5e05969c0677cd1e6762381187386cf44ea1",
+      "video_stream": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "16.000000",
+        "nb_frames": "960"
+      },
+      "complete_decode_pass": true,
+      "command": "./isaaclab.sh -p scripts/assignment/run.py scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Ant-Final-Unseen-v0 --checkpoint logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42/model_999.pt --seed 24 --num_envs 1 --headless  --video --video_length 960 --video_name relief_base_final_unseen --follow_robot --terrain_relief_video --rollout_telemetry_dir docs/videos/metadata/relief_base env.viewer.resolution=[1280,720]",
+      "raw_video": "logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42/videos/play/relief_base_final_unseen_20261004_110930_003951_6qef2h_s/relief_base_final_unseen-step-0.mp4",
+      "episode_return": 68.10724428750109,
+      "forward_displacement_m": 63.314449310302734,
+      "telemetry_sha256": "6b2c2a70ce5af23bc77bbb29a0c8c039d7a6e2830afaf135b37f72cd4e6a4671",
+      "telemetry_byte_identical_to_previous": true,
+      "old_vs_new": {
+        "episode_reward_total": {
+          "old": 68.10724428750109,
+          "new": 68.10724428750109,
+          "exactly_equal": true
+        },
+        "episode_length": {
+          "old": 960,
+          "new": 960,
+          "exactly_equal": true
+        },
+        "duration_s": {
+          "old": 16.0,
+          "new": 16.0,
+          "exactly_equal": true
+        },
+        "termination": {
+          "old": "time_out",
+          "new": "time_out",
+          "exactly_equal": true
+        },
+        "final_displacement_m": {
+          "old": 63.314449310302734,
+          "new": 63.314449310302734,
+          "exactly_equal": true
+        },
+        "fall": {
+          "old": false,
+          "new": false,
+          "exactly_equal": true
+        },
+        "timeout": {
+          "old": true,
+          "new": true,
+          "exactly_equal": true
+        }
+      },
+      "inspected_frames": [
+        {
+          "section": "flat",
+          "video_time_s": 0.6833333333333333,
+          "terrain_local_x_m": 3.0036468505859375
+        },
+        {
+          "section": "ridge",
+          "video_time_s": 1.7333333333333334,
+          "terrain_local_x_m": 6.970573425292969
+        },
+        {
+          "section": "terraces",
+          "video_time_s": 3.316666666666667,
+          "terrain_local_x_m": 14.016145706176758
+        },
+        {
+          "section": "basin",
+          "video_time_s": 4.883333333333334,
+          "terrain_local_x_m": 21.50248908996582
+        },
+        {
+          "section": "landing",
+          "video_time_s": 7.233333333333333,
+          "terrain_local_x_m": 31.021936416625977
+        }
+      ],
+      "visibility_review": "Compared five matched-location old/new frames; terrain shading and terrace edges clearer, basin/landing remain subtle at true centimetre-scale height."
+    },
+    {
+      "policy": "Original HeightScan",
+      "checkpoint": "logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42/model_999.pt",
+      "checkpoint_sha256": "716a6bbb860078beb41766b31f3d35ff0775f875c4411f5c5c7055be95379aca",
+      "actor_input_dim": 123,
+      "runtime_observation_dim": 123,
+      "env_id": 0,
+      "episode_index": 0,
+      "episode_steps": 960,
+      "episode_duration_s": 16.0,
+      "termination": "time_out",
+      "path": "docs/videos/heightscan_final_unseen.mp4",
+      "size_bytes": 3505610,
+      "sha256": "d3341759ad43f60a2c0b6de408e9607185e11826c9483fc1317215e5fa5ae349",
+      "video_stream": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "16.000000",
+        "nb_frames": "960"
+      },
+      "complete_decode_pass": true,
+      "command": "./isaaclab.sh -p scripts/assignment/run.py scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Ant-Final-Unseen-v0 --checkpoint logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42/model_999.pt --seed 24 --num_envs 1 --headless --height_scan --video --video_length 960 --video_name relief_heightscan_final_unseen --follow_robot --terrain_relief_video --rollout_telemetry_dir docs/videos/metadata/relief_heightscan env.viewer.resolution=[1280,720]",
+      "raw_video": "logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42/videos/play/relief_heightscan_final_unseen_20261004_111103_671908_qfiudpy_/relief_heightscan_final_unseen-step-0.mp4",
+      "episode_return": 68.39093877759296,
+      "forward_displacement_m": 62.72631072998047,
+      "telemetry_sha256": "6f060aaec074dae4164571d2cad5fda5b237a7233c326ba38e23d2c29b75b2da",
+      "telemetry_byte_identical_to_previous": true,
+      "old_vs_new": {
+        "episode_reward_total": {
+          "old": 68.39093877759296,
+          "new": 68.39093877759296,
+          "exactly_equal": true
+        },
+        "episode_length": {
+          "old": 960,
+          "new": 960,
+          "exactly_equal": true
+        },
+        "duration_s": {
+          "old": 16.0,
+          "new": 16.0,
+          "exactly_equal": true
+        },
+        "termination": {
+          "old": "time_out",
+          "new": "time_out",
+          "exactly_equal": true
+        },
+        "final_displacement_m": {
+          "old": 62.72631072998047,
+          "new": 62.72631072998047,
+          "exactly_equal": true
+        },
+        "fall": {
+          "old": false,
+          "new": false,
+          "exactly_equal": true
+        },
+        "timeout": {
+          "old": true,
+          "new": true,
+          "exactly_equal": true
+        }
+      },
+      "inspected_frames": [
+        {
+          "section": "flat",
+          "video_time_s": 0.55,
+          "terrain_local_x_m": 2.975250244140625
+        },
+        {
+          "section": "ridge",
+          "video_time_s": 1.4666666666666666,
+          "terrain_local_x_m": 7.029514312744141
+        },
+        {
+          "section": "terraces",
+          "video_time_s": 3.1,
+          "terrain_local_x_m": 14.015291213989258
+        },
+        {
+          "section": "basin",
+          "video_time_s": 4.95,
+          "terrain_local_x_m": 21.473798751831055
+        },
+        {
+          "section": "landing",
+          "video_time_s": 7.233333333333333,
+          "terrain_local_x_m": 30.985955238342285
+        }
+      ],
+      "visibility_review": "Compared five matched-location old/new frames; terrain shading and terrace edges clearer, basin/landing remain subtle at true centimetre-scale height."
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "checkpoint": "logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/model_999.pt",
+      "checkpoint_sha256": "8fa361827664fce1a42a2f4d42152853c81a6a8cf63deb3174aca5b9d80d937a",
+      "actor_input_dim": 127,
+      "runtime_observation_dim": 127,
+      "env_id": 0,
+      "episode_index": 0,
+      "episode_steps": 960,
+      "episode_duration_s": 16.0,
+      "termination": "time_out",
+      "path": "docs/videos/contact_final_unseen.mp4",
+      "size_bytes": 3669552,
+      "sha256": "bab38043d539777972ecffe702cbbab226433fb3d1ad20507ae39eabd7de94b3",
+      "video_stream": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "16.000000",
+        "nb_frames": "960"
+      },
+      "complete_decode_pass": true,
+      "command": "./isaaclab.sh -p scripts/assignment/run.py scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Ant-Final-Unseen-v0 --checkpoint logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/model_999.pt --seed 24 --num_envs 1 --headless --height_scan --foot_contacts --video --video_length 960 --video_name relief_contact_final_unseen --follow_robot --terrain_relief_video --rollout_telemetry_dir docs/videos/metadata/relief_contact env.viewer.resolution=[1280,720]",
+      "raw_video": "logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/videos/play/relief_contact_final_unseen_20261004_111242_584248_blzvvzs3/relief_contact_final_unseen-step-0.mp4",
+      "episode_return": 76.63128926372156,
+      "forward_displacement_m": 68.37352561950684,
+      "telemetry_sha256": "7356a178c04bbee99b8c121f35818239d834110d53bad529696c4af15478ba4c",
+      "telemetry_byte_identical_to_previous": true,
+      "old_vs_new": {
+        "episode_reward_total": {
+          "old": 76.63128926372156,
+          "new": 76.63128926372156,
+          "exactly_equal": true
+        },
+        "episode_length": {
+          "old": 960,
+          "new": 960,
+          "exactly_equal": true
+        },
+        "duration_s": {
+          "old": 16.0,
+          "new": 16.0,
+          "exactly_equal": true
+        },
+        "termination": {
+          "old": "time_out",
+          "new": "time_out",
+          "exactly_equal": true
+        },
+        "final_displacement_m": {
+          "old": 68.37352561950684,
+          "new": 68.37352561950684,
+          "exactly_equal": true
+        },
+        "fall": {
+          "old": false,
+          "new": false,
+          "exactly_equal": true
+        },
+        "timeout": {
+          "old": true,
+          "new": true,
+          "exactly_equal": true
+        }
+      },
+      "inspected_frames": [
+        {
+          "section": "flat",
+          "video_time_s": 0.6333333333333333,
+          "terrain_local_x_m": 2.9752197265625
+        },
+        {
+          "section": "ridge",
+          "video_time_s": 1.6,
+          "terrain_local_x_m": 6.9714202880859375
+        },
+        {
+          "section": "terraces",
+          "video_time_s": 3.1333333333333333,
+          "terrain_local_x_m": 13.975072860717773
+        },
+        {
+          "section": "basin",
+          "video_time_s": 4.833333333333333,
+          "terrain_local_x_m": 21.534982681274414
+        },
+        {
+          "section": "landing",
+          "video_time_s": 6.816666666666666,
+          "terrain_local_x_m": 31.007116317749023
+        }
+      ],
+      "visibility_review": "Compared five matched-location old/new frames; terrain shading and terrace edges clearer, basin/landing remain subtle at true centimetre-scale height."
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "checkpoint": "logs/rsl_rl/ant/2026-10-03_18-57-46_ablation_heightscan_contact_diverse_s42/model_999.pt",
+      "checkpoint_sha256": "2f36d5fc0280a9000b1719552ab1c68cb64861a22b9088440f19acd5217dfe48",
+      "actor_input_dim": 127,
+      "runtime_observation_dim": 127,
+      "env_id": 0,
+      "episode_index": 0,
+      "episode_steps": 960,
+      "episode_duration_s": 16.0,
+      "termination": "time_out",
+      "path": "docs/videos/diverse_final_unseen.mp4",
+      "size_bytes": 3462766,
+      "sha256": "5a738b320c5a48bfe60f1e9bd0dff7337df0572888269c06c8f52a40725250d4",
+      "video_stream": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "16.000000",
+        "nb_frames": "960"
+      },
+      "complete_decode_pass": true,
+      "command": "./isaaclab.sh -p scripts/assignment/run.py scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Ant-Final-Unseen-v0 --checkpoint logs/rsl_rl/ant/2026-10-03_18-57-46_ablation_heightscan_contact_diverse_s42/model_999.pt --seed 24 --num_envs 1 --headless --height_scan --foot_contacts --video --video_length 960 --video_name relief_diverse_final_unseen --follow_robot --terrain_relief_video --rollout_telemetry_dir docs/videos/metadata/relief_diverse env.viewer.resolution=[1280,720]",
+      "raw_video": "logs/rsl_rl/ant/2026-10-03_18-57-46_ablation_heightscan_contact_diverse_s42/videos/play/relief_diverse_final_unseen_20261004_111442_244922_9_c47vtn/relief_diverse_final_unseen-step-0.mp4",
+      "episode_return": 75.75918375398032,
+      "forward_displacement_m": 68.96175956726074,
+      "telemetry_sha256": "914816b89cee2b19fc34d77fa70ada99c5f258235c3612acc55a30a3f603bbeb",
+      "telemetry_byte_identical_to_previous": true,
+      "old_vs_new": {
+        "episode_reward_total": {
+          "old": 75.75918375398032,
+          "new": 75.75918375398032,
+          "exactly_equal": true
+        },
+        "episode_length": {
+          "old": 960,
+          "new": 960,
+          "exactly_equal": true
+        },
+        "duration_s": {
+          "old": 16.0,
+          "new": 16.0,
+          "exactly_equal": true
+        },
+        "termination": {
+          "old": "time_out",
+          "new": "time_out",
+          "exactly_equal": true
+        },
+        "final_displacement_m": {
+          "old": 68.96175956726074,
+          "new": 68.96175956726074,
+          "exactly_equal": true
+        },
+        "fall": {
+          "old": false,
+          "new": false,
+          "exactly_equal": true
+        },
+        "timeout": {
+          "old": true,
+          "new": true,
+          "exactly_equal": true
+        }
+      },
+      "inspected_frames": [
+        {
+          "section": "flat",
+          "video_time_s": 0.55,
+          "terrain_local_x_m": 2.9862709045410156
+        },
+        {
+          "section": "ridge",
+          "video_time_s": 1.4666666666666666,
+          "terrain_local_x_m": 7.006172180175781
+        },
+        {
+          "section": "terraces",
+          "video_time_s": 3.0,
+          "terrain_local_x_m": 13.970840454101562
+        },
+        {
+          "section": "basin",
+          "video_time_s": 4.466666666666667,
+          "terrain_local_x_m": 21.532976150512695
+        },
+        {
+          "section": "landing",
+          "video_time_s": 7.0,
+          "terrain_local_x_m": 30.973297119140625
+        }
+      ],
+      "visibility_review": "Compared five matched-location old/new frames; terrain shading and terrace edges clearer, basin/landing remain subtle at true centimetre-scale height."
+    }
+  ],
+  "visual_material": {
+    "diffuse_color": [
+      0.48,
+      0.5,
+      0.52
+    ],
+    "roughness": 0.9,
+    "metallic": 0
+  },
+  "lighting": {
+    "directional": {
+      "intensity": 3000.0,
+      "rotation_xyz_deg": [
+        0,
+        -78,
+        -35
+      ],
+      "color": [
+        1,
+        0.96,
+        0.9
+      ],
+      "angle": 0.5
+    },
+    "dome_fill": {
+      "intensity": 120.0,
+      "color": [
+        0.85,
+        0.9,
+        1
+      ]
+    }
+  },
+  "physics_geometry_unchanged": true,
+  "physics_material_unchanged": true,
+  "evaluation_conditions_unchanged": true,
+  "physical_signatures": {
+    "terrain_mesh_sha256": "c0e1eb34d72dbc86d0a64774a27878aeb9acd9de2174cb0853f99703234cc282",
+    "physics_bindings": {
+      "/physicsScene.material:binding:physics": [
+        "/physicsScene/defaultMaterial"
+      ],
+      "/World/ground/terrain/mesh.material:binding:physics": [
+        "/World/ground/terrain/physicsMaterial"
+      ]
+    },
+    "physics_material_attributes": {
+      "/physicsScene/defaultMaterial.physics:dynamicFriction": "1.0",
+      "/physicsScene/defaultMaterial.physics:restitution": "0.0",
+      "/physicsScene/defaultMaterial.physics:staticFriction": "1.0",
+      "/World/ground/terrain/physicsMaterial.physics:dynamicFriction": "1.0",
+      "/World/ground/terrain/physicsMaterial.physics:restitution": "0.0",
+      "/World/ground/terrain/physicsMaterial.physics:staticFriction": "1.0"
+    },
+    "robot_material_sha256": "de50fb2329a296dcc79c26066d14cc5feef91cde57682f0a9171f7db8452709d",
+    "env_origins_sha256": "59b1f8cdb95fea788a8a79de4eafe3d53ad0f0e9ca3f49642bb115c6debca1af"
+  },
+  "previous_recording_outputs": [
+    {
+      "policy": "Base",
+      "checkpoint": "logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42/model_999.pt",
+      "checkpoint_sha256": "a7304b58e1d06ba656b910d33edfdbcd9e08c28c8e541f80c095073242ff2570",
+      "actor_input_dim": 60,
+      "runtime_observation_dim": 60,
+      "env_id": 0,
+      "episode_index": 0,
+      "episode_steps": 960,
+      "episode_duration_s": 16.0,
+      "termination": "time_out",
+      "path": "docs/videos/base_final_unseen.mp4",
+      "size_bytes": 2254096,
+      "sha256": "8d2a3c2b0c1f324abdd454e5cfc721d52fc9a31ae85153b8a744b5073ccb28d3",
+      "video_stream": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "16.000000",
+        "nb_frames": "960"
+      },
+      "complete_decode_pass": true,
+      "command": "./isaaclab.sh -p scripts/assignment/run.py scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Ant-Final-Unseen-v0 --checkpoint logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42/model_999.pt --seed 24 --num_envs 1 --headless  --video --video_length 960 --video_name base_final_unseen --follow_robot --rollout_telemetry_dir docs/videos/metadata/base env.viewer.resolution=[1280,720]",
+      "raw_video": "logs/rsl_rl/ant/2026-10-02_03-39-50_ablation_base_obs60_s42/videos/play/base_final_unseen_20261004_104906_453728_p_r01k2m/base_final_unseen-step-0.mp4"
+    },
+    {
+      "policy": "Original HeightScan",
+      "checkpoint": "logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42/model_999.pt",
+      "checkpoint_sha256": "716a6bbb860078beb41766b31f3d35ff0775f875c4411f5c5c7055be95379aca",
+      "actor_input_dim": 123,
+      "runtime_observation_dim": 123,
+      "env_id": 0,
+      "episode_index": 0,
+      "episode_steps": 960,
+      "episode_duration_s": 16.0,
+      "termination": "time_out",
+      "path": "docs/videos/heightscan_final_unseen.mp4",
+      "size_bytes": 2112734,
+      "sha256": "655e8418df69f335f0fffcb5e0338610dec5e325284fec61eeacfc015281b87e",
+      "video_stream": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "16.000000",
+        "nb_frames": "960"
+      },
+      "complete_decode_pass": true,
+      "command": "./isaaclab.sh -p scripts/assignment/run.py scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Ant-Final-Unseen-v0 --checkpoint logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42/model_999.pt --seed 24 --num_envs 1 --headless --height_scan --video --video_length 960 --video_name heightscan_final_unseen --follow_robot --rollout_telemetry_dir docs/videos/metadata/heightscan env.viewer.resolution=[1280,720]",
+      "raw_video": "logs/rsl_rl/ant/2026-10-03_00-52-49_ablation_heightscan_obs123_s42/videos/play/heightscan_final_unseen_20261004_105015_592510_snytiawc/heightscan_final_unseen-step-0.mp4"
+    },
+    {
+      "policy": "HeightScan+Contact",
+      "checkpoint": "logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/model_999.pt",
+      "checkpoint_sha256": "8fa361827664fce1a42a2f4d42152853c81a6a8cf63deb3174aca5b9d80d937a",
+      "actor_input_dim": 127,
+      "runtime_observation_dim": 127,
+      "env_id": 0,
+      "episode_index": 0,
+      "episode_steps": 960,
+      "episode_duration_s": 16.0,
+      "termination": "time_out",
+      "path": "docs/videos/contact_final_unseen.mp4",
+      "size_bytes": 2064101,
+      "sha256": "d07591bf190aec3448a3d6b3ebf3397c45d191329ff06e90330e46f4c69c48f4",
+      "video_stream": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "16.000000",
+        "nb_frames": "960"
+      },
+      "complete_decode_pass": true,
+      "command": "./isaaclab.sh -p scripts/assignment/run.py scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Ant-Final-Unseen-v0 --checkpoint logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/model_999.pt --seed 24 --num_envs 1 --headless --height_scan --foot_contacts --video --video_length 960 --video_name contact_final_unseen --follow_robot --rollout_telemetry_dir docs/videos/metadata/contact env.viewer.resolution=[1280,720]",
+      "raw_video": "logs/rsl_rl/ant/2026-10-03_01-10-01_ablation_heightscan_contact_obs127_s42/videos/play/contact_final_unseen_20261004_105249_142226__r8tl2jx/contact_final_unseen-step-0.mp4"
+    },
+    {
+      "policy": "Diverse HeightScan+Contact",
+      "checkpoint": "logs/rsl_rl/ant/2026-10-03_18-57-46_ablation_heightscan_contact_diverse_s42/model_999.pt",
+      "checkpoint_sha256": "2f36d5fc0280a9000b1719552ab1c68cb64861a22b9088440f19acd5217dfe48",
+      "actor_input_dim": 127,
+      "runtime_observation_dim": 127,
+      "env_id": 0,
+      "episode_index": 0,
+      "episode_steps": 960,
+      "episode_duration_s": 16.0,
+      "termination": "time_out",
+      "path": "docs/videos/diverse_final_unseen.mp4",
+      "size_bytes": 2081650,
+      "sha256": "26cf588dfef15ef6eb01567b7cad416c71fbd5ae3368146ce0ed2f713204155e",
+      "video_stream": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "16.000000",
+        "nb_frames": "960"
+      },
+      "complete_decode_pass": true,
+      "command": "./isaaclab.sh -p scripts/assignment/run.py scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Ant-Final-Unseen-v0 --checkpoint logs/rsl_rl/ant/2026-10-03_18-57-46_ablation_heightscan_contact_diverse_s42/model_999.pt --seed 24 --num_envs 1 --headless --height_scan --foot_contacts --video --video_length 960 --video_name diverse_final_unseen --follow_robot --rollout_telemetry_dir docs/videos/metadata/diverse env.viewer.resolution=[1280,720]",
+      "raw_video": "logs/rsl_rl/ant/2026-10-03_18-57-46_ablation_heightscan_contact_diverse_s42/videos/play/diverse_final_unseen_20261004_105418_478828_w891f5w8/diverse_final_unseen-step-0.mp4"
+    }
+  ]
+}
