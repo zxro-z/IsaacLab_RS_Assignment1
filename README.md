@@ -6,9 +6,9 @@ Terrain perception, foot contact feedback, training terrain diversity의 역할�
 
 ## Quick Summary
 
-- **HeightScan:** Base 대비 Final return, forward displacement, progress contribution이 증가했고, joint completer의 endpoint 도달 시간이 짧아졌다.
+- **HeightScan:** Base 대비 Final return, forward displacement, progress contribution이 증가했고, endpoint에 도달한 episode에서는 도달 시간이 더 짧게 나타났다.
 - **HeightScan+Contact:** 추가 이동량 증가보다 control-related penalty 감소와 안정성 관련 패턴이 관찰되었다. Fall 감소의 paired CI는 0에 닿으므로 확정적인 감소로 해석하지 않는다.
-- **Diverse:** 완주자에서 빠른 timing이 관찰되었으나 전체 fall·endpoint reach·corridor completion에서는 기대한 robustness 향상이 나타나지 않았다.
+- **Diverse:** corridor를 완주한 episode에서는 completion time이 더 짧게 나타났으나, 전체 fall·endpoint reach·corridor completion에서는 기대한 robustness 향상이 나타나지 않았다.
 - 결과는 **단일 training seed와 단일 Final unseen realization**에 한정된다.
 
 [평가 명령](#8-evaluation-protocol) · [대표 checkpoint](#16-reproduction) · [주요 결과](#9-main-results) · [분석 자료](#18-key-artifacts)
